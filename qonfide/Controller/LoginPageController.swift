@@ -31,14 +31,14 @@ class LoginPageController: UIViewController{
         return iv
     }()
     
-    private let createAccountButton: UIButton = {
+    private lazy var createAccountButton: UIButton = {
         let button = AuthButton(title: "Create Account", type: .system)
         button.isEnabled = true
         button.addTarget(self, action: #selector(createAccountPressed), for: .touchUpInside)
         return button
     }()
     
-    private let alreadyAccountButton: AuthButton = {
+    private lazy var alreadyAccountButton: AuthButton = {
         let button = AuthButton(title: "I Already Have an Account", type: .system)
         button.addTarget(self, action: #selector(alreadyAccountPressed), for: .touchUpInside)
         button.isEnabled = true
@@ -46,7 +46,7 @@ class LoginPageController: UIViewController{
         return button
     }()
     
-    private let guestButton: UIButton = {
+    private lazy var guestButton: UIButton = {
         let button = UIButton(type: .system)
         let attributedTitle = NSMutableAttributedString(string: "Continue as guest", attributes: [
                 .foregroundColor: UIColor(red: 133/255, green: 165/255, blue: 210/255, alpha: 1),
@@ -60,11 +60,11 @@ class LoginPageController: UIViewController{
     // MARK: - Actions
     
     @objc func createAccountPressed(){
-        navigationController?.pushViewController(LoginFormController(), animated: true)
+        navigationController?.pushViewController(SignupFormController(), animated: true)
     }
     
     @objc func alreadyAccountPressed(){
-        navigationController?.pushViewController(SignupFormController(), animated: true)
+        navigationController?.pushViewController(LoginFormController(), animated: true)
     }
     
     @objc func guestButtonPressed(){
@@ -103,6 +103,3 @@ class LoginPageController: UIViewController{
         
     }
 }
-
-
-

@@ -7,33 +7,13 @@
 
 import UIKit
 
-//class CustomUserTextView: UIStackView{
-//    init(placeholder: String, isSecureField: Bool? = false){
-//        super.init(frame: .zero)
-//
-//        backgroundColor = .systemPink
-//
-        
-//
-//        addSubview(title)
-//        title.widthAnchor.constraint(equalToConstant: 320).isActive = true
-//        title.anchor(top: topAnchor, left: leftAnchor)
-//
-       
-//        addSubview(textField)
-//        textField.anchor(top: title.bottomAnchor, paddingTop: 8)
-//        textField.centerX(inView: self)
-//
-//    }
-//
-//    required init?(coder: NSCoder) {
-//        fatalError("init(coder:) has not been implemented")
-//    }
-//}
-
 class CustomUserTextView: UIStackView{
     
-    init(placeholder: String, isSecureField: Bool? = false){
+    let customTextField: CustomUserTextField
+    
+    init(placeholder: String, isSecureField: Bool? = false)
+    {
+        customTextField = CustomUserTextField(placeholder: placeholder, isSecureField: isSecureField)
         super.init(frame: .zero)
         
         let title = UILabel()
@@ -44,10 +24,7 @@ class CustomUserTextView: UIStackView{
         let spacer = UIView()
         spacer.heightAnchor.constraint(equalToConstant: 4).isActive = true
         
-        let textField = CustomUserTextField(placeholder: placeholder, isSecureField: isSecureField)
-        
-        [title, spacer, textField].forEach {view in addArrangedSubview(view)
-        }
+        [title, spacer, customTextField].forEach {addArrangedSubview($0)}
         
         axis = .vertical
     }

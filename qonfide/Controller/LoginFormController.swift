@@ -10,6 +10,9 @@ import UIKit
 class LoginFormController: UIViewController{
     
     // MARK: - Properties
+    
+    private var userModel = LoginViewModel()
+    
     private let loginImageView: UIImageView = {
         let iv = UIImageView()
         iv.image = #imageLiteral(resourceName: "catAstroLogo").withRenderingMode(.alwaysOriginal)
@@ -25,17 +28,17 @@ class LoginFormController: UIViewController{
         return label
     }()
     
-    private let usernameTextView: UIStackView = CustomUserTextView(placeholder: "Username")
+    private let emailTextView: CustomUserTextView = CustomUserTextView(placeholder: "Email")
     
-    private let passwordTextView: UIStackView = CustomUserTextView(placeholder: "Password", isSecureField: true)
+    private let passwordTextView: CustomUserTextView = CustomUserTextView(placeholder: "Password", isSecureField: true)
     
-    private let loginButton: AuthButton = {
+    private lazy var loginButton: AuthButton = {
         let button = AuthButton(title: "Log In", type: .system)
         button.addTarget(self, action: #selector(loginButtonPressed), for: .touchUpInside)
         return button
     }()
     
-    private let createAccountButton: UIButton = {
+    private lazy var createAccountButton: UIButton = {
         let button = UIButton()
         let attributedTitle = NSMutableAttributedString(string: "Create Account", attributes: [
             .foregroundColor: UIColor(red: 133/255, green: 165/255, blue: 210/255, alpha: 1),
@@ -43,24 +46,50 @@ class LoginFormController: UIViewController{
                 .underlineStyle: NSUnderlineStyle.thick.rawValue
         ])
         button.setAttributedTitle(attributedTitle, for: .normal)
-        button.addTarget(self, action: #selector(guestButtonPressed), for: .touchUpInside)
+        button.addTarget(self, action: #selector(createAccountButtonPressed), for: .touchUpInside)
         return button
     }()
     
     // MARK: - Actions
     
     @objc func loginButtonPressed(){
+        //TODO: login firebase
         print("DEBUG: Login Button Pressed")
     }
     
-    @objc func guestButtonPressed(){
-        print("DEBUG: Login Button Pressed")
+    @objc func createAccountButtonPressed(){
+        navigationController?.pushViewController(SignupFormController(), animated: true)
+    }
+    
+    @objc func textDidChange(sender: UITextField){
+        if sender == emailTextView.customTextField {
+            userModel.email = sender.text
+        } else {
+            userModel.password = sender.text
+        }
+        
+        if userModel.formIsValid {
+            loginButton.isEnabled = true
+        } else {
+            loginButton.isEnabled = false
+        }
+            
+    
+    }
+    
+    // MARK: - Helpers
+    
+    func configureTextFieldObserver(){
+        [emailTextView, passwordTextView].forEach {
+            $0.customTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+        }
     }
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
+        configureTextFieldObserver()
     }
     
     func configureUI(){
@@ -75,7 +104,7 @@ class LoginFormController: UIViewController{
         loginImageView.setDimensions(height: 280, width: 280)
         loginImageView.anchor(top: loginTitle.bottomAnchor, paddingTop: 36)
         
-        let stack = UIStackView(arrangedSubviews: [usernameTextView, passwordTextView, loginButton, createAccountButton])
+        let stack = UIStackView(arrangedSubviews: [emailTextView, passwordTextView, UIView(), loginButton, createAccountButton])
         stack.axis = .vertical
         stack.spacing = 16
         view.addSubview(stack)

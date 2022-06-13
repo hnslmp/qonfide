@@ -10,7 +10,13 @@
 		B55F49752856D7E500BC8351 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = B55F49742856D7E500BC8351 /* FirebaseAuth */; };
 		B55F49772856D7E500BC8351 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = B55F49762856D7E500BC8351 /* FirebaseFirestore */; };
 		B55F49792856D7E500BC8351 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = B55F49782856D7E500BC8351 /* FirebaseStorage */; };
-		B598D3BC2853AA17001F8F47 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B598D3BB2853AA17001F8F47 /* GoogleService-Info.plist */; };
+		B55F497B2856DB6200BC8351 /* LoginPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55F497A2856DB6200BC8351 /* LoginPageController.swift */; };
+		B593326628574C7000927312 /* SignupFormController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B593326528574C7000927312 /* SignupFormController.swift */; };
+		B593326828574CC900927312 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B593326728574CC900927312 /* GoogleService-Info.plist */; };
+		B5A2283428570D02007665A3 /* AuthButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A2283328570D02007665A3 /* AuthButton.swift */; };
+		B5A2283A2857135C007665A3 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A2283928571323007665A3 /* Extensions.swift */; };
+		B5A2283C285713B0007665A3 /* LoginFormController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A2283B285713B0007665A3 /* LoginFormController.swift */; };
+		B5A2283E2857166A007665A3 /* CustomUserTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A2283D2857166A007665A3 /* CustomUserTextView.swift */; };
 		B5B555462852FF800076C25E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B555452852FF800076C25E /* AppDelegate.swift */; };
 		B5B555482852FF800076C25E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B555472852FF800076C25E /* SceneDelegate.swift */; };
 		B5B5554A2852FF800076C25E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B555492852FF800076C25E /* ViewController.swift */; };
@@ -20,7 +26,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		B598D3BB2853AA17001F8F47 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B55F497A2856DB6200BC8351 /* LoginPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageController.swift; sourceTree = "<group>"; };
+		B593326528574C7000927312 /* SignupFormController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupFormController.swift; sourceTree = "<group>"; };
+		B593326728574CC900927312 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B5A2283328570D02007665A3 /* AuthButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthButton.swift; sourceTree = "<group>"; };
+		B5A2283928571323007665A3 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		B5A2283B285713B0007665A3 /* LoginFormController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFormController.swift; sourceTree = "<group>"; };
+		B5A2283D2857166A007665A3 /* CustomUserTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUserTextView.swift; sourceTree = "<group>"; };
 		B5B555422852FF800076C25E /* qonfide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = qonfide.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5B555452852FF800076C25E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B5B555472852FF800076C25E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -45,6 +57,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B5A22835285712CA007665A3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B5A228362857130B007665A3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B5A2283728571314007665A3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B55F497A2856DB6200BC8351 /* LoginPageController.swift */,
+				B5A2283B285713B0007665A3 /* LoginFormController.swift */,
+				B593326528574C7000927312 /* SignupFormController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		B5A228382857131F007665A3 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				B5A2283928571323007665A3 /* Extensions.swift */,
+				B5A2283328570D02007665A3 /* AuthButton.swift */,
+				B5A2283D2857166A007665A3 /* CustomUserTextView.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		B5B555392852FF800076C25E = {
 			isa = PBXGroup;
 			children = (
@@ -64,6 +110,10 @@
 		B5B555442852FF800076C25E /* qonfide */ = {
 			isa = PBXGroup;
 			children = (
+				B5A22835285712CA007665A3 /* Model */,
+				B5A228362857130B007665A3 /* View */,
+				B5A2283728571314007665A3 /* Controller */,
+				B5A228382857131F007665A3 /* Utils */,
 				B5B555452852FF800076C25E /* AppDelegate.swift */,
 				B5B555472852FF800076C25E /* SceneDelegate.swift */,
 				B5B555492852FF800076C25E /* ViewController.swift */,
@@ -71,7 +121,7 @@
 				B5B5554E2852FF820076C25E /* Assets.xcassets */,
 				B5B555502852FF820076C25E /* LaunchScreen.storyboard */,
 				B5B555532852FF820076C25E /* Info.plist */,
-				B598D3BB2853AA17001F8F47 /* GoogleService-Info.plist */,
+				B593326728574CC900927312 /* GoogleService-Info.plist */,
 			);
 			path = qonfide;
 			sourceTree = "<group>";
@@ -143,7 +193,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5B555522852FF820076C25E /* LaunchScreen.storyboard in Resources */,
-				B598D3BC2853AA17001F8F47 /* GoogleService-Info.plist in Resources */,
+				B593326828574CC900927312 /* GoogleService-Info.plist in Resources */,
 				B5B5554F2852FF820076C25E /* Assets.xcassets in Resources */,
 				B5B5554D2852FF800076C25E /* Main.storyboard in Resources */,
 			);
@@ -156,8 +206,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B593326628574C7000927312 /* SignupFormController.swift in Sources */,
+				B5A2283428570D02007665A3 /* AuthButton.swift in Sources */,
+				B5A2283A2857135C007665A3 /* Extensions.swift in Sources */,
+				B5A2283C285713B0007665A3 /* LoginFormController.swift in Sources */,
 				B5B5554A2852FF800076C25E /* ViewController.swift in Sources */,
 				B5B555462852FF800076C25E /* AppDelegate.swift in Sources */,
+				B5A2283E2857166A007665A3 /* CustomUserTextView.swift in Sources */,
+				B55F497B2856DB6200BC8351 /* LoginPageController.swift in Sources */,
 				B5B555482852FF800076C25E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

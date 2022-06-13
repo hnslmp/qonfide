@@ -13,7 +13,7 @@ class AuthButton: UIButton {
         super.init(frame: .zero)
         
         setTitle(title, for: .normal)
-        backgroundColor = #colorLiteral(red: 0.2196078449, green: 0.007843137719, blue: 0.8549019694, alpha: 1)
+        backgroundColor = UIColor(red: 53/255, green: 74/255, blue: 166/255, alpha: 1)
         titleLabel?.font = UIFont.systemFont(ofSize: 16,weight: .heavy)
         layer.cornerRadius = 8
         widthAnchor.constraint(equalToConstant: 300).isActive = true

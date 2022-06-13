@@ -61,12 +61,10 @@ class LoginPageController: UIViewController{
     
     @objc func createAccountPressed(){
         navigationController?.pushViewController(LoginFormController(), animated: true)
-        print("DEBUG: Create account pressed")
-        
     }
     
     @objc func alreadyAccountPressed(){
-        print("DEBUG: Already account pressed")
+        navigationController?.pushViewController(SignupFormController(), animated: true)
     }
     
     @objc func guestButtonPressed(){

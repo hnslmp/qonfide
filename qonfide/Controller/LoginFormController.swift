@@ -75,7 +75,7 @@ class LoginFormController: UIViewController{
         loginImageView.setDimensions(height: 280, width: 280)
         loginImageView.anchor(top: loginTitle.bottomAnchor, paddingTop: 36)
         
-        let stack = UIStackView(arrangedSubviews: [usernameTextView, passwordTextView, loginButton, createAccountButton])
+        let stack = UIStackView(arrangedSubviews: [usernameTextView, passwordTextView, UIView(), loginButton, createAccountButton])
         stack.axis = .vertical
         stack.spacing = 16
         view.addSubview(stack)

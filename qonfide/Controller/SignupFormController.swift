@@ -26,7 +26,7 @@ class SignupFormController: UIViewController{
     private lazy var selectPhotoButton: UIButton = {
         let button = UIButton(type: .system)
 //        button.tintColor = .white
-        button.setImage(#imageLiteral(resourceName: "selectPhoto"), for: .normal)
+        button.setBackgroundImage(#imageLiteral(resourceName: "selectPhoto"), for: .normal)
         button.addTarget(self, action: #selector(handleSelectPhoto), for: .touchUpInside)
         button.clipsToBounds = true
         return button
@@ -138,7 +138,7 @@ class SignupFormController: UIViewController{
         view.backgroundColor = .white
         
         view.addSubview(loginTitle)
-        loginTitle.anchor(top: view.safeAreaLayoutGuide.topAnchor,paddingTop: 0)
+        loginTitle.anchor(top: view.safeAreaLayoutGuide.topAnchor,paddingTop: 12)
         loginTitle.centerX(inView: view)
         
         view.addSubview(selectPhotoButton)

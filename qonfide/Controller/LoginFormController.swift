@@ -61,20 +61,10 @@ class LoginFormController: UIViewController{
         navigationController?.pushViewController(SignupFormController(), animated: true)
     }
     
-    @objc func textDidChange(sender: UITextField){
-        if sender == emailTextView.customTextField {
-            userModel.email = sender.text
-        } else {
-            userModel.password = sender.text
-        }
-        
-        if userModel.formIsValid {
-            loginButton.isEnabled = true
-        } else {
-            loginButton.isEnabled = false
-        }
-            
-    
+    @objc func textDidChange(sender: UITextField)
+    {
+        sender == emailTextView.customTextField ? ({ userModel.email = sender.text })() : ({ userModel.password = sender.text })()
+        loginButton.isEnabled = userModel.formIsValid
     }
     
     // MARK: - Helpers
@@ -96,7 +86,7 @@ class LoginFormController: UIViewController{
         view.backgroundColor = .white
                 
         view.addSubview(loginTitle)
-        loginTitle.anchor(top: view.safeAreaLayoutGuide.topAnchor,paddingTop: 0)
+        loginTitle.anchor(top: view.safeAreaLayoutGuide.topAnchor,paddingTop: 12)
         loginTitle.centerX(inView: view)
         
         view.addSubview(loginImageView)

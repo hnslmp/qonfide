@@ -10,10 +10,11 @@ import UIKit
 class AuthButton: UIButton {
     
     let buttonColor = UIColor(red: 53/255, green: 74/255, blue: 166/255, alpha: 1)
+    let disabledColor = UIColor(red: 166/255, green: 166/255, blue: 172/255, alpha: 1)
     
     override var isEnabled: Bool { didSet {
         super.isEnabled = isEnabled
-        self.backgroundColor = isEnabled ? buttonColor : .systemGray
+        self.backgroundColor = isEnabled ? buttonColor : disabledColor
     }}
     
     init(title: String, type: ButtonType){

@@ -20,7 +20,7 @@ class LoginPageController: UIViewController{
         let label = UILabel()
         label.text = "Qonfide"
         label.textAlignment = .center
-        label.textColor = UIColor(red: 138/255, green: 156/255, blue: 231/255, alpha: 1)
+        label.textColor = UIColor(red: 51/255, green: 88/255, blue: 141/255, alpha: 1)
         label.font = UIFont.systemFont(ofSize: 32, weight: .bold)
         return label
     }()

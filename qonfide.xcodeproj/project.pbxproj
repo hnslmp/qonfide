@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B5043F48285850300064D738 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5043F47285850300064D738 /* LoginService.swift */; };
+		B5043F4A285850590064D738 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5043F49285850590064D738 /* Service.swift */; };
+		B5043F4C285850930064D738 /* DbConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5043F4B285850930064D738 /* DbConstants.swift */; };
 		B55F49752856D7E500BC8351 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = B55F49742856D7E500BC8351 /* FirebaseAuth */; };
 		B55F49772856D7E500BC8351 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = B55F49762856D7E500BC8351 /* FirebaseFirestore */; };
 		B55F49792856D7E500BC8351 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = B55F49782856D7E500BC8351 /* FirebaseStorage */; };
@@ -28,6 +31,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B5043F47285850300064D738 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
+		B5043F49285850590064D738 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		B5043F4B285850930064D738 /* DbConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DbConstants.swift; sourceTree = "<group>"; };
 		B55F497A2856DB6200BC8351 /* LoginPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageController.swift; sourceTree = "<group>"; };
 		B593326528574C7000927312 /* SignupFormController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupFormController.swift; sourceTree = "<group>"; };
 		B593326728574CC900927312 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -93,6 +99,9 @@
 			isa = PBXGroup;
 			children = (
 				B5A2283928571323007665A3 /* Extensions.swift */,
+				B5043F49285850590064D738 /* Service.swift */,
+				B5043F47285850300064D738 /* LoginService.swift */,
+				B5043F4B285850930064D738 /* DbConstants.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -213,12 +222,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				B593326628574C7000927312 /* SignupFormController.swift in Sources */,
+				B5043F4A285850590064D738 /* Service.swift in Sources */,
 				B5A2283428570D02007665A3 /* AuthButton.swift in Sources */,
+				B5043F4C285850930064D738 /* DbConstants.swift in Sources */,
 				B5EFBE6328579B1B00579F50 /* UserViewModel.swift in Sources */,
 				B5A2283A2857135C007665A3 /* Extensions.swift in Sources */,
 				B5A2283C285713B0007665A3 /* LoginFormController.swift in Sources */,
 				B5B5554A2852FF800076C25E /* ViewController.swift in Sources */,
 				B5B555462852FF800076C25E /* AppDelegate.swift in Sources */,
+				B5043F48285850300064D738 /* LoginService.swift in Sources */,
 				B5A2283E2857166A007665A3 /* CustomUserTextView.swift in Sources */,
 				B55F497B2856DB6200BC8351 /* LoginPageController.swift in Sources */,
 				B593326A2857540500927312 /* User.swift in Sources */,

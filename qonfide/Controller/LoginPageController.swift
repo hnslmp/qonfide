@@ -83,9 +83,10 @@ class LoginPageController: UIViewController{
     
     func configureUI(){
         view.backgroundColor = .white
+        self.navigationController?.isNavigationBarHidden = true
                 
         view.addSubview(loginTitle)
-        loginTitle.anchor(top: view.safeAreaLayoutGuide.topAnchor,paddingTop: 0)
+        loginTitle.anchor(top: view.safeAreaLayoutGuide.topAnchor,paddingTop: 12)
         loginTitle.centerX(inView: view)
         
         view.addSubview(loginImageView)

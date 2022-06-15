@@ -53,8 +53,18 @@ class LoginFormController: UIViewController{
     // MARK: - Actions
     
     @objc func loginButtonPressed(){
-        //TODO: login firebase
-        print("DEBUG: Login Button Pressed")
+        guard let email = emailTextView.customTextField.text else {return}
+        guard let password = passwordTextView.customTextField.text else {return}
+        
+        LoginService.logUserIn(withEmail: email, password: password) { result, error in
+            if let error = error {
+                print("DEBUG: Error logging user up \(error.localizedDescription)")
+                return
+            }
+            
+            print("DEBUG: Logged user in successfully")
+        }
+        
     }
     
     @objc func createAccountButtonPressed(){

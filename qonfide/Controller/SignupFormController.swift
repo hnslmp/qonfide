@@ -25,7 +25,6 @@ class SignupFormController: UIViewController{
     
     private lazy var selectPhotoButton: UIButton = {
         let button = UIButton(type: .system)
-//        button.tintColor = .white
         button.setBackgroundImage(#imageLiteral(resourceName: "selectPhoto"), for: .normal)
         button.addTarget(self, action: #selector(handleSelectPhoto), for: .touchUpInside)
         button.clipsToBounds = true
@@ -67,13 +66,15 @@ class SignupFormController: UIViewController{
     }
     
     @objc func createAccountPressed(){
+        print("DEBUG: Create Account Pressed called")
         if userModel.passwordIsValid {
-            //TODO : Bikin account
+            registerUser()
             //TODO : Pindah ke main screen
         } else {
             passwordMisMatchAlert()
         }
     }
+    
     
     @objc func alreadyAccountPressed(){
         navigationController?.pushViewController(LoginFormController(), animated: true)
@@ -92,13 +93,8 @@ class SignupFormController: UIViewController{
             userModel.confirmedPassword = sender.text
         }
 
-        if userModel.formIsValid {
-            createAccountButton.isEnabled = true
-            
-        } else {
-            createAccountButton.isEnabled = false
-        }
-        
+        createAccountButton.isEnabled = userModel.formIsValid
+    
     }
     
     // MARK: - Helpers
@@ -122,6 +118,30 @@ class SignupFormController: UIViewController{
         )
         
         present(alert, animated: true)
+    }
+    
+    func registerUser(){
+        
+        print("DEBUG: Register User func called")
+        
+        guard let email = emailTextView.customTextField.text else {return}
+        guard let username = usernameTextView.customTextField.text else {return}
+        guard let password = passwordTextView.customTextField.text else {return}
+        guard let profileImage = self.profileImage else {return}
+        
+        print(self.profileImage)
+        
+        let credentials = AuthCredentials(email: email, username: username, password: password, profileImage: profileImage)
+        
+        LoginService.registerUser(withCredentials: credentials) { error in
+            if let error = error {
+                print("DEBUG: Error in registering user up \(error.localizedDescription)")
+                return
+            }
+            
+            print("DEBUG: Successfully registered user")
+        }
+        
     }
     
     

@@ -96,7 +96,7 @@ class OnboardViewController: UIViewController, UIScrollViewDelegate {
     }
     
     @objc func didTapButton(_ button: UIButton) {
-        
+        navigationController?.pushViewController(LoginPageController(), animated: true)
     }
 
     @IBAction func pageChanged(_ sender: Any) {

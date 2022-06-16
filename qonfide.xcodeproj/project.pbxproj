@@ -31,6 +31,8 @@
 		E1515BF1285B2E77009E0009 /* Onboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1515BF0285B2E77009E0009 /* Onboard.storyboard */; };
 		E1515BF3285B2E8C009E0009 /* OnboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1515BF2285B2E8C009E0009 /* OnboardViewController.swift */; };
 		E1515BF5285B2FAF009E0009 /* OnboardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1515BF4285B2FAF009E0009 /* OnboardModel.swift */; };
+		E1E8B1E5285BA1C300E2E08B /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1E8B1E4285BA1C300E2E08B /* Setting.storyboard */; };
+		E1E8B1E7285BA1D200E2E08B /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E8B1E6285BA1D200E2E08B /* SettingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +59,8 @@
 		E1515BF0285B2E77009E0009 /* Onboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboard.storyboard; sourceTree = "<group>"; };
 		E1515BF2285B2E8C009E0009 /* OnboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardViewController.swift; sourceTree = "<group>"; };
 		E1515BF4285B2FAF009E0009 /* OnboardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardModel.swift; sourceTree = "<group>"; };
+		E1E8B1E4285BA1C300E2E08B /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
+		E1E8B1E6285BA1D200E2E08B /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +135,7 @@
 		B5B555442852FF800076C25E /* qonfide */ = {
 			isa = PBXGroup;
 			children = (
+				E1E8B1E3285BA18700E2E08B /* AccountSetting */,
 				E1515BEF285B2E57009E0009 /* Onboard */,
 				B5A22835285712CA007665A3 /* Model */,
 				B5A228362857130B007665A3 /* View */,
@@ -156,6 +161,15 @@
 				E1515BF4285B2FAF009E0009 /* OnboardModel.swift */,
 			);
 			path = Onboard;
+			sourceTree = "<group>";
+		};
+		E1E8B1E3285BA18700E2E08B /* AccountSetting */ = {
+			isa = PBXGroup;
+			children = (
+				E1E8B1E4285BA1C300E2E08B /* Setting.storyboard */,
+				E1E8B1E6285BA1D200E2E08B /* SettingViewController.swift */,
+			);
+			path = AccountSetting;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -229,6 +243,7 @@
 				B5B5554F2852FF820076C25E /* Assets.xcassets in Resources */,
 				E1515BF1285B2E77009E0009 /* Onboard.storyboard in Resources */,
 				B5B5554D2852FF800076C25E /* Main.storyboard in Resources */,
+				E1E8B1E5285BA1C300E2E08B /* Setting.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,6 +259,7 @@
 				B5A2283428570D02007665A3 /* AuthButton.swift in Sources */,
 				E1515BF5285B2FAF009E0009 /* OnboardModel.swift in Sources */,
 				B5043F4C285850930064D738 /* DbConstants.swift in Sources */,
+				E1E8B1E7285BA1D200E2E08B /* SettingViewController.swift in Sources */,
 				B5EFBE6328579B1B00579F50 /* UserViewModel.swift in Sources */,
 				E1515BF3285B2E8C009E0009 /* OnboardViewController.swift in Sources */,
 				B5A2283A2857135C007665A3 /* Extensions.swift in Sources */,

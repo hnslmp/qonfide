@@ -12,6 +12,7 @@ private let reuseIdentifier = "MessageCell"
 class ChatController: UICollectionViewController {
     
     // MARK: - Properties
+    private var messages = [Message]()
     
     // MARK: - Lifecycle
     
@@ -26,13 +27,14 @@ class ChatController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
+        messages.append(Message(text: "Hey, I'm Bob. I'm here to help you with your emotions. Can you first tell me what is affecting your emotion?", isBobSender: true))
+        messages.append(Message(text: "Hey, Bob. It's mostly because of School", isBobSender: false))
     }
     
     
     // MARK: - Helpers
     
     func configureUI(){
-        
         configureNavigationBar(withTitle: getDate(), preferLargeTitles: false)
         collectionView.backgroundColor = .white
         collectionView.register(MessageCell.self, forCellWithReuseIdentifier: reuseIdentifier)
@@ -52,11 +54,12 @@ class ChatController: UICollectionViewController {
 
 extension ChatController{
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return messages.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! MessageCell
+        cell.message = messages[indexPath.row]
         return cell
     }
 }
@@ -70,6 +73,8 @@ extension ChatController: UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let frame = CGRect(x: 0, y: 0, width: view.frame.width, height: 50)
         let estimatedSizeCell = MessageCell(frame: frame)
+        estimatedSizeCell.message = messages[indexPath.row]
+        estimatedSizeCell.layoutIfNeeded()
         let targetSize = CGSize(width: view.frame.width, height: 10000)
         let estimatedSize = estimatedSizeCell.systemLayoutSizeFitting(targetSize)
         return .init(width: view.frame.width, height: estimatedSize.height)

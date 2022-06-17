@@ -128,9 +128,7 @@ class SignupFormController: UIViewController{
         guard let username = usernameTextView.customTextField.text else {return}
         guard let password = passwordTextView.customTextField.text else {return}
         guard let profileImage = self.profileImage else {return}
-        
-        print(self.profileImage)
-        
+            
         let credentials = AuthCredentials(email: email, username: username, password: password, profileImage: profileImage)
         
         LoginService.registerUser(withCredentials: credentials) { error in

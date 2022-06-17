@@ -16,6 +16,8 @@
 		B55F49772856D7E500BC8351 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = B55F49762856D7E500BC8351 /* FirebaseFirestore */; };
 		B55F49792856D7E500BC8351 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = B55F49782856D7E500BC8351 /* FirebaseStorage */; };
 		B55F497B2856DB6200BC8351 /* LoginPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55F497A2856DB6200BC8351 /* LoginPageController.swift */; };
+		B57BC0AB285C5D03008776E0 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57BC0AA285C5D03008776E0 /* Message.swift */; };
+		B57BC0AD285C5E53008776E0 /* MessageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57BC0AC285C5E53008776E0 /* MessageViewModel.swift */; };
 		B593326628574C7000927312 /* SignupFormController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B593326528574C7000927312 /* SignupFormController.swift */; };
 		B593326828574CC900927312 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B593326728574CC900927312 /* GoogleService-Info.plist */; };
 		B593326A2857540500927312 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59332692857540500927312 /* User.swift */; };
@@ -39,6 +41,8 @@
 		B528513C285B5FC2009F7422 /* ChatController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatController.swift; sourceTree = "<group>"; };
 		B528513E285B6509009F7422 /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
 		B55F497A2856DB6200BC8351 /* LoginPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageController.swift; sourceTree = "<group>"; };
+		B57BC0AA285C5D03008776E0 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		B57BC0AC285C5E53008776E0 /* MessageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewModel.swift; sourceTree = "<group>"; };
 		B593326528574C7000927312 /* SignupFormController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupFormController.swift; sourceTree = "<group>"; };
 		B593326728574CC900927312 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B59332692857540500927312 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -76,6 +80,8 @@
 			children = (
 				B59332692857540500927312 /* User.swift */,
 				B5EFBE6228579B1B00579F50 /* UserViewModel.swift */,
+				B57BC0AA285C5D03008776E0 /* Message.swift */,
+				B57BC0AC285C5E53008776E0 /* MessageViewModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -230,12 +236,14 @@
 				B593326628574C7000927312 /* SignupFormController.swift in Sources */,
 				B528513F285B6509009F7422 /* MessageCell.swift in Sources */,
 				B5043F4A285850590064D738 /* Service.swift in Sources */,
+				B57BC0AB285C5D03008776E0 /* Message.swift in Sources */,
 				B5A2283428570D02007665A3 /* AuthButton.swift in Sources */,
 				B5043F4C285850930064D738 /* DbConstants.swift in Sources */,
 				B5EFBE6328579B1B00579F50 /* UserViewModel.swift in Sources */,
 				B5A2283A2857135C007665A3 /* Extensions.swift in Sources */,
 				B5A2283C285713B0007665A3 /* LoginFormController.swift in Sources */,
 				B5B5554A2852FF800076C25E /* ViewController.swift in Sources */,
+				B57BC0AD285C5E53008776E0 /* MessageViewModel.swift in Sources */,
 				B528513D285B5FC2009F7422 /* ChatController.swift in Sources */,
 				B5B555462852FF800076C25E /* AppDelegate.swift in Sources */,
 				B5043F48285850300064D738 /* LoginService.swift in Sources */,

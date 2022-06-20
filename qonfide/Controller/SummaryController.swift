@@ -45,24 +45,47 @@ class SummaryController: UIViewController{
     
     private let totalEntries: UIView = {
         let view = UIView()
+        
+        view.heightAnchor.constraint(equalToConstant: 80).isActive = true
         view.layer.cornerRadius = 20
         view.backgroundColor = UIColor(red: 241/255, green: 247/255, blue: 255/255, alpha: 1)
         
-        //TODO: ganti hitung beneran
+        //TODO: Ganti jadi ambil data asli
         let entriesCount = 7
         
-        let label = UILabel()
-        let textColor = UIColor(red: 51/255, green: 88/255, blue: 141/255, alpha: 1)
-        let attributedTitle = NSMutableAttributedString(string: String(entriesCount), attributes: [.foregroundColor: textColor, .font: UIFont.boldSystemFont(ofSize: 50)])
-        attributedTitle.append(NSAttributedString(string: "Total Entries This Week", attributes: [.foregroundColor: textColor, .font: UIFont.systemFont(ofSize: 20)]))
+        let labelNumber = UILabel()
+        labelNumber.font = .boldSystemFont(ofSize: 50)
+        labelNumber.textColor = UIColor(red: 51/255, green: 88/255, blue: 141/255, alpha: 1)
+        labelNumber.text = String(entriesCount)
         
-        label.attributedText = attributedTitle
-        view.addSubview(label)
-        label.centerX(inView: view)
-        label.centerY(inView: view)
+        let labelString = UILabel()
+        labelString.font = .systemFont(ofSize: 20)
+        labelString.textColor = UIColor(red: 51/255, green: 88/255, blue: 141/255, alpha: 1)
+        labelString.text = "Total Entries This Week"
+        
+        let labelStack = UIStackView(arrangedSubviews: [labelNumber, labelString])
+        labelStack.axis = .horizontal
+        
+        view.addSubview(labelStack)
+        labelStack.centerX(inView: view)
+        labelStack.centerY(inView: view)
+    
+//        let label = UILabel()
+//        let textColor = UIColor(red: 51/255, green: 88/255, blue: 141/255, alpha: 1)
+//        let attributedTitle = NSMutableAttributedString(string: String(entriesCount), attributes: [.foregroundColor: textColor, .font: UIFont.boldSystemFont(ofSize: 50)])
+//
+//        attributedTitle.append(NSAttributedString(string: "Total Entries This Week", attributes: [.foregroundColor: textColor, .font: UIFont.systemFont(ofSize: 20)]))
+        
+//        label.attributedText = attributedTitle
+//        view.addSubview(label)
+//        label.centerX(inView: view)
+//        label.centerY(inView: view)
         
         return view
     }()
+    
+    private let averageMood = AverageMoodView()
+    
     
     // MARK: - Lifecycle
     
@@ -89,18 +112,19 @@ class SummaryController: UIViewController{
         
         view.addSubview(graphView)
         graphView.anchor(top: durationControl.bottomAnchor,left: view.leftAnchor, right: view.rightAnchor,paddingTop: 32, paddingLeft: 24, paddingRight: 24)
-    
         graphView.setDimensions(height: graphView.frame.height , width: graphView.frame.width)
         drawGraph()
 
         let scrollView = UIScrollView()
-        scrollView.backgroundColor = .systemPink
         view.addSubview(scrollView)
         scrollView.anchor(top: graphView.bottomAnchor, left: view.leftAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, right: view.rightAnchor, paddingTop: 60, paddingLeft: 24, paddingBottom: 12, paddingRight: 24)
 
         scrollView.addSubview(totalEntries)
-        totalEntries.anchor(top: scrollView.topAnchor, left: scrollView.leftAnchor, right: scrollView.rightAnchor)
-        totalEntries.setDimensions(height: 80, width: 342)
+        totalEntries.anchor(top: scrollView.topAnchor, left: scrollView.frameLayoutGuide.leftAnchor, right: scrollView.frameLayoutGuide.rightAnchor)
+        
+        scrollView.addSubview(averageMood)
+        averageMood.anchor(top: totalEntries.bottomAnchor, left: scrollView.frameLayoutGuide.leftAnchor, right: scrollView.frameLayoutGuide.rightAnchor, paddingTop: 12)
+        
     }
     
     private func drawGraph()

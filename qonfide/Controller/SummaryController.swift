@@ -86,6 +86,8 @@ class SummaryController: UIViewController{
     
     private let averageMood = AverageMoodView()
     
+    private let upDownMood = UpDownMoodView()
+    
     
     // MARK: - Lifecycle
     
@@ -116,6 +118,8 @@ class SummaryController: UIViewController{
         drawGraph()
 
         let scrollView = UIScrollView()
+        scrollView.contentSize = CGSize(width: 330, height: 400)
+        
         view.addSubview(scrollView)
         scrollView.anchor(top: graphView.bottomAnchor, left: view.leftAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, right: view.rightAnchor, paddingTop: 60, paddingLeft: 24, paddingBottom: 12, paddingRight: 24)
 
@@ -124,6 +128,9 @@ class SummaryController: UIViewController{
         
         scrollView.addSubview(averageMood)
         averageMood.anchor(top: totalEntries.bottomAnchor, left: scrollView.frameLayoutGuide.leftAnchor, right: scrollView.frameLayoutGuide.rightAnchor, paddingTop: 12)
+        
+        scrollView.addSubview(upDownMood)
+        upDownMood.anchor(top: averageMood.bottomAnchor, left: scrollView.frameLayoutGuide.leftAnchor, right: scrollView.frameLayoutGuide.rightAnchor, paddingTop: 12)
         
     }
     

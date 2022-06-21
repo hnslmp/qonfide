@@ -37,7 +37,7 @@ class SummaryController: UIViewController{
     }()
     
     private let durationControl: UISegmentedControl = {
-        let durations = ["Week", "Month"]
+        let durations = ["Past 7 Days", "Past 31 Days"]
         let sc = UISegmentedControl(items: durations)
 
         return sc

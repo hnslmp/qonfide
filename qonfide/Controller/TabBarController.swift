@@ -19,9 +19,9 @@ class TabBarController: UITabBarController{
     override func viewDidLoad() {
         super.viewDidLoad()
           
-//        SummaryVC.title = "Summary"
-//        ListEntriesVC.title = "List of Entries"
-//        ChatInputVC.title = "ChatInput"
+        SummaryVC.title = "Summary"
+        ListEntriesVC.title = "Entries"
+        ChatInputVC.title = "ChatInput"
         
         self.setViewControllers([ListEntriesVC, ChatInputVC, SummaryVC], animated: true)
 

@@ -8,14 +8,34 @@
 import UIKit
 
 class HomeViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        fetchData { (quotes) in
+            for quote in quotes {
+                print(quote.author)
+            }
+        }
         // Do any additional setup after loading the view.
     }
     
-
+    func fetchData(completionHandler: @escaping ([DailyQuotes]) -> Void) {
+        let url = URL(string: "https://type.fit/api/quotes")!
+        
+        let task = URLSession.shared.dataTask(with: url) { data, response, error in
+            
+            guard let data = data, error == nil else { return }
+            
+            do {
+                let postData = try JSONDecoder().decode([DailyQuotes].self, from: data)
+                completionHandler(postData)
+            } catch {
+                print(error)
+            }
+        }
+        task.resume()
+    }
+    
     /*
     // MARK: - Navigation
 

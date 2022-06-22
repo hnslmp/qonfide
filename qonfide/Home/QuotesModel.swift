@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct DailyQuotes: Decodable {
-    let userId: Int
-    let quotes: String
+struct DailyQuotes: Codable {
+    let text: String
+    let author: String
 }

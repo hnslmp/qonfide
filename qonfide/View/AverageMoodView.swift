@@ -14,6 +14,7 @@ struct moodStruct {
 
 class AverageMoodView: UIView{
     
+    // MARK: - Properties
     private let moodTitle: UILabel = {
         
         //TODO: Change into using dynamic data
@@ -63,6 +64,7 @@ class AverageMoodView: UIView{
         return stack
     }()
     
+    // MARK: - Lifecycle
     override init(frame: CGRect){
         super.init(frame: frame)
         

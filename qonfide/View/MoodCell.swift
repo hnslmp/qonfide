@@ -11,7 +11,7 @@ class MoodCellView: UIStackView{
     
     init(mood: String, count: Int){
         super.init(frame: .zero)
-        
+                
         axis = .horizontal
         distribution = .equalSpacing
         

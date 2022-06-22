@@ -9,6 +9,8 @@ import UIKit
 
 class UpDownMoodView: UIView {
     
+    // MARK: - Properties
+    
     private let upMoodBody: UILabel = {
         let label = UILabel()
         label.textColor =  UIColor(red: 51/255, green: 88/255, blue: 141/255, alpha: 1)
@@ -58,7 +60,7 @@ class UpDownMoodView: UIView {
         return stack
     }()
     
-    
+    // MARK: - Lifecycle
     override init(frame: CGRect) {
         super.init(frame: frame)
         

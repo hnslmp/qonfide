@@ -16,7 +16,7 @@ class OnboardViewController: UIViewController, UIScrollViewDelegate {
     var scrollWidth: CGFloat! = 0.0
     var scrollHeight: CGFloat! = 0.0
     var scrollFrame = CGRect(x: 0, y: 0, width: 0, height: 0)
-    var onboardData: [Onboard] = [Onboard(titles: "Welcome to Qonfide", desc: "Recognize your emotion better and work towards a healthier emotional regulation.", imageView: "Earth and Moon-cuate", imageBackGround: "CShape1"), Onboard(titles: "Meet Bob!", desc: "Confide to Bob, your personal Qonfide assistant. All your stories are safe between you and Bob.", imageView: "World-cuate", imageBackGround: "CShape2"), Onboard(titles: "Start taking care of your emotions", desc: "We’ve carefully crafted guiding questions to create a meaningful journaling experience for you.", imageView: "Cat astronaut-cuate", imageBackGround: "CShape3")]
+    var onboardData: [Onboard] = [Onboard(titles: "Welcome to Qonfide", desc: "Recognize your emotion better and work towards a healthier emotional regulation.", imageView: "qonfide vector-1", imageBackGround: "background1"), Onboard(titles: "Meet Bob!", desc: "Confide to Bob, your personal Qonfide assistant. All your stories are safe between you and Bob.", imageView: "qonfide vector-2", imageBackGround: "background2"), Onboard(titles: "Start taking care of your emotions", desc: "We’ve carefully crafted guiding questions to create a meaningful journaling experience for you.", imageView: "qonfide vector-3", imageBackGround: "background3")]
     
     
     override func viewDidLayoutSubviews() {
@@ -42,8 +42,8 @@ class OnboardViewController: UIViewController, UIScrollViewDelegate {
             
 //            subviews (ex: title, desc, etc)
             let backgroundImg = UIImageView.init(image: UIImage(named: onboardData[index].imageBackGround))
-            backgroundImg.frame = CGRect(x: 0, y: 236, width: scrollWidth, height: 560)
-            backgroundImg.contentMode = .scaleToFill
+            backgroundImg.frame = CGRect(x: 0, y: 0, width: scrollWidth, height: scrollHeight)
+            backgroundImg.contentMode = .scaleAspectFit
 //
             let imageView = UIImageView.init(image: UIImage(named: onboardData[index].imageView))
             imageView.frame = CGRect(x: 0, y: 0, width: 300, height: 300)

@@ -15,27 +15,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Qonfide." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wKq-vz-NVn">
-                                <rect key="frame" x="139" y="610" width="136" height="41"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Qonfide." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wKq-vz-NVn">
+                                <rect key="frame" x="100" y="549" width="214" height="41"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
-                                <color key="textColor" red="0.94901961089999998" green="0.96862745289999996" blue="0.99607843159999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="textColor" red="0.20000000000000001" green="0.34509803921568627" blue="0.55294117647058827" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Cat astronaut-cuate Copy" translatesAutoresizingMaskIntoConstraints="NO" id="DJR-Dy-U9E">
-                                <rect key="frame" x="82" y="323" width="250" height="250"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="250" id="Ktp-up-er8"/>
-                                    <constraint firstAttribute="height" constant="250" id="mhO-Mw-GSi"/>
-                                </constraints>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="qonfide logo" translatesAutoresizingMaskIntoConstraints="NO" id="DJR-Dy-U9E">
+                                <rect key="frame" x="100" y="323" width="214" height="189"/>
+                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="small"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" red="0.54509806630000002" green="0.64313727620000005" blue="0.8078432083" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.94901961089999998" green="0.96862745289999996" blue="0.99607843159999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="DJR-Dy-U9E" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="62" id="OpR-H0-t35"/>
-                            <constraint firstItem="wKq-vz-NVn" firstAttribute="top" secondItem="DJR-Dy-U9E" secondAttribute="bottom" constant="37" id="UgE-rw-RhQ"/>
-                            <constraint firstItem="wKq-vz-NVn" firstAttribute="centerX" secondItem="DJR-Dy-U9E" secondAttribute="centerX" id="cIe-4h-gE6"/>
-                            <constraint firstItem="DJR-Dy-U9E" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="topMargin" constant="279" id="rUx-cj-Dco"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="DJR-Dy-U9E" secondAttribute="bottom" constant="350" id="3hK-Ub-Sim"/>
+                            <constraint firstItem="DJR-Dy-U9E" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="L7U-pB-xLg"/>
+                            <constraint firstItem="wKq-vz-NVn" firstAttribute="top" secondItem="DJR-Dy-U9E" secondAttribute="bottom" constant="37" id="LsX-fe-PHB"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="DJR-Dy-U9E" secondAttribute="trailing" constant="100" id="S4X-Bb-dHR"/>
+                            <constraint firstItem="DJR-Dy-U9E" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="279" id="ceh-Vk-6Un"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wKq-vz-NVn" secondAttribute="trailing" constant="100" id="pF4-jS-OBG"/>
+                            <constraint firstItem="DJR-Dy-U9E" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="tBE-7t-AFc"/>
+                            <constraint firstItem="wKq-vz-NVn" firstAttribute="centerX" secondItem="DJR-Dy-U9E" secondAttribute="centerX" id="yeQ-Nm-JGQ"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -45,6 +46,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Cat astronaut-cuate Copy" width="500" height="500"/>
+        <image name="qonfide logo" width="214" height="214"/>
     </resources>
 </document>

@@ -12,8 +12,9 @@ struct moodStruct {
     let count: Int
 }
 
-class AverageMoodView: UIStackView{
+class AverageMoodView: UIView{
     
+    // MARK: - Properties
     private let moodTitle: UILabel = {
         
         //TODO: Change into using dynamic data
@@ -53,6 +54,7 @@ class AverageMoodView: UIStackView{
         stack.axis = .horizontal
         stack.distribution = .fillProportionally
         
+        //TODO: Ganti jadi data real
         let moods = [moodStruct(mood: "Happy", count: 4), moodStruct(mood: "Sadness", count: 2)]
         
         moods.forEach { moodStruct in
@@ -62,17 +64,33 @@ class AverageMoodView: UIStackView{
         return stack
     }()
     
+    // MARK: - Lifecycle
     override init(frame: CGRect){
         super.init(frame: frame)
         
         backgroundColor = UIColor(red: 241/255, green: 247/255, blue: 255/255, alpha: 1)
         layer.cornerRadius = 10
         heightAnchor.constraint(equalToConstant: 120).isActive = true
-        axis = .vertical
-        alignment = .center
-        distribution = .fillProportionally
         
-        [moodTitle, moodLine, moodBody, moodStack].forEach {view in addArrangedSubview(view)}
+        addSubview(moodTitle)
+        moodTitle.anchor(top: topAnchor, left: leftAnchor, paddingTop: 12, paddingLeft: 24)
+        
+        addSubview(moodLine)
+        moodLine.anchor(top: moodTitle.bottomAnchor, paddingTop: 12)
+        moodLine.centerX(inView: self)
+        
+        addSubview(moodBody)
+        moodBody.anchor(top: moodLine.bottomAnchor,left:leftAnchor, paddingTop: 12, paddingLeft: 24)
+        
+        addSubview(moodStack)
+        moodStack.anchor(top: moodBody.bottomAnchor,left:leftAnchor, paddingTop: 12, paddingLeft: 24)
+        
+//        axis = .vertical
+//        alignment = .lastBaseline
+//        distribution = .fillProportionally
+//
+//        [moodTitle, moodLine, moodBody, moodStack].forEach {view in addArrangedSubview(view)}
+        
     }
     
     required init(coder: NSCoder) {

@@ -10,7 +10,6 @@ import UIKit
 class SummaryController: UIViewController{
     
     // MARK: - Properties
-    
     var dataSource: Array<Int> = [1,3,4,5,6,7,8]
     
     var graphViews: Array<UIView> = []
@@ -61,7 +60,7 @@ class SummaryController: UIViewController{
         let labelString = UILabel()
         labelString.font = .systemFont(ofSize: 20)
         labelString.textColor = UIColor(red: 51/255, green: 88/255, blue: 141/255, alpha: 1)
-        labelString.text = "Total Entries This Week"
+        labelString.text = " Total Entries This Week"
         
         let labelStack = UIStackView(arrangedSubviews: [labelNumber, labelString])
         labelStack.axis = .horizontal
@@ -86,12 +85,14 @@ class SummaryController: UIViewController{
     
     private let averageMood = AverageMoodView()
     
+    private let upDownMood = UpDownMoodView()
     
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
+    
     }
     
     // MARK: - Helpers
@@ -116,6 +117,8 @@ class SummaryController: UIViewController{
         drawGraph()
 
         let scrollView = UIScrollView()
+        scrollView.contentSize = CGSize(width: 330, height: 400)
+        
         view.addSubview(scrollView)
         scrollView.anchor(top: graphView.bottomAnchor, left: view.leftAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, right: view.rightAnchor, paddingTop: 60, paddingLeft: 24, paddingBottom: 12, paddingRight: 24)
 
@@ -124,6 +127,9 @@ class SummaryController: UIViewController{
         
         scrollView.addSubview(averageMood)
         averageMood.anchor(top: totalEntries.bottomAnchor, left: scrollView.frameLayoutGuide.leftAnchor, right: scrollView.frameLayoutGuide.rightAnchor, paddingTop: 12)
+        
+        scrollView.addSubview(upDownMood)
+        upDownMood.anchor(top: averageMood.bottomAnchor, left: scrollView.frameLayoutGuide.leftAnchor, right: scrollView.frameLayoutGuide.rightAnchor, paddingTop: 12)
         
     }
     

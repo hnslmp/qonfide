@@ -25,6 +25,9 @@ class ChatController: UICollectionViewController {
     }
     
     override func viewDidLoad() {
+        let vc = CustomModalViewController()
+        vc.modalPresentationStyle = .overCurrentContext
+        self.present(vc, animated: true)
         super.viewDidLoad()
         configureUI()
         messages.append(Message(text: "Hey, I'm Bob. I'm here to help you with your emotions. Can you first tell me what is affecting your emotion?", isBobSender: true))

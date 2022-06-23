@@ -13,13 +13,9 @@ struct MessageViewModel {
     private let message:Message
     
     var messageBackgroundColor: UIColor {
-        return message.isBobSender ? UIColor(red: 0.278, green: 0.561, blue: 0.965, alpha: 1.0) : UIColor(red: 0.914, green: 0.914, blue: 0.922, alpha: 1.0)
+        return message.isBobSender ? UIColor(red: 254/255, green: 235/255, blue: 166/255, alpha: 1.0) : UIColor(red: 225/255, green: 237/255, blue: 253/255, alpha: 1.0)
     }
-    
-    var messageTextColor: UIColor {
-        return message.isBobSender ? .white : .black
-    }
-    
+        
     var rightAnchorActive: Bool {
         return !message.isBobSender
     }

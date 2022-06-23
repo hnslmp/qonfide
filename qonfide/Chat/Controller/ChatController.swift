@@ -35,15 +35,20 @@ class ChatController: UICollectionViewController
     
     
     // MARK: - Helpers
-    
     func configureUI(){
         configureNavigationBar(withTitle: getDate(), preferLargeTitles: false)
+        
+        self.navigationController?.navigationBar.layer.shadowColor = UIColor.black.cgColor
+        self.navigationController?.navigationBar.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
+        self.navigationController?.navigationBar.layer.shadowRadius = 4.0
+        self.navigationController?.navigationBar.layer.shadowOpacity = 0.4
+        self.navigationController?.navigationBar.layer.masksToBounds = false
+
         collectionView.backgroundColor = .white
         collectionView.register(MessageCell.self, forCellWithReuseIdentifier: reuseIdentifier)
         collectionView.alwaysBounceVertical = true
         collectionView.keyboardDismissMode = .interactive
     }
-    
     
     func getDate() -> String {
         let date = Date()

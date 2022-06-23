@@ -29,19 +29,6 @@ class ChatViewModel{
     
     var emotionEffects: Array<String> = ["💼 Work", "🏫 School", "👫🏻 Relationships", "😕 Insecurities", "Others"]
     
-    // MARK: - Lifecycle
-    init(){
-//        configureChat()
-//        messages.append(Message(text: "Hey, I'm Bob. I'm here to help you with your emotions. Can you first tell me what is affecting your emotion?", isBobSender: true))
-//        messages.append(Message(text: "Hey, Bob. It's mostly because of School", isBobSender: false))
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    // MARK: - Helpers
-    
     func configureChat(){
         if counter == 0 {
             messages.append(Message(text: "Hey, I'm Bob. I'm here to help you with your emotions. Can you first tell me what is affecting your emotion?", isBobSender: true))

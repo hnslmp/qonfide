@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		2E56BA0828602E5B0078E6F8 /* ButtonOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E56BA0728602E5B0078E6F8 /* ButtonOptions.swift */; };
-		2E56BA0A286102BF0078E6F8 /* LayoutOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E56BA09286102BF0078E6F8 /* LayoutOptions.swift */; };
 		2E56BA0C28621A050078E6F8 /* CustomMessageTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E56BA0B28621A050078E6F8 /* CustomMessageTextView.swift */; };
 		2E56BA0E2862D52E0078E6F8 /* CustomModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E56BA0D2862D52E0078E6F8 /* CustomModalViewController.swift */; };
 		2E56BA1128641F3B0078E6F8 /* TextFieldController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E56BA1028641F3B0078E6F8 /* TextFieldController.swift */; };
@@ -51,7 +50,6 @@
 
 /* Begin PBXFileReference section */
 		2E56BA0728602E5B0078E6F8 /* ButtonOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonOptions.swift; sourceTree = "<group>"; };
-		2E56BA09286102BF0078E6F8 /* LayoutOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutOptions.swift; sourceTree = "<group>"; };
 		2E56BA0B28621A050078E6F8 /* CustomMessageTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMessageTextView.swift; sourceTree = "<group>"; };
 		2E56BA0D2862D52E0078E6F8 /* CustomModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomModalViewController.swift; sourceTree = "<group>"; };
 		2E56BA1028641F3B0078E6F8 /* TextFieldController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldController.swift; sourceTree = "<group>"; };
@@ -105,13 +103,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B501F1E62864D3CD008F6437 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				B5FBDB5C285DCFAB007F047D /* SummaryViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		B5A22835285712CA007665A3 /* Chat */ = {
 			isa = PBXGroup;
 			children = (
 				B5D02765286459B60041E175 /* Controller */,
 				B5D02764286459A50041E175 /* ViewModel */,
 				B5D027632864599D0041E175 /* Model */,
-				B5FBDB5C285DCFAB007F047D /* SummaryViewModel.swift */,
 				B5A228362857130B007665A3 /* View */,
 			);
 			path = Chat;
@@ -123,7 +128,6 @@
 				B528513E285B6509009F7422 /* MessageCell.swift */,
 				2E56BA0B28621A050078E6F8 /* CustomMessageTextView.swift */,
 				2E56BA0728602E5B0078E6F8 /* ButtonOptions.swift */,
-				2E56BA09286102BF0078E6F8 /* LayoutOptions.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -252,6 +256,7 @@
 		B5D02766286459EC0041E175 /* Summary */ = {
 			isa = PBXGroup;
 			children = (
+				B501F1E62864D3CD008F6437 /* ViewModel */,
 				B5D0276828645A2F0041E175 /* View */,
 				B5D02767286459F10041E175 /* Controller */,
 			);
@@ -395,7 +400,6 @@
 				B528513F285B6509009F7422 /* MessageCell.swift in Sources */,
 				B5043F4A285850590064D738 /* Service.swift in Sources */,
 				2E56BA0828602E5B0078E6F8 /* ButtonOptions.swift in Sources */,
-				2E56BA0A286102BF0078E6F8 /* LayoutOptions.swift in Sources */,
 				2E56BA0C28621A050078E6F8 /* CustomMessageTextView.swift in Sources */,
 				B57BC0AB285C5D03008776E0 /* Message.swift in Sources */,
 				2E56BA0E2862D52E0078E6F8 /* CustomModalViewController.swift in Sources */,

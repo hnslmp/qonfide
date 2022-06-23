@@ -17,9 +17,7 @@ class CustomMessageTextView: UIStackView {
         let button = UIButton(type: .system)
         button.setTitle("Done", for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
-        button.setTitleColor(UIColor(red: 117/255, green: 117/255, blue: 117/255, alpha: 1), for: .normal)
-//        button.addTarget(self, action: #selector(handleSendMessage), for: .touchUpInside)
-        
+        button.setTitleColor(UIColor(red: 117/255, green: 117/255, blue: 117/255, alpha: 1), for: .normal)        
         return button
     }()
     

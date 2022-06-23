@@ -8,9 +8,17 @@
 import UIKit
 
 class TextFieldController: UIViewController {
-
-    private let layoutOptions = LayoutOptions()
     
+    private let layoutOptions: UIStackView = {
+        let stack = UIStackView()
+        stack.backgroundColor = UIColor(red: 241/255, green: 247/255, blue: 255/255, alpha: 1)
+        stack.distribution = .fill
+        stack.axis = .vertical
+        stack.alignment = .center
+        stack.spacing = 12.0
+        return stack
+    }()
+
     private lazy var containerView: UIView = {
         let view = UIView()
         view.backgroundColor =  UIColor(red: 241/255, green: 247/255, blue: 255/255, alpha: 1)

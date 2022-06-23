@@ -24,7 +24,7 @@ class TabBarController: UITabBarController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        logout()
+//        logout()
         checkIfUserIsLoggedIn()
         configureTabBar()
     }

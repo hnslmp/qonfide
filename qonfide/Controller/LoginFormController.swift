@@ -64,6 +64,10 @@ class LoginFormController: UIViewController{
             }
             
             print("DEBUG: Logged user in successfully")
+            DispatchQueue.main.async {
+                self.navigationController?.pushViewController(TabBarController(), animated: true)
+            }
+            
         }
         
     }

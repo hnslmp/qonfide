@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Onboard View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="OnboardView" id="Y6W-OH-hqX" customClass="OnboardViewController" customModule="qonfide" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3u1-GP-Of7">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </scrollView>
+                            <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="c0i-JJ-osO">
+                                <rect key="frame" x="149" y="780" width="116" height="26"/>
+                                <connections>
+                                    <action selector="pageChanged:" destination="Y6W-OH-hqX" eventType="valueChanged" id="duC-aO-s37"/>
+                                </connections>
+                            </pageControl>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="c0i-JJ-osO" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="149" id="AMs-I7-A5B"/>
+                            <constraint firstAttribute="bottom" secondItem="3u1-GP-Of7" secondAttribute="bottom" id="HEm-Nz-VuN"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="c0i-JJ-osO" secondAttribute="bottom" constant="56" id="OOs-hY-cCX"/>
+                            <constraint firstItem="3u1-GP-Of7" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="QH2-Hs-GMP"/>
+                            <constraint firstItem="3u1-GP-Of7" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="QOH-W7-6ld"/>
+                            <constraint firstItem="3u1-GP-Of7" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="cfa-Dw-8iy"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="pageControl" destination="c0i-JJ-osO" id="lsF-CV-jVe"/>
+                        <outlet property="scrollView" destination="3u1-GP-Of7" id="aEE-9N-aUA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="18.840579710144929" y="81.696428571428569"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Ncq-bu-XFW">
+            <objects>
+                <viewController id="oTu-2Y-1W7" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="znE-ZS-tVP">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="CShape3" translatesAutoresizingMaskIntoConstraints="NO" id="xGc-q9-kKm">
+                                <rect key="frame" x="0.0" y="336" width="414" height="560"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="bq0-lv-Ufl"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mv7-FV-soK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="905.79710144927549" y="81.696428571428569"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="CShape3" width="390" height="579"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

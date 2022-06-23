@@ -21,19 +21,34 @@
 		B5A2283A2857135C007665A3 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A2283928571323007665A3 /* Extensions.swift */; };
 		B5A2283C285713B0007665A3 /* LoginFormController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A2283B285713B0007665A3 /* LoginFormController.swift */; };
 		B5A2283E2857166A007665A3 /* CustomUserTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A2283D2857166A007665A3 /* CustomUserTextView.swift */; };
+		B5A4F9D0286175B600ADAE15 /* AverageMoodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A4F9CF286175B600ADAE15 /* AverageMoodView.swift */; };
 		B5B555462852FF800076C25E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B555452852FF800076C25E /* AppDelegate.swift */; };
 		B5B555482852FF800076C25E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B555472852FF800076C25E /* SceneDelegate.swift */; };
 		B5B5554A2852FF800076C25E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B555492852FF800076C25E /* ViewController.swift */; };
 		B5B5554D2852FF800076C25E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5B5554B2852FF800076C25E /* Main.storyboard */; };
 		B5B5554F2852FF820076C25E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5B5554E2852FF820076C25E /* Assets.xcassets */; };
 		B5B555522852FF820076C25E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5B555502852FF820076C25E /* LaunchScreen.storyboard */; };
+		B5D02759286207780041E175 /* UpDownMoodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D02758286207780041E175 /* UpDownMoodView.swift */; };
+		B5E1192D2860BD42000DD0E0 /* MoodCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E1192C2860BD42000DD0E0 /* MoodCell.swift */; };
+		B5ECF70C2860D57F00D30E8E /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5ECF70B2860D57F00D30E8E /* TabBarController.swift */; };
 		B5EFBE6328579B1B00579F50 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EFBE6228579B1B00579F50 /* UserViewModel.swift */; };
+<<<<<<< HEAD
 		E11B80B42860DDB400CB340E /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E11B80B32860DDB400CB340E /* Home.storyboard */; };
 		E11B80B62860DDC100CB340E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11B80B52860DDC100CB340E /* HomeViewController.swift */; };
 		E11B80B82860E6CC00CB340E /* QuotesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11B80B72860E6CC00CB340E /* QuotesModel.swift */; };
 		E198EC462863854D00631556 /* EntryListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E198EC442863854D00631556 /* EntryListCell.swift */; };
 		E198EC472863854D00631556 /* EntryListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E198EC452863854D00631556 /* EntryListCell.xib */; };
 		E1E72B332863658B004D6AFE /* ModalPickMonthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E72B322863658B004D6AFE /* ModalPickMonthController.swift */; };
+=======
+
+		E1515BF1285B2E77009E0009 /* Onboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1515BF0285B2E77009E0009 /* Onboard.storyboard */; };
+		E1515BF3285B2E8C009E0009 /* OnboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1515BF2285B2E8C009E0009 /* OnboardViewController.swift */; };
+		E1515BF5285B2FAF009E0009 /* OnboardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1515BF4285B2FAF009E0009 /* OnboardModel.swift */; };
+
+		B5FBDB5B285DCC92007F047D /* SummaryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FBDB5A285DCC92007F047D /* SummaryController.swift */; };
+		B5FBDB5D285DCFAB007F047D /* SummaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FBDB5C285DCFAB007F047D /* SummaryViewModel.swift */; };
+
+>>>>>>> e4cf9ffec368f475f304a6a6eaeaeb729a530690
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +63,7 @@
 		B5A2283928571323007665A3 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		B5A2283B285713B0007665A3 /* LoginFormController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFormController.swift; sourceTree = "<group>"; };
 		B5A2283D2857166A007665A3 /* CustomUserTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUserTextView.swift; sourceTree = "<group>"; };
+		B5A4F9CF286175B600ADAE15 /* AverageMoodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AverageMoodView.swift; sourceTree = "<group>"; };
 		B5B555422852FF800076C25E /* qonfide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = qonfide.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5B555452852FF800076C25E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B5B555472852FF800076C25E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -56,13 +72,27 @@
 		B5B5554E2852FF820076C25E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B5B555512852FF820076C25E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B5B555532852FF820076C25E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B5D02758286207780041E175 /* UpDownMoodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpDownMoodView.swift; sourceTree = "<group>"; };
+		B5E1192C2860BD42000DD0E0 /* MoodCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodCell.swift; sourceTree = "<group>"; };
+		B5ECF70B2860D57F00D30E8E /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		B5EFBE6228579B1B00579F50 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+<<<<<<< HEAD
 		E11B80B32860DDB400CB340E /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		E11B80B52860DDC100CB340E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		E11B80B72860E6CC00CB340E /* QuotesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesModel.swift; sourceTree = "<group>"; };
 		E198EC442863854D00631556 /* EntryListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryListCell.swift; sourceTree = "<group>"; };
 		E198EC452863854D00631556 /* EntryListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EntryListCell.xib; sourceTree = "<group>"; };
 		E1E72B322863658B004D6AFE /* ModalPickMonthController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalPickMonthController.swift; sourceTree = "<group>"; };
+=======
+    
+		E1515BF0285B2E77009E0009 /* Onboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboard.storyboard; sourceTree = "<group>"; };
+		E1515BF2285B2E8C009E0009 /* OnboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardViewController.swift; sourceTree = "<group>"; };
+		E1515BF4285B2FAF009E0009 /* OnboardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardModel.swift; sourceTree = "<group>"; };
+
+		B5FBDB5A285DCC92007F047D /* SummaryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryController.swift; sourceTree = "<group>"; };
+		B5FBDB5C285DCFAB007F047D /* SummaryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryViewModel.swift; sourceTree = "<group>"; };
+
+>>>>>>> e4cf9ffec368f475f304a6a6eaeaeb729a530690
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +114,7 @@
 			children = (
 				B59332692857540500927312 /* User.swift */,
 				B5EFBE6228579B1B00579F50 /* UserViewModel.swift */,
+				B5FBDB5C285DCFAB007F047D /* SummaryViewModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -92,7 +123,10 @@
 			isa = PBXGroup;
 			children = (
 				B5A2283328570D02007665A3 /* AuthButton.swift */,
+				B5E1192C2860BD42000DD0E0 /* MoodCell.swift */,
 				B5A2283D2857166A007665A3 /* CustomUserTextView.swift */,
+				B5A4F9CF286175B600ADAE15 /* AverageMoodView.swift */,
+				B5D02758286207780041E175 /* UpDownMoodView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -103,6 +137,8 @@
 				B55F497A2856DB6200BC8351 /* LoginPageController.swift */,
 				B5A2283B285713B0007665A3 /* LoginFormController.swift */,
 				B593326528574C7000927312 /* SignupFormController.swift */,
+				B5FBDB5A285DCC92007F047D /* SummaryController.swift */,
+				B5ECF70B2860D57F00D30E8E /* TabBarController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -137,7 +173,11 @@
 		B5B555442852FF800076C25E /* qonfide */ = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< HEAD
 				E11B80B22860DDA300CB340E /* Home */,
+=======
+				E1515BEF285B2E57009E0009 /* Onboard */,
+>>>>>>> e4cf9ffec368f475f304a6a6eaeaeb729a530690
 				B5A22835285712CA007665A3 /* Model */,
 				B5A228362857130B007665A3 /* View */,
 				B5A2283728571314007665A3 /* Controller */,
@@ -154,6 +194,7 @@
 			path = qonfide;
 			sourceTree = "<group>";
 		};
+<<<<<<< HEAD
 		E11B80B22860DDA300CB340E /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -173,6 +214,16 @@
 				E198EC452863854D00631556 /* EntryListCell.xib */,
 			);
 			path = Cell;
+=======
+		E1515BEF285B2E57009E0009 /* Onboard */ = {
+			isa = PBXGroup;
+			children = (
+				E1515BF0285B2E77009E0009 /* Onboard.storyboard */,
+				E1515BF2285B2E8C009E0009 /* OnboardViewController.swift */,
+				E1515BF4285B2FAF009E0009 /* OnboardModel.swift */,
+			);
+			path = Onboard;
+>>>>>>> e4cf9ffec368f475f304a6a6eaeaeb729a530690
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -246,6 +297,7 @@
 				E11B80B42860DDB400CB340E /* Home.storyboard in Resources */,
 				B593326828574CC900927312 /* GoogleService-Info.plist in Resources */,
 				B5B5554F2852FF820076C25E /* Assets.xcassets in Resources */,
+				E1515BF1285B2E77009E0009 /* Onboard.storyboard in Resources */,
 				B5B5554D2852FF800076C25E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -262,18 +314,32 @@
 				E198EC462863854D00631556 /* EntryListCell.swift in Sources */,
 				B5043F4A285850590064D738 /* Service.swift in Sources */,
 				B5A2283428570D02007665A3 /* AuthButton.swift in Sources */,
+				E1515BF5285B2FAF009E0009 /* OnboardModel.swift in Sources */,
 				B5043F4C285850930064D738 /* DbConstants.swift in Sources */,
 				B5EFBE6328579B1B00579F50 /* UserViewModel.swift in Sources */,
+<<<<<<< HEAD
 				E11B80B62860DDC100CB340E /* HomeViewController.swift in Sources */,
+=======
+				E1515BF3285B2E8C009E0009 /* OnboardViewController.swift in Sources */,
+>>>>>>> e4cf9ffec368f475f304a6a6eaeaeb729a530690
 				B5A2283A2857135C007665A3 /* Extensions.swift in Sources */,
 				B5A2283C285713B0007665A3 /* LoginFormController.swift in Sources */,
 				B5B5554A2852FF800076C25E /* ViewController.swift in Sources */,
 				B5B555462852FF800076C25E /* AppDelegate.swift in Sources */,
+				B5ECF70C2860D57F00D30E8E /* TabBarController.swift in Sources */,
+				B5FBDB5B285DCC92007F047D /* SummaryController.swift in Sources */,
 				B5043F48285850300064D738 /* LoginService.swift in Sources */,
+				B5FBDB5D285DCFAB007F047D /* SummaryViewModel.swift in Sources */,
 				B5A2283E2857166A007665A3 /* CustomUserTextView.swift in Sources */,
+				B5D02759286207780041E175 /* UpDownMoodView.swift in Sources */,
+				B5E1192D2860BD42000DD0E0 /* MoodCell.swift in Sources */,
 				B55F497B2856DB6200BC8351 /* LoginPageController.swift in Sources */,
 				B593326A2857540500927312 /* User.swift in Sources */,
+<<<<<<< HEAD
 				E11B80B82860E6CC00CB340E /* QuotesModel.swift in Sources */,
+=======
+				B5A4F9D0286175B600ADAE15 /* AverageMoodView.swift in Sources */,
+>>>>>>> e4cf9ffec368f475f304a6a6eaeaeb729a530690
 				B5B555482852FF800076C25E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -426,7 +492,7 @@
 				INFOPLIST_FILE = qonfide/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = Onboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -454,7 +520,7 @@
 				INFOPLIST_FILE = qonfide/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = Onboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

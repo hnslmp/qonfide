@@ -6,22 +6,49 @@
 //
 
 import UIKit
+import SwiftUI
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-
+    let defaults = UserDefaults.standard
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         
         guard let scene = (scene as? UIWindowScene) else { return }
+<<<<<<< HEAD
         let storyboard = UIStoryboard(name: "Home", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "HomeView")
         
         window = UIWindow(windowScene: scene)
         window?.makeKeyAndVisible()
         window?.rootViewController = UINavigationController(rootViewController: vc)
+=======
 
+        window = UIWindow(windowScene: scene)
+        window?.makeKeyAndVisible()
+        window?.rootViewController = UINavigationController(rootViewController: TabBarController())
+
+>>>>>>> e4cf9ffec368f475f304a6a6eaeaeb729a530690
+
+        if defaults.bool(forKey: "First Launch") {
+//            open for second time or more
+            print("kedua")
+            defaults.set(true, forKey: "First Launch")
+            window = UIWindow(windowScene: scene)
+            window?.makeKeyAndVisible()
+            window?.rootViewController = UINavigationController(rootViewController: LoginPageController())
+            
+        } else {
+//          open for first time
+            print("pertama")
+            defaults.set(true, forKey: "First Launch")
+            let storyboard = UIStoryboard(name: "Onboard", bundle: nil)
+            let initiateVC = storyboard.instantiateViewController(withIdentifier: "OnboardView")
+            window = UIWindow(windowScene: scene)
+            window?.makeKeyAndVisible()
+            window?.rootViewController = UINavigationController(rootViewController: initiateVC)
+        }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

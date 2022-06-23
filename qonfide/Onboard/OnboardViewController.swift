@@ -42,7 +42,7 @@ class OnboardViewController: UIViewController, UIScrollViewDelegate {
             
 //            subviews (ex: title, desc, etc)
             let backgroundImg = UIImageView.init(image: UIImage(named: onboardData[index].imageBackGround))
-            backgroundImg.frame = CGRect(x: 0, y: 0, width: scrollWidth, height: scrollHeight)
+            backgroundImg.frame = CGRect(x: 0, y: -50, width: scrollWidth, height: scrollHeight)
             backgroundImg.contentMode = .scaleAspectFit
 //
             let imageView = UIImageView.init(image: UIImage(named: onboardData[index].imageView))

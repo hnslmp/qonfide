@@ -9,7 +9,7 @@ import UIKit
 
 class TextFieldController: UIViewController {
 
-    private let layoutOptions = LayoutOptions()
+    private let layoutOptions = LayoutOptions(buttons: [])
     
     private lazy var containerView: UIView = {
         let view = UIView()

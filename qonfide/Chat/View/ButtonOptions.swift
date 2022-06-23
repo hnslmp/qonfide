@@ -19,7 +19,7 @@ class ButtonOptions: UIButton{
         titleLabel?.font = UIFont.systemFont(ofSize: 16,weight: .regular)
         setTitleColor(UIColor.black, for: .normal)
         layer.cornerRadius = 8
-        widthAnchor.constraint(equalToConstant: 350).isActive = true
+        widthAnchor.constraint(equalToConstant: 346).isActive = true
         heightAnchor.constraint(equalToConstant: 50).isActive = true
     }
     

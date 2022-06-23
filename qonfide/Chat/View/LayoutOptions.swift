@@ -10,15 +10,17 @@ import UIKit
 
 class LayoutOptions: UIStackView {
     
-    private let buttonArray: Array<String> = ["😊 Happy","😭 Sad", "😡 Angry", "😮 Surprise", "😔 Bad", "🤢 Disgusted", "😱 Fearful" ]
+//    private let buttonArray: Array<String> = ["😊 Happy","😭 Sad", "😡 Angry", "😮 Surprise", "😔 Bad", "🤢 Disgusted", "😱 Fearful" ]
     
-    init() {
+    var buttonArray: Array<String> = []
+    
+    init(buttons: [String]) {
         super.init(frame: .zero)
-        backgroundColor = UIColor(red: 241/255, green: 247/255, blue: 255/255, alpha: 1)
-        distribution = .fill
-        axis = .vertical
-        alignment = .center
-        spacing = 12.0
+        
+        buttonArray = buttons
+        
+       
+        
         countButton()
     }
     

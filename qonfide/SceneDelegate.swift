@@ -19,7 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         window = UIWindow(windowScene: scene)
         window?.makeKeyAndVisible()
-        window?.rootViewController = UINavigationController(rootViewController: TabBarController())
+        window?.rootViewController = UINavigationController(rootViewController: ChatController())
 
         if defaults.bool(forKey: "First Launch") {
 //            open for second time or more

@@ -41,14 +41,11 @@
 		B5E1192D2860BD42000DD0E0 /* MoodCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E1192C2860BD42000DD0E0 /* MoodCell.swift */; };
 		B5ECF70C2860D57F00D30E8E /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5ECF70B2860D57F00D30E8E /* TabBarController.swift */; };
 		B5EFBE6328579B1B00579F50 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EFBE6228579B1B00579F50 /* UserViewModel.swift */; };
-
+		B5FBDB5B285DCC92007F047D /* SummaryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FBDB5A285DCC92007F047D /* SummaryController.swift */; };
+		B5FBDB5D285DCFAB007F047D /* SummaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FBDB5C285DCFAB007F047D /* SummaryViewModel.swift */; };
 		E1515BF1285B2E77009E0009 /* Onboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1515BF0285B2E77009E0009 /* Onboard.storyboard */; };
 		E1515BF3285B2E8C009E0009 /* OnboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1515BF2285B2E8C009E0009 /* OnboardViewController.swift */; };
 		E1515BF5285B2FAF009E0009 /* OnboardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1515BF4285B2FAF009E0009 /* OnboardModel.swift */; };
-
-		B5FBDB5B285DCC92007F047D /* SummaryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FBDB5A285DCC92007F047D /* SummaryController.swift */; };
-		B5FBDB5D285DCFAB007F047D /* SummaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FBDB5C285DCFAB007F047D /* SummaryViewModel.swift */; };
-
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -85,14 +82,11 @@
 		B5E1192C2860BD42000DD0E0 /* MoodCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodCell.swift; sourceTree = "<group>"; };
 		B5ECF70B2860D57F00D30E8E /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		B5EFBE6228579B1B00579F50 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
-    
+		B5FBDB5A285DCC92007F047D /* SummaryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryController.swift; sourceTree = "<group>"; };
+		B5FBDB5C285DCFAB007F047D /* SummaryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryViewModel.swift; sourceTree = "<group>"; };
 		E1515BF0285B2E77009E0009 /* Onboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboard.storyboard; sourceTree = "<group>"; };
 		E1515BF2285B2E8C009E0009 /* OnboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardViewController.swift; sourceTree = "<group>"; };
 		E1515BF4285B2FAF009E0009 /* OnboardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardModel.swift; sourceTree = "<group>"; };
-
-		B5FBDB5A285DCC92007F047D /* SummaryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryController.swift; sourceTree = "<group>"; };
-		B5FBDB5C285DCFAB007F047D /* SummaryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryViewModel.swift; sourceTree = "<group>"; };
-
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,65 +103,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2E56BA0F28641A530078E6F8 /* Modal */ = {
+		B5A22835285712CA007665A3 /* Chat */ = {
 			isa = PBXGroup;
 			children = (
-				2E56BA0D2862D52E0078E6F8 /* CustomModalViewController.swift */,
-				2E56BA1028641F3B0078E6F8 /* TextFieldController.swift */,
-			);
-			path = Modal;
-			sourceTree = "<group>";
-		};
-		B5A22835285712CA007665A3 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				B59332692857540500927312 /* User.swift */,
-				B5EFBE6228579B1B00579F50 /* UserViewModel.swift */,
-
-				B57BC0AA285C5D03008776E0 /* Message.swift */,
-				B57BC0AC285C5E53008776E0 /* MessageViewModel.swift */,
-
+				B5D02765286459B60041E175 /* Controller */,
+				B5D02764286459A50041E175 /* ViewModel */,
+				B5D027632864599D0041E175 /* Model */,
 				B5FBDB5C285DCFAB007F047D /* SummaryViewModel.swift */,
-
+				B5A228362857130B007665A3 /* View */,
 			);
-			path = Model;
+			path = Chat;
 			sourceTree = "<group>";
 		};
 		B5A228362857130B007665A3 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				B5A2283328570D02007665A3 /* AuthButton.swift */,
-
 				B528513E285B6509009F7422 /* MessageCell.swift */,
-				B5A2283D2857166A007665A3 /* CustomUserTextView.swift */,
 				2E56BA0B28621A050078E6F8 /* CustomMessageTextView.swift */,
 				2E56BA0728602E5B0078E6F8 /* ButtonOptions.swift */,
 				2E56BA09286102BF0078E6F8 /* LayoutOptions.swift */,
-
-				B5E1192C2860BD42000DD0E0 /* MoodCell.swift */,
-				B5A2283D2857166A007665A3 /* CustomUserTextView.swift */,
-				B5A4F9CF286175B600ADAE15 /* AverageMoodView.swift */,
-				B5D02758286207780041E175 /* UpDownMoodView.swift */,
-
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		B5A2283728571314007665A3 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				2E56BA0F28641A530078E6F8 /* Modal */,
-				B55F497A2856DB6200BC8351 /* LoginPageController.swift */,
-				B5A2283B285713B0007665A3 /* LoginFormController.swift */,
-				B593326528574C7000927312 /* SignupFormController.swift */,
-
-				B528513C285B5FC2009F7422 /* ChatController.swift */,
-
-				B5FBDB5A285DCC92007F047D /* SummaryController.swift */,
-				B5ECF70B2860D57F00D30E8E /* TabBarController.swift */,
-
-			);
-			path = Controller;
 			sourceTree = "<group>";
 		};
 		B5A228382857131F007665A3 /* Utils */ = {
@@ -200,14 +156,15 @@
 		B5B555442852FF800076C25E /* qonfide */ = {
 			isa = PBXGroup;
 			children = (
+				B5D02766286459EC0041E175 /* Summary */,
+				B5D0275E286457260041E175 /* LoginSignup */,
 				E1515BEF285B2E57009E0009 /* Onboard */,
-				B5A22835285712CA007665A3 /* Model */,
-				B5A228362857130B007665A3 /* View */,
-				B5A2283728571314007665A3 /* Controller */,
+				B5A22835285712CA007665A3 /* Chat */,
 				B5A228382857131F007665A3 /* Utils */,
 				B5B555452852FF800076C25E /* AppDelegate.swift */,
 				B5B555472852FF800076C25E /* SceneDelegate.swift */,
 				B5B555492852FF800076C25E /* ViewController.swift */,
+				B5ECF70B2860D57F00D30E8E /* TabBarController.swift */,
 				B5B5554B2852FF800076C25E /* Main.storyboard */,
 				B5B5554E2852FF820076C25E /* Assets.xcassets */,
 				B5B555502852FF820076C25E /* LaunchScreen.storyboard */,
@@ -217,12 +174,135 @@
 			path = qonfide;
 			sourceTree = "<group>";
 		};
-		E1515BEF285B2E57009E0009 /* Onboard */ = {
+		B5D0275E286457260041E175 /* LoginSignup */ = {
+			isa = PBXGroup;
+			children = (
+				B5D027622864575A0041E175 /* Controller */,
+				B5D02761286457500041E175 /* View */,
+				B5D027602864573E0041E175 /* ViewModel */,
+				B5D0275F2864572E0041E175 /* Model */,
+			);
+			path = LoginSignup;
+			sourceTree = "<group>";
+		};
+		B5D0275F2864572E0041E175 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B59332692857540500927312 /* User.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B5D027602864573E0041E175 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				B5EFBE6228579B1B00579F50 /* UserViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		B5D02761286457500041E175 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B5A2283328570D02007665A3 /* AuthButton.swift */,
+				B5A2283D2857166A007665A3 /* CustomUserTextView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B5D027622864575A0041E175 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B55F497A2856DB6200BC8351 /* LoginPageController.swift */,
+				B5A2283B285713B0007665A3 /* LoginFormController.swift */,
+				B593326528574C7000927312 /* SignupFormController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		B5D027632864599D0041E175 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B57BC0AA285C5D03008776E0 /* Message.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B5D02764286459A50041E175 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				B57BC0AC285C5E53008776E0 /* MessageViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		B5D02765286459B60041E175 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B528513C285B5FC2009F7422 /* ChatController.swift */,
+				2E56BA0D2862D52E0078E6F8 /* CustomModalViewController.swift */,
+				2E56BA1028641F3B0078E6F8 /* TextFieldController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		B5D02766286459EC0041E175 /* Summary */ = {
+			isa = PBXGroup;
+			children = (
+				B5D0276828645A2F0041E175 /* View */,
+				B5D02767286459F10041E175 /* Controller */,
+			);
+			path = Summary;
+			sourceTree = "<group>";
+		};
+		B5D02767286459F10041E175 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B5FBDB5A285DCC92007F047D /* SummaryController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		B5D0276828645A2F0041E175 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B5E1192C2860BD42000DD0E0 /* MoodCell.swift */,
+				B5A4F9CF286175B600ADAE15 /* AverageMoodView.swift */,
+				B5D02758286207780041E175 /* UpDownMoodView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B5D0276928645A550041E175 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				E1515BF0285B2E77009E0009 /* Onboard.storyboard */,
-				E1515BF2285B2E8C009E0009 /* OnboardViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B5D0276A28645A5D0041E175 /* Model */ = {
+			isa = PBXGroup;
+			children = (
 				E1515BF4285B2FAF009E0009 /* OnboardModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B5D0276B28645A660041E175 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E1515BF2285B2E8C009E0009 /* OnboardViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		E1515BEF285B2E57009E0009 /* Onboard */ = {
+			isa = PBXGroup;
+			children = (
+				B5D0276B28645A660041E175 /* Controller */,
+				B5D0276A28645A5D0041E175 /* Model */,
+				B5D0276928645A550041E175 /* View */,
 			);
 			path = Onboard;
 			sourceTree = "<group>";
@@ -336,11 +416,8 @@
 				B5E1192D2860BD42000DD0E0 /* MoodCell.swift in Sources */,
 				B55F497B2856DB6200BC8351 /* LoginPageController.swift in Sources */,
 				B593326A2857540500927312 /* User.swift in Sources */,
-
 				2E56BA1128641F3B0078E6F8 /* TextFieldController.swift in Sources */,
-
 				B5A4F9D0286175B600ADAE15 /* AverageMoodView.swift in Sources */,
-
 				B5B555482852FF800076C25E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

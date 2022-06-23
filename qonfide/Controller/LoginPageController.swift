@@ -32,6 +32,8 @@ class LoginPageController: UIViewController{
         return iv
     }()
     
+    private let tezz = LayoutOptions()
+    
     private lazy var createAccountButton: UIButton = {
         let button = AuthButton(title: "Create Account", type: .system)
         button.isEnabled = true
@@ -95,7 +97,7 @@ class LoginPageController: UIViewController{
         loginImageView.setDimensions(height: 320, width: 320)
         loginImageView.anchor(top: loginTitle.bottomAnchor, paddingTop: 36)
         
-        let stack = UIStackView(arrangedSubviews: [createAccountButton, alreadyAccountButton, orLimiter, guestButton])
+        let stack = UIStackView(arrangedSubviews: [tezz,createAccountButton, alreadyAccountButton, orLimiter, guestButton])
         stack.axis = .vertical
         stack.spacing = 32
         

@@ -21,7 +21,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.makeKeyAndVisible()
         window?.rootViewController = UINavigationController(rootViewController: TabBarController())
 
-
         if defaults.bool(forKey: "First Launch") {
 //            open for second time or more
             print("kedua")

@@ -7,13 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E56BA0828602E5B0078E6F8 /* ButtonOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E56BA0728602E5B0078E6F8 /* ButtonOptions.swift */; };
+		2E56BA0A286102BF0078E6F8 /* LayoutOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E56BA09286102BF0078E6F8 /* LayoutOptions.swift */; };
+		2E56BA0C28621A050078E6F8 /* CustomMessageTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E56BA0B28621A050078E6F8 /* CustomMessageTextView.swift */; };
+		2E56BA0E2862D52E0078E6F8 /* CustomModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E56BA0D2862D52E0078E6F8 /* CustomModalViewController.swift */; };
+		2E56BA1128641F3B0078E6F8 /* TextFieldController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E56BA1028641F3B0078E6F8 /* TextFieldController.swift */; };
 		B5043F48285850300064D738 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5043F47285850300064D738 /* LoginService.swift */; };
 		B5043F4A285850590064D738 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5043F49285850590064D738 /* Service.swift */; };
 		B5043F4C285850930064D738 /* DbConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5043F4B285850930064D738 /* DbConstants.swift */; };
+		B528513D285B5FC2009F7422 /* ChatController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B528513C285B5FC2009F7422 /* ChatController.swift */; };
+		B528513F285B6509009F7422 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B528513E285B6509009F7422 /* MessageCell.swift */; };
 		B55F49752856D7E500BC8351 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = B55F49742856D7E500BC8351 /* FirebaseAuth */; };
 		B55F49772856D7E500BC8351 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = B55F49762856D7E500BC8351 /* FirebaseFirestore */; };
 		B55F49792856D7E500BC8351 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = B55F49782856D7E500BC8351 /* FirebaseStorage */; };
 		B55F497B2856DB6200BC8351 /* LoginPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55F497A2856DB6200BC8351 /* LoginPageController.swift */; };
+		B57BC0AB285C5D03008776E0 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57BC0AA285C5D03008776E0 /* Message.swift */; };
+		B57BC0AD285C5E53008776E0 /* MessageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57BC0AC285C5E53008776E0 /* MessageViewModel.swift */; };
 		B593326628574C7000927312 /* SignupFormController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B593326528574C7000927312 /* SignupFormController.swift */; };
 		B593326828574CC900927312 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B593326728574CC900927312 /* GoogleService-Info.plist */; };
 		B593326A2857540500927312 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59332692857540500927312 /* User.swift */; };
@@ -43,10 +52,19 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2E56BA0728602E5B0078E6F8 /* ButtonOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonOptions.swift; sourceTree = "<group>"; };
+		2E56BA09286102BF0078E6F8 /* LayoutOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutOptions.swift; sourceTree = "<group>"; };
+		2E56BA0B28621A050078E6F8 /* CustomMessageTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMessageTextView.swift; sourceTree = "<group>"; };
+		2E56BA0D2862D52E0078E6F8 /* CustomModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomModalViewController.swift; sourceTree = "<group>"; };
+		2E56BA1028641F3B0078E6F8 /* TextFieldController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldController.swift; sourceTree = "<group>"; };
 		B5043F47285850300064D738 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
 		B5043F49285850590064D738 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		B5043F4B285850930064D738 /* DbConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DbConstants.swift; sourceTree = "<group>"; };
+		B528513C285B5FC2009F7422 /* ChatController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatController.swift; sourceTree = "<group>"; };
+		B528513E285B6509009F7422 /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
 		B55F497A2856DB6200BC8351 /* LoginPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageController.swift; sourceTree = "<group>"; };
+		B57BC0AA285C5D03008776E0 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		B57BC0AC285C5E53008776E0 /* MessageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewModel.swift; sourceTree = "<group>"; };
 		B593326528574C7000927312 /* SignupFormController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupFormController.swift; sourceTree = "<group>"; };
 		B593326728574CC900927312 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B59332692857540500927312 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -91,12 +109,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2E56BA0F28641A530078E6F8 /* Modal */ = {
+			isa = PBXGroup;
+			children = (
+				2E56BA0D2862D52E0078E6F8 /* CustomModalViewController.swift */,
+				2E56BA1028641F3B0078E6F8 /* TextFieldController.swift */,
+			);
+			path = Modal;
+			sourceTree = "<group>";
+		};
 		B5A22835285712CA007665A3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				B59332692857540500927312 /* User.swift */,
 				B5EFBE6228579B1B00579F50 /* UserViewModel.swift */,
+
+				B57BC0AA285C5D03008776E0 /* Message.swift */,
+				B57BC0AC285C5E53008776E0 /* MessageViewModel.swift */,
+
 				B5FBDB5C285DCFAB007F047D /* SummaryViewModel.swift */,
+
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -105,10 +137,18 @@
 			isa = PBXGroup;
 			children = (
 				B5A2283328570D02007665A3 /* AuthButton.swift */,
+
+				B528513E285B6509009F7422 /* MessageCell.swift */,
+				B5A2283D2857166A007665A3 /* CustomUserTextView.swift */,
+				2E56BA0B28621A050078E6F8 /* CustomMessageTextView.swift */,
+				2E56BA0728602E5B0078E6F8 /* ButtonOptions.swift */,
+				2E56BA09286102BF0078E6F8 /* LayoutOptions.swift */,
+
 				B5E1192C2860BD42000DD0E0 /* MoodCell.swift */,
 				B5A2283D2857166A007665A3 /* CustomUserTextView.swift */,
 				B5A4F9CF286175B600ADAE15 /* AverageMoodView.swift */,
 				B5D02758286207780041E175 /* UpDownMoodView.swift */,
+
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -116,11 +156,16 @@
 		B5A2283728571314007665A3 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				2E56BA0F28641A530078E6F8 /* Modal */,
 				B55F497A2856DB6200BC8351 /* LoginPageController.swift */,
 				B5A2283B285713B0007665A3 /* LoginFormController.swift */,
 				B593326528574C7000927312 /* SignupFormController.swift */,
+
+				B528513C285B5FC2009F7422 /* ChatController.swift */,
+
 				B5FBDB5A285DCC92007F047D /* SummaryController.swift */,
 				B5ECF70B2860D57F00D30E8E /* TabBarController.swift */,
+
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -264,7 +309,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				B593326628574C7000927312 /* SignupFormController.swift in Sources */,
+				B528513F285B6509009F7422 /* MessageCell.swift in Sources */,
 				B5043F4A285850590064D738 /* Service.swift in Sources */,
+				2E56BA0828602E5B0078E6F8 /* ButtonOptions.swift in Sources */,
+				2E56BA0A286102BF0078E6F8 /* LayoutOptions.swift in Sources */,
+				2E56BA0C28621A050078E6F8 /* CustomMessageTextView.swift in Sources */,
+				B57BC0AB285C5D03008776E0 /* Message.swift in Sources */,
+				2E56BA0E2862D52E0078E6F8 /* CustomModalViewController.swift in Sources */,
 				B5A2283428570D02007665A3 /* AuthButton.swift in Sources */,
 				E1515BF5285B2FAF009E0009 /* OnboardModel.swift in Sources */,
 				B5043F4C285850930064D738 /* DbConstants.swift in Sources */,
@@ -273,6 +324,8 @@
 				B5A2283A2857135C007665A3 /* Extensions.swift in Sources */,
 				B5A2283C285713B0007665A3 /* LoginFormController.swift in Sources */,
 				B5B5554A2852FF800076C25E /* ViewController.swift in Sources */,
+				B57BC0AD285C5E53008776E0 /* MessageViewModel.swift in Sources */,
+				B528513D285B5FC2009F7422 /* ChatController.swift in Sources */,
 				B5B555462852FF800076C25E /* AppDelegate.swift in Sources */,
 				B5ECF70C2860D57F00D30E8E /* TabBarController.swift in Sources */,
 				B5FBDB5B285DCC92007F047D /* SummaryController.swift in Sources */,
@@ -283,7 +336,11 @@
 				B5E1192D2860BD42000DD0E0 /* MoodCell.swift in Sources */,
 				B55F497B2856DB6200BC8351 /* LoginPageController.swift in Sources */,
 				B593326A2857540500927312 /* User.swift in Sources */,
+
+				2E56BA1128641F3B0078E6F8 /* TextFieldController.swift in Sources */,
+
 				B5A4F9D0286175B600ADAE15 /* AverageMoodView.swift in Sources */,
+
 				B5B555482852FF800076C25E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

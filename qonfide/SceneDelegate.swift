@@ -20,7 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         window = UIWindow(windowScene: scene)
         window?.makeKeyAndVisible()
-        window?.rootViewController = UINavigationController(rootViewController: ModalPickMonthController())
+        window?.rootViewController = UINavigationController(rootViewController: vc)
 
     }
 

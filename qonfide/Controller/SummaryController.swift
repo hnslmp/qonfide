@@ -113,7 +113,9 @@ class SummaryController: UIViewController{
         
         view.addSubview(graphView)
         graphView.anchor(top: durationControl.bottomAnchor,left: view.leftAnchor, right: view.rightAnchor,paddingTop: 32, paddingLeft: 24, paddingRight: 24)
-        graphView.setDimensions(height: graphView.frame.height , width: graphView.frame.width)
+        
+        graphView.translatesAutoresizingMaskIntoConstraints = false
+        graphView.heightAnchor.constraint(equalToConstant: graphView.frame.height).isActive = true
         drawGraph()
 
         let scrollView = UIScrollView()

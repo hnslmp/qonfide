@@ -6,9 +6,12 @@
 //
 
 import UIKit
+import Firebase
 
 
 class TabBarController: UITabBarController{
+    
+    // MARK: - Properties
     
     private let SummaryVC = SummaryController()
     
@@ -16,12 +19,21 @@ class TabBarController: UITabBarController{
     private let ListEntriesVC = ViewController()
     private let ChatInputVC = ViewController()
     
+    
+    // MARK: - Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-          
+        logout()
+        checkIfUserIsLoggedIn()
+        configureTabBar()
+    }
+    
+    // MARK: - Helpers
+    func configureTabBar(){
         SummaryVC.title = "Summary"
         ListEntriesVC.title = "Entries"
-        ChatInputVC.title = "ChatInput"
+        ChatInputVC.title = "New Input"
         
         self.setViewControllers([ListEntriesVC, ChatInputVC, SummaryVC], animated: true)
 
@@ -34,7 +46,8 @@ class TabBarController: UITabBarController{
         self.tabBar.layer.cornerRadius = 10
         
         self.tabBar.backgroundColor = .white
-        self.tabBar.tintColor = UIColor(red: 133/255, green: 165/255, blue: 210/255, alpha: 1)
+        self.tabBar.unselectedItemTintColor = UIColor(red: 133/255, green: 165/255, blue: 210/255, alpha: 1)
+        self.tabBar.tintColor = UIColor(red: 51/255, green: 88/255, blue: 141/255, alpha: 1)
                 
         if let tabBarItem1 = self.tabBar.items?[0] {
             tabBarItem1.image = UIImage(systemName: "book")
@@ -47,6 +60,32 @@ class TabBarController: UITabBarController{
             tabBarItem3.image = UIImage(systemName: "chart.bar")
             tabBarItem3.selectedImage = UIImage(systemName: "chart.bar.fill")
         }
-                
     }
+    
+    func checkIfUserIsLoggedIn(){
+        if Auth.auth().currentUser == nil {
+            presentLoginController()
+        } else {
+            print("DEBUG: User is logged in")
+        }
+    }
+    
+    func presentLoginController(){
+        DispatchQueue.main.async {
+            let vc = LoginPageController()
+            let nav = UINavigationController(rootViewController: vc)
+            nav.modalPresentationStyle = .fullScreen
+            self.present(nav, animated: true, completion: nil)
+        }
+    }
+    
+    func logout(){
+        do {
+            try Auth.auth().signOut()
+            presentLoginController()
+        } catch {
+            print("DEBUG: Failed to sign out")
+        }
+    }
+    
 }

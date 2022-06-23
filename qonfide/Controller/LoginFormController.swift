@@ -15,7 +15,8 @@ class LoginFormController: UIViewController{
     
     private let loginImageView: UIImageView = {
         let iv = UIImageView()
-        iv.image = #imageLiteral(resourceName: "catAstroLogo").withRenderingMode(.alwaysOriginal)
+        iv.image = UIImage(named: "loginPhoto")?.withRenderingMode(.alwaysOriginal)
+        iv.contentMode = .scaleAspectFill
         return iv
     }()
     
@@ -65,6 +66,10 @@ class LoginFormController: UIViewController{
             }
             
             print("DEBUG: Logged user in successfully")
+            DispatchQueue.main.async {
+                self.navigationController?.pushViewController(TabBarController(), animated: true)
+            }
+            
         }
         
     }

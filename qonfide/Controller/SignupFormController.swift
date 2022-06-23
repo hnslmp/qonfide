@@ -69,7 +69,9 @@ class SignupFormController: UIViewController{
         print("DEBUG: Create Account Pressed called")
         if userModel.passwordIsValid {
             registerUser()
-            //TODO : Pindah ke main screen
+            DispatchQueue.main.async {
+                self.navigationController?.pushViewController(TabBarController(), animated: true)
+            }
         } else {
             passwordMisMatchAlert()
         }
@@ -142,10 +144,7 @@ class SignupFormController: UIViewController{
         
     }
     
-    
-    
     // MARK: - Lifecycle
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
@@ -164,7 +163,7 @@ class SignupFormController: UIViewController{
         selectPhotoButton.anchor(top: loginTitle.bottomAnchor, paddingTop: 12)
         selectPhotoButton.centerX(inView: view)
         
-        let stack = UIStackView(arrangedSubviews: [emailTextView, usernameTextView, passwordTextView, confirmPasswordTextView, UIView(), createAccountButton, alreadyAccountButton])
+        let stack = UIStackView(arrangedSubviews: [emailTextView, usernameTextView, passwordTextView, confirmPasswordTextView, UIView() , createAccountButton, alreadyAccountButton])
         stack.axis = .vertical
         stack.spacing = 16
         view.addSubview(stack)
@@ -172,6 +171,7 @@ class SignupFormController: UIViewController{
         stack.centerX(inView: view)
         
     }
+    
 }
 
 extension SignupFormController: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
@@ -187,5 +187,4 @@ extension SignupFormController: UIImagePickerControllerDelegate, UINavigationCon
         
         dismiss(animated: true,completion: nil)
     }
-   
 }

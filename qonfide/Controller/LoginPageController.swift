@@ -12,7 +12,8 @@ class LoginPageController: UIViewController{
     // MARK: - Properties
     private let loginImageView: UIImageView = {
         let iv = UIImageView()
-        iv.image = #imageLiteral(resourceName: "catAstroLogo").withRenderingMode(.alwaysOriginal)
+        iv.image = UIImage(named: "loginPhoto")?.withRenderingMode(.alwaysOriginal)
+        iv.contentMode = .scaleAspectFill
         return iv
     }()
     
@@ -98,10 +99,10 @@ class LoginPageController: UIViewController{
         
         let stack = UIStackView(arrangedSubviews: [tezz,createAccountButton, alreadyAccountButton, orLimiter, guestButton])
         stack.axis = .vertical
-        stack.spacing = 16
+        stack.spacing = 32
         
         view.addSubview(stack)
-        stack.anchor(top: loginImageView.bottomAnchor, paddingTop: 30)
+        stack.anchor(top: loginImageView.bottomAnchor, paddingTop: 60)
         stack.centerX(inView: view)
         
     }

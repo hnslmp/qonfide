@@ -42,7 +42,11 @@ class OnboardViewController: UIViewController, UIScrollViewDelegate {
             
 //            subviews (ex: title, desc, etc)
             let backgroundImg = UIImageView.init(image: UIImage(named: onboardData[index].imageBackGround))
-            backgroundImg.frame = CGRect(x: 0, y: -50, width: scrollWidth, height: scrollHeight)
+            if index == 0 {
+                backgroundImg.frame = CGRect(x: 0, y: -35, width: scrollWidth, height: scrollHeight)
+            } else {
+                backgroundImg.frame = CGRect(x: 0, y: -50, width: scrollWidth, height: scrollHeight)
+            }
             backgroundImg.contentMode = .scaleAspectFit
 //
             let imageView = UIImageView.init(image: UIImage(named: onboardData[index].imageView))
@@ -50,7 +54,7 @@ class OnboardViewController: UIViewController, UIScrollViewDelegate {
             imageView.contentMode = .scaleAspectFill
             imageView.center = CGPoint(x: scrollWidth/2, y: scrollHeight/2 - 250)
             
-            let title = UILabel.init(frame: CGRect(x: 32, y: imageView.frame.maxY + 30, width: scrollWidth - 100, height: 85))
+            let title = UILabel.init(frame: CGRect(x: 32, y: imageView.frame.maxY + 50, width: scrollWidth - 100, height: 85))
             title.textAlignment = .left
             title.numberOfLines = 2
             title.textColor = .white

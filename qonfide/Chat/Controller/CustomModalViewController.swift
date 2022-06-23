@@ -7,13 +7,17 @@
 
 import UIKit
 
-//protocol userChoiceInputProtocol{
-//    func userChose(choice: String)
+//@objc protocol CustomModalViewControllerDelegate: AnyObject
+//{
+//    @objc optional func userSelect(choice: String?)
 //}
 
-class CustomModalViewController: UIViewController {
-    
-//    var delegate: userChoiceInputProtocol!
+protocol CustomModalViewControllerDelegate: AnyObject{
+    func userSelect(choice: String)
+}
+
+class CustomModalViewController: UIViewController{
+    weak var delegate: CustomModalViewControllerDelegate?
     
     private let layoutOptions: UIStackView = {
         let stack = UIStackView()
@@ -112,8 +116,10 @@ class CustomModalViewController: UIViewController {
         
     // MARK: - Functions
     
-    @objc func optionPressed(sender: UIButton){
-//        delegate.userChose(choice: sender.titleLabel!.text!)
+    @objc func optionPressed(sender: UIButton)
+    {
+//        delegate?.userSelect(choice: sender.titleLabel?.text)
+        delegate?.userSelect(choice: (sender.titleLabel?.text)!)
         dismiss(animated: true)
     }
     

@@ -9,7 +9,8 @@ import UIKit
 
 private let reuseIdentifier = "MessageCell"
 
-class ChatController: UICollectionViewController {
+class ChatController: UICollectionViewController
+{
     
     // MARK: - Properties
     private let viewModel = ChatViewModel()
@@ -27,7 +28,7 @@ class ChatController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel.chatDelegate = self
+        viewModel.delegate = self
         configureUI()
         viewModel.configureChat()
     }
@@ -82,10 +83,11 @@ extension ChatController: UICollectionViewDelegateFlowLayout{
     }
 }
 
-extension ChatController: chatViewModelProtocol{
+extension ChatController: ChatViewModelDelegate{
     
     func presentChoiceModal(buttons: [String]) {
         let vc = CustomModalViewController(buttonArray: buttons)
+        vc.delegate = self
         vc.modalPresentationStyle = .overCurrentContext
         self.present(vc, animated: true)
     }
@@ -93,5 +95,14 @@ extension ChatController: chatViewModelProtocol{
     func refreshChat() {
         self.collectionView.reloadData()
     }
-    
+}
+
+extension ChatController: CustomModalViewControllerDelegate
+{
+    func userSelect(choice: String)
+    {
+        print("DEBUG: ChatController delegate: \(choice)")
+        viewModel.userChoice = choice
+        viewModel.configureChat()
+    }
 }

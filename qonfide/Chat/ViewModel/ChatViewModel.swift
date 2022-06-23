@@ -7,7 +7,8 @@
 
 import UIKit
 
-protocol chatViewModelProtocol {
+protocol ChatViewModelDelegate
+{
     func presentChoiceModal(buttons: [String])
     func refreshChat()
 }
@@ -18,17 +19,17 @@ class ChatViewModel{
     
     var messages: Array<Message> = []
     
-    var emotionEffects: Array<String> = ["💼 Work", "🏫 School", "👫🏻 Relationships", "😕 Insecurities", "Others"]
-    
     var counter: Int = 0
     
     var endFlag = true
     
-    var chatDelegate: chatViewModelProtocol!
+    var delegate: ChatViewModelDelegate!
     
-    var userChoice:String = ""
+    var userChoice: String = ""
     
-    // MARK: - Lifecyle
+    var emotionEffects: Array<String> = ["💼 Work", "🏫 School", "👫🏻 Relationships", "😕 Insecurities", "Others"]
+    
+    // MARK: - Lifecycle
     init(){
 //        configureChat()
 //        messages.append(Message(text: "Hey, I'm Bob. I'm here to help you with your emotions. Can you first tell me what is affecting your emotion?", isBobSender: true))
@@ -42,24 +43,24 @@ class ChatViewModel{
     // MARK: - Helpers
     
     func configureChat(){
-
         if counter == 0 {
             messages.append(Message(text: "Hey, I'm Bob. I'm here to help you with your emotions. Can you first tell me what is affecting your emotion?", isBobSender: true))
             counter += 1
             configureChat()
         }
         else if counter == 1 {
-            chatDelegate.presentChoiceModal(buttons: emotionEffects)
-//            messages.append(Message(text: "Hey, Bob. It's mostly because of " + userChoice, isBobSender: false))
+            delegate.presentChoiceModal(buttons: emotionEffects)
+            counter += 1
+        }else if counter == 2 {
+            messages.append(Message(text: "Hey, Bob. It's mostly because of " + userChoice, isBobSender: false))
+            delegate.refreshChat()
+            counter += 1
+            configureChat()
+        }else if counter == 3 {
+            messages.append(Message(text: "Can you write how and why " + userChoice + " affects you?", isBobSender: true))
+            delegate.refreshChat()
+            counter += 1
         }
     }
     
 }
-//
-//extension ChatViewModel: userChoiceInputProtocol{
-//
-//    func userChose(choice: String) {
-//        userChoice = choice
-//    }
-//
-//}

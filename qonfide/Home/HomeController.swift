@@ -33,7 +33,6 @@ class HomeController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         self.tableView.register(UINib.init(nibName: "EntryListViewCell", bundle: nil), forCellReuseIdentifier: EntryListViewCell.identifier)
-        
         viewStyling()
     }
     

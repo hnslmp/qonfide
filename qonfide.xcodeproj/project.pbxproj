@@ -44,6 +44,16 @@
 		B5FBDB5B285DCC92007F047D /* SummaryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FBDB5A285DCC92007F047D /* SummaryController.swift */; };
 		B5FBDB5D285DCFAB007F047D /* SummaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FBDB5C285DCFAB007F047D /* SummaryViewModel.swift */; };
 		E1063F822864D9F700B5B046 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1063F812864D9F700B5B046 /* TabBarViewController.swift */; };
+		E108B6062865FFC20096B685 /* ModalChooseQuotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = E108B5FB2865FFC20096B685 /* ModalChooseQuotes.swift */; };
+		E108B6072865FFC20096B685 /* ChangePasswordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E108B5FD2865FFC20096B685 /* ChangePasswordCell.swift */; };
+		E108B6082865FFC20096B685 /* ReminderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E108B5FE2865FFC20096B685 /* ReminderCell.swift */; };
+		E108B6092865FFC20096B685 /* ChangePasswordCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E108B5FF2865FFC20096B685 /* ChangePasswordCell.xib */; };
+		E108B60A2865FFC20096B685 /* ReminderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E108B6002865FFC20096B685 /* ReminderCell.xib */; };
+		E108B60B2865FFC20096B685 /* ChangePasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E108B6012865FFC20096B685 /* ChangePasswordController.swift */; };
+		E108B60C2865FFC20096B685 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E108B6022865FFC20096B685 /* UserModel.swift */; };
+		E108B60D2865FFC20096B685 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E108B6032865FFC20096B685 /* Settings.storyboard */; };
+		E108B60E2865FFC20096B685 /* ModalChooseReminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E108B6042865FFC20096B685 /* ModalChooseReminder.swift */; };
+		E108B60F2865FFC20096B685 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E108B6052865FFC20096B685 /* SettingsViewController.swift */; };
 		E1139DA72864C50C00662A48 /* ModalPickMonthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1139DA62864C50C00662A48 /* ModalPickMonthController.swift */; };
 		E1515BF1285B2E77009E0009 /* Onboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1515BF0285B2E77009E0009 /* Onboard.storyboard */; };
 		E1515BF3285B2E8C009E0009 /* OnboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1515BF2285B2E8C009E0009 /* OnboardViewController.swift */; };
@@ -91,6 +101,16 @@
 		B5FBDB5A285DCC92007F047D /* SummaryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryController.swift; sourceTree = "<group>"; };
 		B5FBDB5C285DCFAB007F047D /* SummaryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryViewModel.swift; sourceTree = "<group>"; };
 		E1063F812864D9F700B5B046 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		E108B5FB2865FFC20096B685 /* ModalChooseQuotes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalChooseQuotes.swift; sourceTree = "<group>"; };
+		E108B5FD2865FFC20096B685 /* ChangePasswordCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePasswordCell.swift; sourceTree = "<group>"; };
+		E108B5FE2865FFC20096B685 /* ReminderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReminderCell.swift; sourceTree = "<group>"; };
+		E108B5FF2865FFC20096B685 /* ChangePasswordCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChangePasswordCell.xib; sourceTree = "<group>"; };
+		E108B6002865FFC20096B685 /* ReminderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReminderCell.xib; sourceTree = "<group>"; };
+		E108B6012865FFC20096B685 /* ChangePasswordController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePasswordController.swift; sourceTree = "<group>"; };
+		E108B6022865FFC20096B685 /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		E108B6032865FFC20096B685 /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		E108B6042865FFC20096B685 /* ModalChooseReminder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalChooseReminder.swift; sourceTree = "<group>"; };
+		E108B6052865FFC20096B685 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		E1139DA62864C50C00662A48 /* ModalPickMonthController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ModalPickMonthController.swift; path = qonfide/Home/ModalPickMonthController.swift; sourceTree = SOURCE_ROOT; };
 		E1515BF0285B2E77009E0009 /* Onboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboard.storyboard; sourceTree = "<group>"; };
 		E1515BF2285B2E8C009E0009 /* OnboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardViewController.swift; sourceTree = "<group>"; };
@@ -174,6 +194,7 @@
 		B5B555442852FF800076C25E /* qonfide */ = {
 			isa = PBXGroup;
 			children = (
+				E108B5FA2865FFC20096B685 /* Setting */,
 				E1ED6CA4286480EA0028F9D1 /* Home */,
 				B5D02766286459EC0041E175 /* Summary */,
 				B5D0275E286457260041E175 /* LoginSignup */,
@@ -318,6 +339,31 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		E108B5FA2865FFC20096B685 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				E108B5FB2865FFC20096B685 /* ModalChooseQuotes.swift */,
+				E108B5FC2865FFC20096B685 /* Cell */,
+				E108B6012865FFC20096B685 /* ChangePasswordController.swift */,
+				E108B6022865FFC20096B685 /* UserModel.swift */,
+				E108B6032865FFC20096B685 /* Settings.storyboard */,
+				E108B6042865FFC20096B685 /* ModalChooseReminder.swift */,
+				E108B6052865FFC20096B685 /* SettingsViewController.swift */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		E108B5FC2865FFC20096B685 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				E108B5FD2865FFC20096B685 /* ChangePasswordCell.swift */,
+				E108B5FE2865FFC20096B685 /* ReminderCell.swift */,
+				E108B5FF2865FFC20096B685 /* ChangePasswordCell.xib */,
+				E108B6002865FFC20096B685 /* ReminderCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		E1515BEF285B2E57009E0009 /* Onboard */ = {
 			isa = PBXGroup;
 			children = (
@@ -415,6 +461,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E108B60A2865FFC20096B685 /* ReminderCell.xib in Resources */,
+				E108B6092865FFC20096B685 /* ChangePasswordCell.xib in Resources */,
 				B5B555522852FF820076C25E /* LaunchScreen.storyboard in Resources */,
 				B593326828574CC900927312 /* GoogleService-Info.plist in Resources */,
 				B5B5554F2852FF820076C25E /* Assets.xcassets in Resources */,
@@ -422,6 +470,7 @@
 				E1515BF1285B2E77009E0009 /* Onboard.storyboard in Resources */,
 				E1ED6CB128648B400028F9D1 /* EntryListViewCell.xib in Resources */,
 				B5B5554D2852FF800076C25E /* Main.storyboard in Resources */,
+				E108B60D2865FFC20096B685 /* Settings.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -445,12 +494,19 @@
 				B5043F4C285850930064D738 /* DbConstants.swift in Sources */,
 				B5EFBE6328579B1B00579F50 /* UserViewModel.swift in Sources */,
 				E1515BF3285B2E8C009E0009 /* OnboardViewController.swift in Sources */,
+				E108B60E2865FFC20096B685 /* ModalChooseReminder.swift in Sources */,
 				B5A2283A2857135C007665A3 /* Extensions.swift in Sources */,
+				E108B60B2865FFC20096B685 /* ChangePasswordController.swift in Sources */,
 				B5A2283C285713B0007665A3 /* LoginFormController.swift in Sources */,
 				B5B5554A2852FF800076C25E /* ViewController.swift in Sources */,
 				B57BC0AD285C5E53008776E0 /* MessageViewModel.swift in Sources */,
+				E108B60C2865FFC20096B685 /* UserModel.swift in Sources */,
+				E108B6072865FFC20096B685 /* ChangePasswordCell.swift in Sources */,
+				E108B6062865FFC20096B685 /* ModalChooseQuotes.swift in Sources */,
 				E1063F822864D9F700B5B046 /* TabBarViewController.swift in Sources */,
+				E108B60F2865FFC20096B685 /* SettingsViewController.swift in Sources */,
 				B528513D285B5FC2009F7422 /* ChatController.swift in Sources */,
+				E108B6082865FFC20096B685 /* ReminderCell.swift in Sources */,
 				B5B555462852FF800076C25E /* AppDelegate.swift in Sources */,
 				B5ECF70C2860D57F00D30E8E /* TabBarController.swift in Sources */,
 				B5FBDB5B285DCC92007F047D /* SummaryController.swift in Sources */,

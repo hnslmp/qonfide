@@ -7,10 +7,27 @@
 
 import UIKit
 
-class CustomModalViewController: UIViewController {
-    // define lazy views
+//@objc protocol CustomModalViewControllerDelegate: AnyObject
+//{
+//    @objc optional func userSelect(choice: String?)
+//}
+
+protocol CustomModalViewControllerDelegate: AnyObject{
+    func userSelect(choice: String)
+}
+
+class CustomModalViewController: UIViewController{
+    weak var delegate: CustomModalViewControllerDelegate?
     
-    private let layoutOptions = LayoutOptions()
+    private let layoutOptions: UIStackView = {
+        let stack = UIStackView()
+        stack.backgroundColor = UIColor(red: 241/255, green: 247/255, blue: 255/255, alpha: 1)
+        stack.distribution = .fill
+        stack.axis = .vertical
+        stack.alignment = .center
+        stack.spacing = 12.0
+        return stack
+    }()
     
     lazy var containerView: UIView = {
         let view = UIView()
@@ -21,25 +38,38 @@ class CustomModalViewController: UIViewController {
     }()
     
     // Constants
-    let defaultHeight: CGFloat = 475
+    var defaultHeight: CGFloat = 0
     let dismissibleHeight: CGFloat = 200
     let maximumContainerHeight: CGFloat = UIScreen.main.bounds.height - 64
-    // keep current new height, initial is default height
+    // Keep current new height, initial is default height
     var currentContainerHeight: CGFloat = 300
     
     // Dynamic container constraint
     var containerViewHeightConstraint: NSLayoutConstraint?
     var containerViewBottomConstraint: NSLayoutConstraint?
     
+    
+    // MARK: - Lifecycle
+    
+    init(buttonArray: [String]){
+        super.init(nibName: nil, bundle: nil)
+        for value in buttonArray {
+            let button = ButtonOptions(title: value, type: .system)
+            button.translatesAutoresizingMaskIntoConstraints = false
+            button.addTarget(self, action: #selector(optionPressed), for: .touchUpInside)
+            layoutOptions.addArrangedSubview(button)
+        }
+        defaultHeight = CGFloat(buttonArray.count * 70)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
         setupConstraints()
-        setupPanGesture()
-    }
-    
-    @objc func handleCloseAction() {
-//        animateDismissView()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -83,81 +113,21 @@ class CustomModalViewController: UIViewController {
         containerViewHeightConstraint?.isActive = true
         containerViewBottomConstraint?.isActive = true
     }
+        
+    // MARK: - Functions
     
-    func setupPanGesture() {
-        // add pan gesture recognizer to the view controller's view (the whole screen)
-        let panGesture = UIPanGestureRecognizer(target: self, action: #selector(self.handlePanGesture(gesture:)))
-        // change to false to immediately listen on gesture movement
-        panGesture.delaysTouchesBegan = false
-        panGesture.delaysTouchesEnded = false
-        view.addGestureRecognizer(panGesture)
+    @objc func optionPressed(sender: UIButton)
+    {
+//        delegate?.userSelect(choice: sender.titleLabel?.text)
+        delegate?.userSelect(choice: (sender.titleLabel?.text)!)
+        dismiss(animated: true)
     }
     
-    // MARK: Pan gesture handler
-    @objc func handlePanGesture(gesture: UIPanGestureRecognizer) {
-        let translation = gesture.translation(in: view)
-        // Drag to top will be minus value and vice versa
-        print("Pan gesture y offset: \(translation.y)")
-        
-        // Get drag direction
-        let isDraggingDown = translation.y > 0
-        print("Dragging direction: \(isDraggingDown ? "going down" : "going up")")
-        
-        // New height is based on value of dragging plus current container height
-        let newHeight = currentContainerHeight - translation.y
-        
-        // Handle based on gesture state
-        switch gesture.state {
-        case .changed:
-            // This state will occur when user is dragging
-            if newHeight < maximumContainerHeight {
-                // Keep updating the height constraint
-                containerViewHeightConstraint?.constant = newHeight
-                // refresh layout
-                view.layoutIfNeeded()
-            }
-        case .ended:
-            // This happens when user stop drag,
-            // so we will get the last height of container
-            
-            // Condition 1: If new height is below min, dismiss controller
-            if newHeight < dismissibleHeight {
-                print("dd")
-            }
-            else if newHeight < defaultHeight {
-                // Condition 2: If new height is below default, animate back to default
-                animateContainerHeight(defaultHeight)
-            }
-            else if newHeight < maximumContainerHeight && isDraggingDown {
-                // Condition 3: If new height is below max and going down, set to default height
-                animateContainerHeight(defaultHeight)
-            }
-            else if newHeight > defaultHeight && !isDraggingDown {
-                // Condition 4: If new height is below max and going up, set to max height at top
-                animateContainerHeight(maximumContainerHeight)
-            }
-        default:
-            break
-        }
-    }
-    
-    func animateContainerHeight(_ height: CGFloat) {
-        UIView.animate(withDuration: 0.4) {
-            // Update container height
-            self.containerViewHeightConstraint?.constant = height
-            // Call this to trigger refresh constraint
-            self.view.layoutIfNeeded()
-        }
-        // Save current height
-        currentContainerHeight = height
-    }
-    
-    // MARK: Present and dismiss animation
     func animatePresentContainer() {
-        // update bottom constraint in animation block
+        // Update bottom constraint in animation block
         UIView.animate(withDuration: 0.3) {
             self.containerViewBottomConstraint?.constant = 0
-            // call this to trigger refresh constraint
+            // Call this to trigger refresh constraint
             self.view.layoutIfNeeded()
         }
     }

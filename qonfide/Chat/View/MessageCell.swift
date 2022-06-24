@@ -30,10 +30,9 @@ class MessageCell: UICollectionViewCell{
         let tv = UITextView()
         tv.backgroundColor = .clear
         tv.font = .systemFont(ofSize: 16)
+        tv.textColor = UIColor(red: 53/255, green: 74/255, blue: 166/255, alpha: 1)
         tv.isScrollEnabled = false
         tv.isEditable = false
-        tv.textColor = .white
-//        tv.text = "Hey, I'm Bob. I'm here to help you with your emotions. Can you first tell me what is affecting your emotion?"
         return tv
     }()
     
@@ -78,7 +77,6 @@ class MessageCell: UICollectionViewCell{
         let viewModel = MessageViewModel(message: message)
         
         bubbleContainer.backgroundColor = viewModel.messageBackgroundColor
-        textView.textColor = viewModel.messageTextColor
         textView.text = message.text
         
         bubbleLeftAnchor.isActive = viewModel.leftAnchorActive

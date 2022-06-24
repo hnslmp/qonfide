@@ -9,10 +9,11 @@ import UIKit
 
 private let reuseIdentifier = "MessageCell"
 
-class ChatController: UICollectionViewController {
+class ChatController: UICollectionViewController
+{
     
     // MARK: - Properties
-    private var messages = [Message]()
+    private let viewModel = ChatViewModel()
     
     // MARK: - Lifecycle
     
@@ -24,27 +25,30 @@ class ChatController: UICollectionViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    
     override func viewDidLoad() {
-        let vc = CustomModalViewController()
-        vc.modalPresentationStyle = .overCurrentContext
-        self.present(vc, animated: true)
         super.viewDidLoad()
+        viewModel.delegate = self
         configureUI()
-        messages.append(Message(text: "Hey, I'm Bob. I'm here to help you with your emotions. Can you first tell me what is affecting your emotion?", isBobSender: true))
-        messages.append(Message(text: "Hey, Bob. It's mostly because of School", isBobSender: false))
+        viewModel.configureChat()
     }
     
     
     // MARK: - Helpers
-    
     func configureUI(){
         configureNavigationBar(withTitle: getDate(), preferLargeTitles: false)
+        
+        self.navigationController?.navigationBar.layer.shadowColor = UIColor.black.cgColor
+        self.navigationController?.navigationBar.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
+        self.navigationController?.navigationBar.layer.shadowRadius = 4.0
+        self.navigationController?.navigationBar.layer.shadowOpacity = 0.4
+        self.navigationController?.navigationBar.layer.masksToBounds = false
+
         collectionView.backgroundColor = .white
         collectionView.register(MessageCell.self, forCellWithReuseIdentifier: reuseIdentifier)
         collectionView.alwaysBounceVertical = true
         collectionView.keyboardDismissMode = .interactive
     }
-    
     
     func getDate() -> String {
         let date = Date()
@@ -57,12 +61,12 @@ class ChatController: UICollectionViewController {
 
 extension ChatController{
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return messages.count
+        return viewModel.messages.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! MessageCell
-        cell.message = messages[indexPath.row]
+        cell.message = viewModel.messages[indexPath.row]
         return cell
     }
 }
@@ -76,10 +80,34 @@ extension ChatController: UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let frame = CGRect(x: 0, y: 0, width: view.frame.width, height: 50)
         let estimatedSizeCell = MessageCell(frame: frame)
-        estimatedSizeCell.message = messages[indexPath.row]
+        estimatedSizeCell.message = viewModel.messages[indexPath.row]
         estimatedSizeCell.layoutIfNeeded()
         let targetSize = CGSize(width: view.frame.width, height: 10000)
         let estimatedSize = estimatedSizeCell.systemLayoutSizeFitting(targetSize)
         return .init(width: view.frame.width, height: estimatedSize.height)
+    }
+}
+
+extension ChatController: ChatViewModelDelegate{
+    
+    func presentChoiceModal(buttons: [String]) {
+        let vc = CustomModalViewController(buttonArray: buttons)
+        vc.delegate = self
+        vc.modalPresentationStyle = .overCurrentContext
+        self.present(vc, animated: true)
+    }
+    
+    func refreshChat() {
+        self.collectionView.reloadData()
+    }
+}
+
+extension ChatController: CustomModalViewControllerDelegate
+{
+    func userSelect(choice: String)
+    {
+        print("DEBUG: ChatController delegate: \(choice)")
+        viewModel.userChoice = choice
+        viewModel.configureChat()
     }
 }

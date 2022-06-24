@@ -1,17 +1,15 @@
 {
   "images" : [
     {
-      "filename" : "qonfide vector-2.png",
+      "filename" : "addchat.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "qonfide vector-02@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "qonfide vector-02@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

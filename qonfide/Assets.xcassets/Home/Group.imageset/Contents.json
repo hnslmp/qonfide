@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "qonfide vector-2.png",
+      "filename" : "Group.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "qonfide vector-02@2x.png",
+      "filename" : "Group@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "qonfide vector-02@3x.png",
+      "filename" : "Group@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

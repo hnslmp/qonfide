@@ -6,15 +6,17 @@
 //
 
 import UIKit
+import SwiftUI
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-
+    let defaults = UserDefaults.standard
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         
         guard let scene = (scene as? UIWindowScene) else { return }
+
         let storyboard = UIStoryboard(name: "Settings", bundle: nil)
         let initiateVC = storyboard.instantiateViewController(withIdentifier: "SettingView")
 
@@ -22,6 +24,40 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.makeKeyAndVisible()
         window?.rootViewController = UINavigationController(rootViewController: initiateVC)
 
+
+//        let storyboard = UIStoryboard(name: "Onboard", bundle: nil)
+//        let initiateVC = storyboard.instantiateViewController(withIdentifier: "OnboardView")
+        window = UIWindow(windowScene: scene)
+        window?.makeKeyAndVisible()
+        window?.rootViewController = UINavigationController(rootViewController: TabBarController())
+
+//        if defaults.bool(forKey: "First Launch") {
+
+////            open for second time or more
+
+//            print("kedua")
+//            defaults.set(true, forKey: "First Launch")
+//            window = UIWindow(windowScene: scene)
+//            window?.makeKeyAndVisible()
+//            window?.rootViewController = UINavigationController(rootViewController: LoginPageController())
+
+//        } else {
+////          open for first time
+//            print("pertama")
+//            defaults.set(true, forKey: "First Launch")
+
+////            let storyboard = UIStoryboard(name: "Onboard", bundle: nil)
+//            let storyboard = UIStoryboard(name: "Home", bundle: nil)
+////            let initiateVC = storyboard.instantiateViewController(withIdentifier: "OnboardView")
+//            let initiateVC = storyboard.instantiateViewController(withIdentifier: "homeView")
+
+//            let storyboard = UIStoryboard(name: "Onboard", bundle: nil)
+//            let initiateVC = storyboard.instantiateViewController(withIdentifier: "OnboardView")
+
+//            window = UIWindow(windowScene: scene)
+//            window?.makeKeyAndVisible()
+//            window?.rootViewController = UINavigationController(rootViewController: initiateVC)
+//        }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

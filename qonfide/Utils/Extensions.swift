@@ -16,6 +16,27 @@ extension UIColor {
     static let barDeselectedColor = UIColor(white: 0, alpha: 0.1)
 }
 
+extension UIViewController{
+    func configureNavigationBar(withTitle title: String, preferLargeTitles: Bool) {
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
+        appearance.backgroundColor = .systemCyan
+        
+        navigationController?.navigationBar.standardAppearance = appearance
+        navigationController?.navigationBar.compactAppearance = appearance
+        navigationController?.navigationBar.scrollEdgeAppearance = appearance
+        
+        navigationController?.navigationBar.prefersLargeTitles = preferLargeTitles
+        navigationItem.title = title
+        navigationController?.navigationBar.tintColor = .white
+        navigationController?.navigationBar.isTranslucent = true
+        
+        navigationController?.navigationBar.overrideUserInterfaceStyle = .dark
+        
+    }
+}
+
 extension UIView {
     
     func anchor(top: NSLayoutYAxisAnchor? = nil,

@@ -22,7 +22,7 @@ class SettingsViewController: UIViewController {
     
 //    --MARK: Data Dummy
     
-    var userData:Users = Users(username: "Dedy", password: "mbuhkeder", email: "kobujer@gmail.com", profilePicture: (UIImage(named: "catAstroLogo"))!)
+    var userData:Users = Users(username: "John Doe", password: "mbuhkeder", email: "johndoe123@gmail.com", profilePicture: (UIImage(named: "catAstroLogo"))!)
     var textInCells = ["", "Check-In Reminder", "Daily Quotes Reminder"]
     let notificationCenter = UNUserNotificationCenter.current()
     private var profileImage: UIImage?
@@ -45,9 +45,11 @@ class SettingsViewController: UIViewController {
         self.tableView.register(UINib.init(nibName: "ReminderCell", bundle: nil), forCellReuseIdentifier: ReminderCell.identifier)
         
         selectPhoto.setImage(userData.profilePicture.withRenderingMode(.alwaysOriginal), for: .normal)
-        selectPhoto.imageView?.layer.cornerRadius = selectPhoto.frame.size.width/2
-        selectPhoto.layer.cornerRadius = 10
+//        selectPhoto.imageView?.layer.cornerRadius = selectPhoto.frame.size.width/2
+        selectPhoto.layer.cornerRadius = 50
         selectPhoto.clipsToBounds = true
+        selectPhoto.contentMode = .center
+        selectPhoto.imageView?.contentMode = .scaleAspectFit
         selectPhoto.imageView?.clipsToBounds = true
         selectPhoto.imageView?.layer.masksToBounds = true
         selectPhoto.addTarget(self, action: #selector(handleSelectPhoto), for: .touchUpInside)
@@ -147,11 +149,12 @@ extension SettingsViewController: UIImagePickerControllerDelegate & UINavigation
         let image = info[.originalImage] as? UIImage
         profileImage = image
         selectPhoto.setImage(image?.withRenderingMode(.alwaysOriginal), for: .normal)
-        selectPhoto.contentMode = .scaleAspectFit
+        selectPhoto.imageView?.contentMode = .scaleAspectFit
+        selectPhoto.contentMode = .center
         selectPhoto.layer.borderColor = UIColor(white: 1, alpha: 0.7).cgColor
-        selectPhoto.layer.borderWidth = 3
-        selectPhoto.layer.cornerRadius = selectPhoto.layer.bounds.width * 0.5
-        selectPhoto.clipsToBounds = true
+        selectPhoto.layer.borderWidth = 1
+//        selectPhoto.layer.cornerRadius = selectPhoto.layer.bounds.width * 0.5
+//        selectPhoto.clipsToBounds = true
         userData.profilePicture = profileImage!
         
         dismiss(animated: true, completion: nil)

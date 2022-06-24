@@ -43,9 +43,15 @@
 		B5EFBE6328579B1B00579F50 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EFBE6228579B1B00579F50 /* UserViewModel.swift */; };
 		B5FBDB5B285DCC92007F047D /* SummaryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FBDB5A285DCC92007F047D /* SummaryController.swift */; };
 		B5FBDB5D285DCFAB007F047D /* SummaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FBDB5C285DCFAB007F047D /* SummaryViewModel.swift */; };
+		E1063F822864D9F700B5B046 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1063F812864D9F700B5B046 /* TabBarViewController.swift */; };
+		E1139DA72864C50C00662A48 /* ModalPickMonthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1139DA62864C50C00662A48 /* ModalPickMonthController.swift */; };
 		E1515BF1285B2E77009E0009 /* Onboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1515BF0285B2E77009E0009 /* Onboard.storyboard */; };
 		E1515BF3285B2E8C009E0009 /* OnboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1515BF2285B2E8C009E0009 /* OnboardViewController.swift */; };
 		E1515BF5285B2FAF009E0009 /* OnboardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1515BF4285B2FAF009E0009 /* OnboardModel.swift */; };
+		E1ED6CA6286480FB0028F9D1 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1ED6CA5286480FB0028F9D1 /* Home.storyboard */; };
+		E1ED6CA8286481100028F9D1 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1ED6CA7286481100028F9D1 /* HomeController.swift */; };
+		E1ED6CB028648B400028F9D1 /* EntryListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1ED6CAE28648B400028F9D1 /* EntryListViewCell.swift */; };
+		E1ED6CB128648B400028F9D1 /* EntryListViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1ED6CAF28648B400028F9D1 /* EntryListViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -84,9 +90,15 @@
 		B5EFBE6228579B1B00579F50 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		B5FBDB5A285DCC92007F047D /* SummaryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryController.swift; sourceTree = "<group>"; };
 		B5FBDB5C285DCFAB007F047D /* SummaryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryViewModel.swift; sourceTree = "<group>"; };
+		E1063F812864D9F700B5B046 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		E1139DA62864C50C00662A48 /* ModalPickMonthController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ModalPickMonthController.swift; path = qonfide/Home/ModalPickMonthController.swift; sourceTree = SOURCE_ROOT; };
 		E1515BF0285B2E77009E0009 /* Onboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboard.storyboard; sourceTree = "<group>"; };
 		E1515BF2285B2E8C009E0009 /* OnboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardViewController.swift; sourceTree = "<group>"; };
 		E1515BF4285B2FAF009E0009 /* OnboardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardModel.swift; sourceTree = "<group>"; };
+		E1ED6CA5286480FB0028F9D1 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		E1ED6CA7286481100028F9D1 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
+		E1ED6CAE28648B400028F9D1 /* EntryListViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryListViewCell.swift; sourceTree = "<group>"; };
+		E1ED6CAF28648B400028F9D1 /* EntryListViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EntryListViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +168,7 @@
 		B5B555442852FF800076C25E /* qonfide */ = {
 			isa = PBXGroup;
 			children = (
+				E1ED6CA4286480EA0028F9D1 /* Home */,
 				B5D02766286459EC0041E175 /* Summary */,
 				B5D0275E286457260041E175 /* LoginSignup */,
 				E1515BEF285B2E57009E0009 /* Onboard */,
@@ -307,6 +320,27 @@
 			path = Onboard;
 			sourceTree = "<group>";
 		};
+		E1ED6CA4286480EA0028F9D1 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				E1ED6CA928648AF00028F9D1 /* HomeCell */,
+				E1ED6CA5286480FB0028F9D1 /* Home.storyboard */,
+				E1139DA62864C50C00662A48 /* ModalPickMonthController.swift */,
+				E1ED6CA7286481100028F9D1 /* HomeController.swift */,
+				E1063F812864D9F700B5B046 /* TabBarViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		E1ED6CA928648AF00028F9D1 /* HomeCell */ = {
+			isa = PBXGroup;
+			children = (
+				E1ED6CAE28648B400028F9D1 /* EntryListViewCell.swift */,
+				E1ED6CAF28648B400028F9D1 /* EntryListViewCell.xib */,
+			);
+			path = HomeCell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -376,7 +410,9 @@
 				B5B555522852FF820076C25E /* LaunchScreen.storyboard in Resources */,
 				B593326828574CC900927312 /* GoogleService-Info.plist in Resources */,
 				B5B5554F2852FF820076C25E /* Assets.xcassets in Resources */,
+				E1ED6CA6286480FB0028F9D1 /* Home.storyboard in Resources */,
 				E1515BF1285B2E77009E0009 /* Onboard.storyboard in Resources */,
+				E1ED6CB128648B400028F9D1 /* EntryListViewCell.xib in Resources */,
 				B5B5554D2852FF800076C25E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -389,6 +425,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B593326628574C7000927312 /* SignupFormController.swift in Sources */,
+				E1139DA72864C50C00662A48 /* ModalPickMonthController.swift in Sources */,
 				B528513F285B6509009F7422 /* MessageCell.swift in Sources */,
 				B5043F4A285850590064D738 /* Service.swift in Sources */,
 				2E56BA0828602E5B0078E6F8 /* ButtonOptions.swift in Sources */,
@@ -405,6 +442,7 @@
 				B5A2283C285713B0007665A3 /* LoginFormController.swift in Sources */,
 				B5B5554A2852FF800076C25E /* ViewController.swift in Sources */,
 				B57BC0AD285C5E53008776E0 /* MessageViewModel.swift in Sources */,
+				E1063F822864D9F700B5B046 /* TabBarViewController.swift in Sources */,
 				B528513D285B5FC2009F7422 /* ChatController.swift in Sources */,
 				B5B555462852FF800076C25E /* AppDelegate.swift in Sources */,
 				B5ECF70C2860D57F00D30E8E /* TabBarController.swift in Sources */,
@@ -416,8 +454,10 @@
 				B5E1192D2860BD42000DD0E0 /* MoodCell.swift in Sources */,
 				B55F497B2856DB6200BC8351 /* LoginPageController.swift in Sources */,
 				B593326A2857540500927312 /* User.swift in Sources */,
+				E1ED6CA8286481100028F9D1 /* HomeController.swift in Sources */,
 				2E56BA1128641F3B0078E6F8 /* TextFieldController.swift in Sources */,
 				B5A4F9D0286175B600ADAE15 /* AverageMoodView.swift in Sources */,
+				E1ED6CB028648B400028F9D1 /* EntryListViewCell.swift in Sources */,
 				B5B555482852FF800076C25E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

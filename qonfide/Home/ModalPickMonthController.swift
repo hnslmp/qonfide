@@ -6,89 +6,107 @@
 //
 
 import UIKit
+import MonthYearWheelPicker
+
+protocol SelectMonthYearDelegate {
+    func ChangeMonthYearDelegate(date: Date)
+}
 
 class ModalPickMonthController: UIViewController {
 
     lazy var doneButton: UIButton = {
-                let done = UIButton()
-                done.setTitle("Done", for: .normal)
-                done.titleLabel?.font = UIFont.systemFont(ofSize: 17, weight: UIFont.Weight.bold)
-                done.setTitleColor(UIColor(red: 51/255, green: 88/255, blue: 141/255, alpha: 100), for: .normal)
-                done.addTarget(self, action: #selector(handleCloseAction), for: .touchUpInside)
-                done.backgroundColor = .white
-                
-                return done
-            }()
+            let done = UIButton()
+            done.setTitle("Done", for: .normal)
+            done.titleLabel?.font = UIFont.systemFont(ofSize: 17, weight: UIFont.Weight.bold)
+            done.setTitleColor(UIColor(red: 51/255, green: 88/255, blue: 141/255, alpha: 100), for: .normal)
+            done.addTarget(self, action: #selector(handleCloseAction), for: .touchUpInside)
+            done.backgroundColor = .white
+            
+            return done
+        }()
         
-            lazy var textLabel: UILabel = {
-                let labelText = UILabel()
-                labelText.text = "Select Time"
-                labelText.textColor = UIColor(red: 51/255, green: 88/255, blue: 141/255, alpha: 100)
-                labelText.font = UIFont.systemFont(ofSize: 17, weight: UIFont.Weight.bold)
-                
-                return labelText
-            }()
+    lazy var textLabel: UILabel = {
+        let labelText = UILabel()
+        labelText.text = "Select Time"
+        labelText.textColor = UIColor(red: 51/255, green: 88/255, blue: 141/255, alpha: 100)
+        labelText.font = UIFont.systemFont(ofSize: 17, weight: UIFont.Weight.bold)
         
-    //    MARK: --CANCEL BUTTON HAPUS
-            lazy var cancelButton: UIButton = {
-                let cancel = UIButton()
-                cancel.setTitle("Cancel", for: .normal)
-                cancel.addTarget(self, action: #selector(handleCancelAction), for: .touchUpInside)
-                cancel.setTitleColor(UIColor(named: "purpleHeader"), for: .normal)
-                return cancel
-            }()
-            
-            lazy var timePicker: UIDatePicker = {
-                let picker = UIDatePicker()
-                picker.datePickerMode = .date
-                picker.preferredDatePickerStyle = .wheels
-    //            picker.addTarget(self, action: #selector(respondToChanges), for: .valueChanged)
-                return picker
-            }()
-            
-            lazy var buttonStackView: UIStackView = {
-                let spacer = UIView()
-                let stckView = UIStackView(arrangedSubviews: [textLabel,spacer,doneButton])
-                stckView.distribution = .fillEqually
-                stckView.axis = .horizontal
-                return stckView
-            }()
-            
-            lazy var contentStackView: UIStackView = {
-                let spacer = UIView()
-                let stackView = UIStackView(arrangedSubviews: [buttonStackView, spacer,timePicker, spacer])
-                stackView.axis = .vertical
-                stackView.spacing = 12.0
-                return stackView
-            }()
-            
-            lazy var containerView: UIView = {
-                let view = UIView()
-                view.backgroundColor = .white
-                view.layer.cornerRadius = 16
-                view.clipsToBounds = true
-                return view
-            }()
-            
-            let maxDimmedAlpha: CGFloat = 0.6
-            lazy var dimmedView: UIView = {
-                let view = UIView()
-                view.backgroundColor = .black
-                view.alpha = maxDimmedAlpha
-                return view
-            }()
-            
-            // Constants
-            let defaultHeight: CGFloat = 350
-            let dismissibleHeight: CGFloat = 200
-            let maximumContainerHeight: CGFloat = UIScreen.main.bounds.height - 64
-            // keep current new height, initial is default height
-            var currentContainerHeight: CGFloat = 300
-            
-            // Dynamic container constraint
-            var containerViewHeightConstraint: NSLayoutConstraint?
-            var containerViewBottomConstraint: NSLayoutConstraint?
+        return labelText
+    }()
+
+    lazy var inputField: UITextField = {
+        let inputText = UITextField()
+        inputText.textColor = UIColor(red: 51/255, green: 88/255, blue: 141/255, alpha: 100)
+        inputText.placeholder = "Pick a time"
+        inputText.textAlignment = .center
+        inputText.inputView = monthPicker
+        inputText.inputAccessoryView = createToolbar()
+
+        return inputText
+    }()
+
+//    MARK: --CANCEL BUTTON HAPUS
+    lazy var cancelButton: UIButton = {
+        let cancel = UIButton()
+        cancel.setTitle("Cancel", for: .normal)
+        cancel.addTarget(self, action: #selector(handleCancelAction), for: .touchUpInside)
+        cancel.setTitleColor(UIColor(named: "purpleHeader"), for: .normal)
+        return cancel
+    }()
     
+    lazy var monthPicker: MonthYearWheelPicker = {
+        let picker = MonthYearWheelPicker()
+        picker.minimumDate = Calendar.current.date(byAdding: .year, value: -22, to: Date())!
+        picker.maximumDate = Calendar.current.date(byAdding: .year, value: 0, to: Date())!
+        
+        return picker
+    }()
+    
+    lazy var buttonStackView: UIStackView = {
+        let spacer = UIView()
+        let stckView = UIStackView(arrangedSubviews: [textLabel,spacer,doneButton])
+        stckView.distribution = .fillEqually
+        stckView.axis = .horizontal
+        return stckView
+    }()
+    
+    lazy var contentStackView: UIStackView = {
+        let spacer = UIView()
+        let stackView = UIStackView(arrangedSubviews: [buttonStackView, spacer, inputField, spacer])
+        stackView.axis = .vertical
+        stackView.spacing = 12.0
+        return stackView
+    }()
+    
+    lazy var containerView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .white
+        view.layer.cornerRadius = 16
+        view.clipsToBounds = true
+        return view
+    }()
+    
+    let maxDimmedAlpha: CGFloat = 0.6
+    lazy var dimmedView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .black
+        view.alpha = maxDimmedAlpha
+        return view
+    }()
+    
+    // Constants
+    let defaultHeight: CGFloat = 350
+    let dismissibleHeight: CGFloat = 200
+    let maximumContainerHeight: CGFloat = UIScreen.main.bounds.height - 64
+    // keep current new height, initial is default height
+    var currentContainerHeight: CGFloat = 300
+    
+    // Dynamic container constraint
+    var containerViewHeightConstraint: NSLayoutConstraint?
+    var containerViewBottomConstraint: NSLayoutConstraint?
+            
+    var selectMonthYearDelegate: SelectMonthYearDelegate!
+            
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
@@ -122,6 +140,26 @@ class ModalPickMonthController: UIViewController {
         dateFormatter.amSymbol = "AM"
         dateFormatter.pmSymbol = "PM"
         
+    }
+    
+    func createToolbar() -> UIToolbar {
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        
+        let done = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(donePressed))
+        toolbar.setItems([done], animated: true)
+
+        return toolbar
+    }
+    
+    @objc func donePressed() {
+        let dateFormatter = DateFormatter()
+        let date = monthPicker.date
+        dateFormatter.dateFormat = "MMMM, yyyy"
+        
+        self.inputField.text = dateFormatter.string(from: monthPicker.date)
+        self.selectMonthYearDelegate.ChangeMonthYearDelegate(date: date)
+        self.view.endEditing(true)
     }
     
     override func viewDidAppear(_ animated: Bool) {

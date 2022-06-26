@@ -29,7 +29,7 @@ class HomeController: UIViewController {
     }()
     
     let dateFormatter = DateFormatter()
-    var entryThisMonth: Date = Date()
+    var entryThisMonth: Date?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,8 +53,9 @@ class HomeController: UIViewController {
         authorTxt.font = UIFont.italicSystemFont(ofSize: 17)
         
         dateFormatter.dateFormat = "MMMM, yyyy"
-            
-        changeDateBtn.setTitle(dateFormatter.string(from: entryThisMonth) + spacer + spacer, for: .normal)
+        entryThisMonth = Date()
+        
+        changeDateBtn.setTitle(dateFormatter.string(from: entryThisMonth!) + spacer + spacer, for: .normal)
         changeDateBtn.setImage(UIImage(systemName: "chevron.down.circle"), for: .normal)
         changeDateBtn.contentHorizontalAlignment = .left
         changeDateBtn.semanticContentAttribute = .forceRightToLeft
@@ -98,6 +99,7 @@ class HomeController: UIViewController {
     
     
     @IBAction func goToSettings(_ sender: Any) {
+        //MARK: -- BELUM ADA
         let sb = UIStoryboard(name: "Settings", bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: "settingView")
         navigationController?.pushViewController(vc, animated: true)
@@ -106,6 +108,8 @@ class HomeController: UIViewController {
     
     @IBAction func pickMonthYear(_ sender: Any) {
         let vc = ModalPickMonthController()
+        vc.selectMonthYearDelegate = self
+        vc.inputField.text = dateFormatter.string(from: entryThisMonth!)
         vc.modalPresentationStyle = .overCurrentContext
         self.present(vc, animated: true, completion: nil)
     }
@@ -122,4 +126,12 @@ extension HomeController: UITableViewDelegate, UITableViewDataSource {
         
         return cell
     }
+}
+
+extension HomeController: SelectMonthYearDelegate {
+    
+    func ChangeMonthYearDelegate(date: Date) {
+        self.changeDateBtn.setTitle(dateFormatter.string(from: date), for: .normal)
+    }
+    
 }

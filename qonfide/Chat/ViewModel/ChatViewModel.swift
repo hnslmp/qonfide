@@ -101,6 +101,35 @@ class ChatViewModel{
             counter += 1
             configureChat()
         }
+        else if counter == 12 {
+            print("COUNTER \(counter)")
+            delegate.presentChoiceModal(buttons: options3, counter: self.counter)
+            counter += 1
+        }
+        else if counter == 13 {
+            messages.append(Message(text: "I Feel a " + userChoice, isBobSender: false))
+            delegate.refreshChat()
+            counter += 1
+            configureChat()
+        }
+        else if counter == 14 {
+            messages.append(Message(text: "It's good that you can try to figure out how intense your emotion is.", isBobSender: true))
+            delegate.refreshChat()
+            counter += 1
+            configureChat()
+        }
+        else if counter == 15 {
+            messages.append(Message(text: "Have you tried to do something to make yourself feel better?", isBobSender: true))
+            delegate.refreshChat()
+            counter += 1
+            configureChat()
+        }
+        else if counter == 15 {
+            messages.append(Message(text: "Have you tried to do something to make yourself feel better?", isBobSender: true))
+            delegate.refreshChat()
+            counter += 1
+            configureChat()
+        }
     }
     
 }

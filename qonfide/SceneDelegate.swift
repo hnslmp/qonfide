@@ -17,8 +17,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         guard let scene = (scene as? UIWindowScene) else { return }
 
-        let storyboard = UIStoryboard(name: "Onboard", bundle: nil)
-        let initiateVC = storyboard.instantiateViewController(withIdentifier: "OnboardView")
+        let storyboard = UIStoryboard(name: "Home", bundle: nil)
+        let initiateVC = storyboard.instantiateViewController(withIdentifier: "tabbarView")
         window = UIWindow(windowScene: scene)
         window?.makeKeyAndVisible()
         window?.rootViewController = UINavigationController(rootViewController: initiateVC)

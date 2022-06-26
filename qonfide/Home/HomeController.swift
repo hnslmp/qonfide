@@ -15,9 +15,9 @@ class HomeController: UIViewController {
     @IBOutlet weak var quoteTxt: UILabel!
     @IBOutlet weak var authorTxt: UILabel!
     @IBOutlet weak var refreshBtn: UIButton!
-    @IBOutlet weak var addEntryBtn: UIButton!
     @IBOutlet weak var changeDateBtn: UIButton!
     @IBOutlet weak var viewQuotes: UIView!
+    
     
     lazy var imgViews: UIImageView = {
         let img = UIImage(named: "Group")
@@ -28,12 +28,14 @@ class HomeController: UIViewController {
         return imgView
     }()
     
+    let dateFormatter = DateFormatter()
+    var entryThisMonth: Date = Date()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
         self.tableView.register(UINib.init(nibName: "EntryListViewCell", bundle: nil), forCellReuseIdentifier: EntryListViewCell.identifier)
-        
         viewStyling()
     }
     
@@ -42,27 +44,72 @@ class HomeController: UIViewController {
         view.addSubview(imgViews)
         let spacer = " "
         
-        greetTxt.text = "Hi, Guest"
+        greetTxt.text = "Hi, John"
         
         viewQuotes.layer.cornerRadius = 10
-        
-        quoteTxt.numberOfLines = 2
-        quoteTxt.text = "\"" + "I wumbo, you wumbo, he she we wumbo" + "\""
+        fetchData()
+        quoteTxt.numberOfLines = 3
         quoteTxt.font = UIFont.italicSystemFont(ofSize: 17)
-        authorTxt.text = "Patrick Star"
         authorTxt.font = UIFont.italicSystemFont(ofSize: 17)
+        
+        dateFormatter.dateFormat = "MMMM, yyyy"
             
-        changeDateBtn.setTitle("June 2022" + spacer + spacer, for: .normal)
+        changeDateBtn.setTitle(dateFormatter.string(from: entryThisMonth) + spacer + spacer, for: .normal)
         changeDateBtn.setImage(UIImage(systemName: "chevron.down.circle"), for: .normal)
         changeDateBtn.contentHorizontalAlignment = .left
         changeDateBtn.semanticContentAttribute = .forceRightToLeft
         
-        addEntryBtn.layer.cornerRadius = 15
-        addEntryBtn.layer.cornerCurve = .continuous
-        addEntryBtn.layer.borderWidth = 1
-        addEntryBtn.layer.borderColor = UIColor.gray.cgColor
     }
+    
+    func fetchData() {
+            let url = URL(string: "https://type.fit/api/quotes")
 
+            let task = URLSession.shared.dataTask(with: url!) { data, response, error in
+                guard let data = data, error == nil else {
+                    print("Error")
+                    return
+                }
+                
+                do {
+                    let parsedData = try JSONSerialization.jsonObject(with: data, options: []) as? [Any]
+                    
+                    let nsarr = parsedData! as NSArray
+                    let x = Int.random(in: 0...(nsarr.count - 1))
+                    let author = (nsarr[x] as AnyObject).value(forKey: "author") as? String
+                    let quote = (nsarr[x] as AnyObject).value(forKey: "text") as? String
+                    
+                    DispatchQueue.main.async {
+                        self.quoteTxt.text = "\"" + (quote ?? "Please refresh quotes") + "\""
+                        self.authorTxt.text = "- " + (author ?? "Annon")
+                    }
+                    
+                } catch {
+                    print(error)
+                }
+            }
+            task.resume()
+       
+        }
+    
+    
+    @IBAction func refreshData(_ sender: Any) {
+        fetchData()
+    }
+    
+    
+    @IBAction func goToSettings(_ sender: Any) {
+        let sb = UIStoryboard(name: "Settings", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: "settingView")
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    
+    @IBAction func pickMonthYear(_ sender: Any) {
+        let vc = ModalPickMonthController()
+        vc.modalPresentationStyle = .overCurrentContext
+        self.present(vc, animated: true, completion: nil)
+    }
+    
 }
 
 extension HomeController: UITableViewDelegate, UITableViewDataSource {

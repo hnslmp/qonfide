@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		2E56BA0828602E5B0078E6F8 /* ButtonOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E56BA0728602E5B0078E6F8 /* ButtonOptions.swift */; };
-		2E56BA0C28621A050078E6F8 /* CustomMessageTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E56BA0B28621A050078E6F8 /* CustomMessageTextView.swift */; };
 		2E56BA0E2862D52E0078E6F8 /* CustomModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E56BA0D2862D52E0078E6F8 /* CustomModalViewController.swift */; };
 		2E56BA1128641F3B0078E6F8 /* TextFieldController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E56BA1028641F3B0078E6F8 /* TextFieldController.swift */; };
 		B5043F48285850300064D738 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5043F47285850300064D738 /* LoginService.swift */; };
@@ -56,7 +55,6 @@
 
 /* Begin PBXFileReference section */
 		2E56BA0728602E5B0078E6F8 /* ButtonOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonOptions.swift; sourceTree = "<group>"; };
-		2E56BA0B28621A050078E6F8 /* CustomMessageTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMessageTextView.swift; sourceTree = "<group>"; };
 		2E56BA0D2862D52E0078E6F8 /* CustomModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomModalViewController.swift; sourceTree = "<group>"; };
 		2E56BA1028641F3B0078E6F8 /* TextFieldController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldController.swift; sourceTree = "<group>"; };
 		B5043F47285850300064D738 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
@@ -138,7 +136,6 @@
 			isa = PBXGroup;
 			children = (
 				B528513E285B6509009F7422 /* MessageCell.swift */,
-				2E56BA0B28621A050078E6F8 /* CustomMessageTextView.swift */,
 				2E56BA0728602E5B0078E6F8 /* ButtonOptions.swift */,
 			);
 			path = View;
@@ -437,7 +434,6 @@
 				B528513F285B6509009F7422 /* MessageCell.swift in Sources */,
 				B5043F4A285850590064D738 /* Service.swift in Sources */,
 				2E56BA0828602E5B0078E6F8 /* ButtonOptions.swift in Sources */,
-				2E56BA0C28621A050078E6F8 /* CustomMessageTextView.swift in Sources */,
 				B57BC0AB285C5D03008776E0 /* Message.swift in Sources */,
 				2E56BA0E2862D52E0078E6F8 /* CustomModalViewController.swift in Sources */,
 				B5A2283428570D02007665A3 /* AuthButton.swift in Sources */,

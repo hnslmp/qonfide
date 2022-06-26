@@ -118,7 +118,6 @@ class CustomModalViewController: UIViewController{
     
     @objc func optionPressed(sender: UIButton)
     {
-//        delegate?.userSelect(choice: sender.titleLabel?.text)
         delegate?.userSelect(choice: (sender.titleLabel?.text)!)
         dismiss(animated: true)
     }

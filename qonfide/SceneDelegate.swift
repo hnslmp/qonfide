@@ -21,7 +21,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 //        let initiateVC = storyboard.instantiateViewController(withIdentifier: "OnboardView")
         window = UIWindow(windowScene: scene)
         window?.makeKeyAndVisible()
-        window?.rootViewController = UINavigationController(rootViewController: TabBarController())
+        window?.rootViewController = UINavigationController(rootViewController: ChatController())
 
 //        if defaults.bool(forKey: "First Launch") {
 

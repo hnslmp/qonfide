@@ -40,8 +40,8 @@ class HomeController: UIViewController {
     }
     
     func viewStyling() {
-        tableView.isHidden = true
-        view.addSubview(imgViews)
+//        tableView.isHidden = true
+//        view.addSubview(imgViews)
         let spacer = " "
         
         greetTxt.text = "Hi, John"
@@ -126,6 +126,13 @@ extension HomeController: UITableViewDelegate, UITableViewDataSource {
         
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let sb = UIStoryboard(name: "Home", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: "viewEntry")
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
 }
 
 extension HomeController: SelectMonthYearDelegate {

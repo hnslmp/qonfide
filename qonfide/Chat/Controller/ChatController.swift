@@ -91,7 +91,14 @@ extension ChatController: UICollectionViewDelegateFlowLayout{
 extension ChatController: ChatViewModelDelegate{
     
     func presentChoiceModal(buttons: [String]) {
-        let vc = CustomModalViewController(buttonArray: buttons)
+            let vc = CustomModalViewController(buttonArray: buttons)
+            vc.delegate = self
+            vc.modalPresentationStyle = .overCurrentContext
+            self.present(vc, animated: true)
+    }
+    
+    func presentTextModal() {
+        let vc = TextFieldController()
         vc.delegate = self
         vc.modalPresentationStyle = .overCurrentContext
         self.present(vc, animated: true)
@@ -108,6 +115,18 @@ extension ChatController: CustomModalViewControllerDelegate
     {
         print("DEBUG: ChatController delegate: \(choice)")
         viewModel.userChoice = choice
+        if choice.contains("Angry") {
+            viewModel.emotionString = choice
+        }
+        viewModel.configureChat()
+    }
+}
+
+extension ChatController: TextFieldControllerDelegate {
+    
+    func userInput(_ inputView: TextFieldController,wantsToSend input: String) {
+        inputView.clearMessageText()
+        viewModel.userChoice = input
         viewModel.configureChat()
     }
 }

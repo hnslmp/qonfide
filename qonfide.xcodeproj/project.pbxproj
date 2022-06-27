@@ -42,15 +42,35 @@
 		B5EFBE6328579B1B00579F50 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EFBE6228579B1B00579F50 /* UserViewModel.swift */; };
 		B5FBDB5B285DCC92007F047D /* SummaryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FBDB5A285DCC92007F047D /* SummaryController.swift */; };
 		B5FBDB5D285DCFAB007F047D /* SummaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FBDB5C285DCFAB007F047D /* SummaryViewModel.swift */; };
-		E1063F822864D9F700B5B046 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1063F812864D9F700B5B046 /* TabBarViewController.swift */; };
-		E1139DA72864C50C00662A48 /* ModalPickMonthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1139DA62864C50C00662A48 /* ModalPickMonthController.swift */; };
+		E108B6062865FFC20096B685 /* ModalChooseQuotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = E108B5FB2865FFC20096B685 /* ModalChooseQuotes.swift */; };
+		E108B6072865FFC20096B685 /* ChangePasswordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E108B5FD2865FFC20096B685 /* ChangePasswordCell.swift */; };
+		E108B6082865FFC20096B685 /* ReminderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E108B5FE2865FFC20096B685 /* ReminderCell.swift */; };
+		E108B6092865FFC20096B685 /* ChangePasswordCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E108B5FF2865FFC20096B685 /* ChangePasswordCell.xib */; };
+		E108B60A2865FFC20096B685 /* ReminderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E108B6002865FFC20096B685 /* ReminderCell.xib */; };
+		E108B60B2865FFC20096B685 /* ChangePasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E108B6012865FFC20096B685 /* ChangePasswordController.swift */; };
+		E108B60C2865FFC20096B685 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E108B6022865FFC20096B685 /* UserModel.swift */; };
+		E108B60D2865FFC20096B685 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E108B6032865FFC20096B685 /* Settings.storyboard */; };
+		E108B60E2865FFC20096B685 /* ModalChooseReminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E108B6042865FFC20096B685 /* ModalChooseReminder.swift */; };
+		E108B60F2865FFC20096B685 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E108B6052865FFC20096B685 /* SettingsViewController.swift */; };
+		E119D37B2869648900956613 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = E119D37A2869648900956613 /* FirebaseAuth */; };
+		E119D37D2869648900956613 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = E119D37C2869648900956613 /* FirebaseFirestore */; };
+		E119D37F2869648900956613 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = E119D37E2869648900956613 /* FirebaseStorage */; };
+		E119D38F286966DE00956613 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E119D381286966DE00956613 /* HomeController.swift */; };
+		E119D390286966DE00956613 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E119D382286966DE00956613 /* Home.storyboard */; };
+		E119D391286966DE00956613 /* EntryTypeThreeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E119D384286966DE00956613 /* EntryTypeThreeCell.xib */; };
+		E119D392286966DE00956613 /* EntryTypeOneCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E119D385286966DE00956613 /* EntryTypeOneCell.swift */; };
+		E119D393286966DE00956613 /* EntryTypeTwoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E119D386286966DE00956613 /* EntryTypeTwoCell.xib */; };
+		E119D394286966DE00956613 /* EntryTypeThreeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E119D387286966DE00956613 /* EntryTypeThreeCell.swift */; };
+		E119D395286966DE00956613 /* EntryTypeOneCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E119D388286966DE00956613 /* EntryTypeOneCell.xib */; };
+		E119D396286966DE00956613 /* EntryTypeTwoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E119D389286966DE00956613 /* EntryTypeTwoCell.swift */; };
+		E119D397286966DE00956613 /* EntryListViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E119D38B286966DE00956613 /* EntryListViewCell.xib */; };
+		E119D398286966DE00956613 /* EntryListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E119D38C286966DE00956613 /* EntryListViewCell.swift */; };
+		E119D399286966DE00956613 /* ModalPickMonthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E119D38D286966DE00956613 /* ModalPickMonthController.swift */; };
+		E119D39A286966DE00956613 /* ViewEntryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E119D38E286966DE00956613 /* ViewEntryController.swift */; };
+		E119D39D2869684400956613 /* MonthYearWheelPicker in Frameworks */ = {isa = PBXBuildFile; productRef = E119D39C2869684400956613 /* MonthYearWheelPicker */; };
 		E1515BF1285B2E77009E0009 /* Onboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1515BF0285B2E77009E0009 /* Onboard.storyboard */; };
 		E1515BF3285B2E8C009E0009 /* OnboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1515BF2285B2E8C009E0009 /* OnboardViewController.swift */; };
 		E1515BF5285B2FAF009E0009 /* OnboardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1515BF4285B2FAF009E0009 /* OnboardModel.swift */; };
-		E1ED6CA6286480FB0028F9D1 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1ED6CA5286480FB0028F9D1 /* Home.storyboard */; };
-		E1ED6CA8286481100028F9D1 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1ED6CA7286481100028F9D1 /* HomeController.swift */; };
-		E1ED6CB028648B400028F9D1 /* EntryListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1ED6CAE28648B400028F9D1 /* EntryListViewCell.swift */; };
-		E1ED6CB128648B400028F9D1 /* EntryListViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1ED6CAF28648B400028F9D1 /* EntryListViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -88,15 +108,31 @@
 		B5EFBE6228579B1B00579F50 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		B5FBDB5A285DCC92007F047D /* SummaryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryController.swift; sourceTree = "<group>"; };
 		B5FBDB5C285DCFAB007F047D /* SummaryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryViewModel.swift; sourceTree = "<group>"; };
-		E1063F812864D9F700B5B046 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
-		E1139DA62864C50C00662A48 /* ModalPickMonthController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ModalPickMonthController.swift; path = qonfide/Home/ModalPickMonthController.swift; sourceTree = SOURCE_ROOT; };
+		E108B5FB2865FFC20096B685 /* ModalChooseQuotes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalChooseQuotes.swift; sourceTree = "<group>"; };
+		E108B5FD2865FFC20096B685 /* ChangePasswordCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePasswordCell.swift; sourceTree = "<group>"; };
+		E108B5FE2865FFC20096B685 /* ReminderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReminderCell.swift; sourceTree = "<group>"; };
+		E108B5FF2865FFC20096B685 /* ChangePasswordCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChangePasswordCell.xib; sourceTree = "<group>"; };
+		E108B6002865FFC20096B685 /* ReminderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReminderCell.xib; sourceTree = "<group>"; };
+		E108B6012865FFC20096B685 /* ChangePasswordController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePasswordController.swift; sourceTree = "<group>"; };
+		E108B6022865FFC20096B685 /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		E108B6032865FFC20096B685 /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		E108B6042865FFC20096B685 /* ModalChooseReminder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalChooseReminder.swift; sourceTree = "<group>"; };
+		E108B6052865FFC20096B685 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		E119D381286966DE00956613 /* HomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
+		E119D382286966DE00956613 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		E119D384286966DE00956613 /* EntryTypeThreeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EntryTypeThreeCell.xib; sourceTree = "<group>"; };
+		E119D385286966DE00956613 /* EntryTypeOneCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryTypeOneCell.swift; sourceTree = "<group>"; };
+		E119D386286966DE00956613 /* EntryTypeTwoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EntryTypeTwoCell.xib; sourceTree = "<group>"; };
+		E119D387286966DE00956613 /* EntryTypeThreeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryTypeThreeCell.swift; sourceTree = "<group>"; };
+		E119D388286966DE00956613 /* EntryTypeOneCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EntryTypeOneCell.xib; sourceTree = "<group>"; };
+		E119D389286966DE00956613 /* EntryTypeTwoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryTypeTwoCell.swift; sourceTree = "<group>"; };
+		E119D38B286966DE00956613 /* EntryListViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EntryListViewCell.xib; sourceTree = "<group>"; };
+		E119D38C286966DE00956613 /* EntryListViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryListViewCell.swift; sourceTree = "<group>"; };
+		E119D38D286966DE00956613 /* ModalPickMonthController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalPickMonthController.swift; sourceTree = "<group>"; };
+		E119D38E286966DE00956613 /* ViewEntryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewEntryController.swift; sourceTree = "<group>"; };
 		E1515BF0285B2E77009E0009 /* Onboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboard.storyboard; sourceTree = "<group>"; };
 		E1515BF2285B2E8C009E0009 /* OnboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardViewController.swift; sourceTree = "<group>"; };
 		E1515BF4285B2FAF009E0009 /* OnboardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardModel.swift; sourceTree = "<group>"; };
-		E1ED6CA5286480FB0028F9D1 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
-		E1ED6CA7286481100028F9D1 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
-		E1ED6CAE28648B400028F9D1 /* EntryListViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryListViewCell.swift; sourceTree = "<group>"; };
-		E1ED6CAF28648B400028F9D1 /* EntryListViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EntryListViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +143,10 @@
 				B55F49752856D7E500BC8351 /* FirebaseAuth in Frameworks */,
 				B55F49772856D7E500BC8351 /* FirebaseFirestore in Frameworks */,
 				B55F49792856D7E500BC8351 /* FirebaseStorage in Frameworks */,
+				E119D37D2869648900956613 /* FirebaseFirestore in Frameworks */,
+				E119D39D2869684400956613 /* MonthYearWheelPicker in Frameworks */,
+				E119D37B2869648900956613 /* FirebaseAuth in Frameworks */,
+				E119D37F2869648900956613 /* FirebaseStorage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -171,7 +211,8 @@
 		B5B555442852FF800076C25E /* qonfide */ = {
 			isa = PBXGroup;
 			children = (
-				E1ED6CA4286480EA0028F9D1 /* Home */,
+				E119D380286966DE00956613 /* Home */,
+				E108B5FA2865FFC20096B685 /* Setting */,
 				B5D02766286459EC0041E175 /* Summary */,
 				B5D0275E286457260041E175 /* LoginSignup */,
 				E1515BEF285B2E57009E0009 /* Onboard */,
@@ -315,6 +356,66 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		E108B5FA2865FFC20096B685 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				E108B5FB2865FFC20096B685 /* ModalChooseQuotes.swift */,
+				E108B5FC2865FFC20096B685 /* Cell */,
+				E108B6012865FFC20096B685 /* ChangePasswordController.swift */,
+				E108B6022865FFC20096B685 /* UserModel.swift */,
+				E108B6032865FFC20096B685 /* Settings.storyboard */,
+				E108B6042865FFC20096B685 /* ModalChooseReminder.swift */,
+				E108B6052865FFC20096B685 /* SettingsViewController.swift */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		E108B5FC2865FFC20096B685 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				E108B5FD2865FFC20096B685 /* ChangePasswordCell.swift */,
+				E108B5FE2865FFC20096B685 /* ReminderCell.swift */,
+				E108B5FF2865FFC20096B685 /* ChangePasswordCell.xib */,
+				E108B6002865FFC20096B685 /* ReminderCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		E119D380286966DE00956613 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				E119D381286966DE00956613 /* HomeController.swift */,
+				E119D382286966DE00956613 /* Home.storyboard */,
+				E119D383286966DE00956613 /* entryViewCell */,
+				E119D38A286966DE00956613 /* HomeCell */,
+				E119D38D286966DE00956613 /* ModalPickMonthController.swift */,
+				E119D38E286966DE00956613 /* ViewEntryController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		E119D383286966DE00956613 /* entryViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				E119D384286966DE00956613 /* EntryTypeThreeCell.xib */,
+				E119D385286966DE00956613 /* EntryTypeOneCell.swift */,
+				E119D386286966DE00956613 /* EntryTypeTwoCell.xib */,
+				E119D387286966DE00956613 /* EntryTypeThreeCell.swift */,
+				E119D388286966DE00956613 /* EntryTypeOneCell.xib */,
+				E119D389286966DE00956613 /* EntryTypeTwoCell.swift */,
+			);
+			path = entryViewCell;
+			sourceTree = "<group>";
+		};
+		E119D38A286966DE00956613 /* HomeCell */ = {
+			isa = PBXGroup;
+			children = (
+				E119D38B286966DE00956613 /* EntryListViewCell.xib */,
+				E119D38C286966DE00956613 /* EntryListViewCell.swift */,
+			);
+			path = HomeCell;
+			sourceTree = "<group>";
+		};
 		E1515BEF285B2E57009E0009 /* Onboard */ = {
 			isa = PBXGroup;
 			children = (
@@ -323,27 +424,6 @@
 				B5D0276928645A550041E175 /* View */,
 			);
 			path = Onboard;
-			sourceTree = "<group>";
-		};
-		E1ED6CA4286480EA0028F9D1 /* Home */ = {
-			isa = PBXGroup;
-			children = (
-				E1ED6CA928648AF00028F9D1 /* HomeCell */,
-				E1ED6CA5286480FB0028F9D1 /* Home.storyboard */,
-				E1139DA62864C50C00662A48 /* ModalPickMonthController.swift */,
-				E1ED6CA7286481100028F9D1 /* HomeController.swift */,
-				E1063F812864D9F700B5B046 /* TabBarViewController.swift */,
-			);
-			path = Home;
-			sourceTree = "<group>";
-		};
-		E1ED6CA928648AF00028F9D1 /* HomeCell */ = {
-			isa = PBXGroup;
-			children = (
-				E1ED6CAE28648B400028F9D1 /* EntryListViewCell.swift */,
-				E1ED6CAF28648B400028F9D1 /* EntryListViewCell.xib */,
-			);
-			path = HomeCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -366,6 +446,10 @@
 				B55F49742856D7E500BC8351 /* FirebaseAuth */,
 				B55F49762856D7E500BC8351 /* FirebaseFirestore */,
 				B55F49782856D7E500BC8351 /* FirebaseStorage */,
+				E119D37A2869648900956613 /* FirebaseAuth */,
+				E119D37C2869648900956613 /* FirebaseFirestore */,
+				E119D37E2869648900956613 /* FirebaseStorage */,
+				E119D39C2869684400956613 /* MonthYearWheelPicker */,
 			);
 			productName = qonfide;
 			productReference = B5B555422852FF800076C25E /* qonfide.app */;
@@ -397,6 +481,8 @@
 			mainGroup = B5B555392852FF800076C25E;
 			packageReferences = (
 				B55F49732856D7E500BC8351 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				E119D3792869648900956613 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				E119D39B2869684400956613 /* XCRemoteSwiftPackageReference "MonthYearWheelPicker" */,
 			);
 			productRefGroup = B5B555432852FF800076C25E /* Products */;
 			projectDirPath = "";
@@ -412,13 +498,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E108B60A2865FFC20096B685 /* ReminderCell.xib in Resources */,
+				E108B6092865FFC20096B685 /* ChangePasswordCell.xib in Resources */,
 				B5B555522852FF820076C25E /* LaunchScreen.storyboard in Resources */,
+				E119D395286966DE00956613 /* EntryTypeOneCell.xib in Resources */,
+				E119D390286966DE00956613 /* Home.storyboard in Resources */,
 				B593326828574CC900927312 /* GoogleService-Info.plist in Resources */,
+				E119D391286966DE00956613 /* EntryTypeThreeCell.xib in Resources */,
+				E119D397286966DE00956613 /* EntryListViewCell.xib in Resources */,
 				B5B5554F2852FF820076C25E /* Assets.xcassets in Resources */,
-				E1ED6CA6286480FB0028F9D1 /* Home.storyboard in Resources */,
 				E1515BF1285B2E77009E0009 /* Onboard.storyboard in Resources */,
-				E1ED6CB128648B400028F9D1 /* EntryListViewCell.xib in Resources */,
 				B5B5554D2852FF800076C25E /* Main.storyboard in Resources */,
+				E108B60D2865FFC20096B685 /* Settings.storyboard in Resources */,
+				E119D393286966DE00956613 /* EntryTypeTwoCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -430,23 +522,33 @@
 			buildActionMask = 2147483647;
 			files = (
 				B593326628574C7000927312 /* SignupFormController.swift in Sources */,
-				E1139DA72864C50C00662A48 /* ModalPickMonthController.swift in Sources */,
 				B528513F285B6509009F7422 /* MessageCell.swift in Sources */,
 				B5043F4A285850590064D738 /* Service.swift in Sources */,
 				2E56BA0828602E5B0078E6F8 /* ButtonOptions.swift in Sources */,
+				E119D398286966DE00956613 /* EntryListViewCell.swift in Sources */,
 				B57BC0AB285C5D03008776E0 /* Message.swift in Sources */,
 				2E56BA0E2862D52E0078E6F8 /* CustomModalViewController.swift in Sources */,
+				E119D394286966DE00956613 /* EntryTypeThreeCell.swift in Sources */,
 				B5A2283428570D02007665A3 /* AuthButton.swift in Sources */,
 				E1515BF5285B2FAF009E0009 /* OnboardModel.swift in Sources */,
 				B5043F4C285850930064D738 /* DbConstants.swift in Sources */,
 				B5EFBE6328579B1B00579F50 /* UserViewModel.swift in Sources */,
 				E1515BF3285B2E8C009E0009 /* OnboardViewController.swift in Sources */,
+				E108B60E2865FFC20096B685 /* ModalChooseReminder.swift in Sources */,
 				B5A2283A2857135C007665A3 /* Extensions.swift in Sources */,
+				E108B60B2865FFC20096B685 /* ChangePasswordController.swift in Sources */,
+				E119D392286966DE00956613 /* EntryTypeOneCell.swift in Sources */,
 				B5A2283C285713B0007665A3 /* LoginFormController.swift in Sources */,
+				E119D399286966DE00956613 /* ModalPickMonthController.swift in Sources */,
 				B5B5554A2852FF800076C25E /* ViewController.swift in Sources */,
 				B57BC0AD285C5E53008776E0 /* MessageViewModel.swift in Sources */,
-				E1063F822864D9F700B5B046 /* TabBarViewController.swift in Sources */,
+				E108B60C2865FFC20096B685 /* UserModel.swift in Sources */,
+				E108B6072865FFC20096B685 /* ChangePasswordCell.swift in Sources */,
+				E108B6062865FFC20096B685 /* ModalChooseQuotes.swift in Sources */,
+				E108B60F2865FFC20096B685 /* SettingsViewController.swift in Sources */,
+				E119D39A286966DE00956613 /* ViewEntryController.swift in Sources */,
 				B528513D285B5FC2009F7422 /* ChatController.swift in Sources */,
+				E108B6082865FFC20096B685 /* ReminderCell.swift in Sources */,
 				B5B555462852FF800076C25E /* AppDelegate.swift in Sources */,
 				B5ECF70C2860D57F00D30E8E /* TabBarController.swift in Sources */,
 				B5FBDB5B285DCC92007F047D /* SummaryController.swift in Sources */,
@@ -454,14 +556,14 @@
 				B5FBDB5D285DCFAB007F047D /* SummaryViewModel.swift in Sources */,
 				B5A2283E2857166A007665A3 /* CustomUserTextView.swift in Sources */,
 				B5D02759286207780041E175 /* UpDownMoodView.swift in Sources */,
+				E119D396286966DE00956613 /* EntryTypeTwoCell.swift in Sources */,
 				B5E1192D2860BD42000DD0E0 /* MoodCell.swift in Sources */,
+				E119D38F286966DE00956613 /* HomeController.swift in Sources */,
 				B5D0276D28645BCA0041E175 /* ChatViewModel.swift in Sources */,
 				B55F497B2856DB6200BC8351 /* LoginPageController.swift in Sources */,
 				B593326A2857540500927312 /* User.swift in Sources */,
-				E1ED6CA8286481100028F9D1 /* HomeController.swift in Sources */,
 				2E56BA1128641F3B0078E6F8 /* TextFieldController.swift in Sources */,
 				B5A4F9D0286175B600ADAE15 /* AverageMoodView.swift in Sources */,
-				E1ED6CB028648B400028F9D1 /* EntryListViewCell.swift in Sources */,
 				B5B555482852FF800076C25E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -690,6 +792,22 @@
 				kind = branch;
 			};
 		};
+		E119D3792869648900956613 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+		E119D39B2869684400956613 /* XCRemoteSwiftPackageReference "MonthYearWheelPicker" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/bendodson/MonthYearWheelPicker.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -707,6 +825,26 @@
 			isa = XCSwiftPackageProductDependency;
 			package = B55F49732856D7E500BC8351 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseStorage;
+		};
+		E119D37A2869648900956613 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E119D3792869648900956613 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		E119D37C2869648900956613 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E119D3792869648900956613 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		E119D37E2869648900956613 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E119D3792869648900956613 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+		E119D39C2869684400956613 /* MonthYearWheelPicker */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E119D39B2869684400956613 /* XCRemoteSwiftPackageReference "MonthYearWheelPicker" */;
+			productName = MonthYearWheelPicker;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

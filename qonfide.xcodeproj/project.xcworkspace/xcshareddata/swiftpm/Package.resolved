@@ -82,6 +82,15 @@
       }
     },
     {
+      "identity" : "monthyearwheelpicker",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/bendodson/MonthYearWheelPicker.git",
+      "state" : {
+        "branch" : "master",
+        "revision" : "d81cdf16b6beb11f8b6505b09a0ab51115ca95b5"
+      }
+    },
+    {
       "identity" : "nanopb",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/firebase/nanopb.git",

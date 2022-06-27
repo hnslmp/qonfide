@@ -16,9 +16,8 @@ class TabBarController: UITabBarController{
     private let SummaryVC = SummaryController()
     
     //TODO: Change into vc yg beners
-    
-    private let ListEntriesVC = HomeController()
-    
+//    private let ListEntriesVC = ViewController()
+    private let ListEntriesVC = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "homeView")
     private let ChatInputVC = ViewController()
     
     
@@ -26,7 +25,8 @@ class TabBarController: UITabBarController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        checkIfUserIsLoggedIn()
+//        logout()
+//        checkIfUserIsLoggedIn()
         configureTabBar()
     }
     
@@ -34,14 +34,9 @@ class TabBarController: UITabBarController{
     func configureTabBar(){
         SummaryVC.title = "Summary"
         ListEntriesVC.title = "Entries"
-        ChatInputVC.title = "New Input"
+//        ChatInputVC.title = "New Input"
         
-        let homeStoryboard = UIStoryboard(name: "Home", bundle: nil)
-        let homeVC = homeStoryboard.instantiateViewController(withIdentifier: "homeView")
-        
-        
-        
-        self.setViewControllers([homeVC, ChatInputVC, SummaryVC], animated: true)
+        self.setViewControllers([ListEntriesVC, ChatInputVC, SummaryVC], animated: true)
 
 //        let chatTintColor = UIColor(red: 51/255, green: 88/255, blue: 141/255, alpha: 1)
         self.tabBar.layer.shadowOffset = CGSize(width: 0, height: 0)
@@ -59,8 +54,13 @@ class TabBarController: UITabBarController{
             tabBarItem1.image = UIImage(systemName: "book")
             tabBarItem1.selectedImage = UIImage(systemName: "book.fill")        }
         if let tabBarItem2 = self.tabBar.items?[1] {
-            tabBarItem2.image = UIImage(systemName: "plus.circle.fill")
-            tabBarItem2.selectedImage = UIImage(systemName: "plus.circle.fill")
+//            tabBarItem2.image = UIImage(systemName: "plus.circle.fill")
+//            tabBarItem2.selectedImage = UIImage(systemName: "plus.circle.fill")
+            tabBarItem2.image = UIImage(named: "addBtn")
+            tabBarItem2.selectedImage = UIImage(named: "addBtn")
+            tabBarItem2.imageInsets.top = -30
+            tabBarItem2.imageInsets.left = -4
+            tabBarItem2.imageInsets.right = -4
         }
         if let tabBarItem3 = self.tabBar.items?[2] {
             tabBarItem3.image = UIImage(systemName: "chart.bar")

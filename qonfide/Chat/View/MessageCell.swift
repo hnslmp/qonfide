@@ -22,6 +22,7 @@ class MessageCell: UICollectionViewCell{
        let iv = UIImageView()
         iv.contentMode = .scaleAspectFill
         iv.clipsToBounds = true
+        iv.image = UIImage(named: "bobChatImage")
         iv.backgroundColor = .lightGray
         return iv
     }()

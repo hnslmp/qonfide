@@ -232,7 +232,7 @@ class TextFieldController: UIViewController {
         
     @objc func handleSendMessage() {
         guard let message = messageInputTextView.text else { return  }
-        print("DEBUG: \(message)")
+        self.dismiss(animated: false)
         delegate?.userInput(self,wantsToSend: message)
     }
     

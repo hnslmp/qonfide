@@ -7,11 +7,6 @@
 
 import UIKit
 
-//@objc protocol CustomModalViewControllerDelegate: AnyObject
-//{
-//    @objc optional func userSelect(choice: String?)
-//}
-
 protocol CustomModalViewControllerDelegate: AnyObject{
     func userSelect(choice: String)
 }
@@ -118,8 +113,8 @@ class CustomModalViewController: UIViewController{
     
     @objc func optionPressed(sender: UIButton)
     {
+        self.dismiss(animated: false)
         delegate?.userSelect(choice: (sender.titleLabel?.text)!)
-        dismiss(animated: true)
     }
     
     func animatePresentContainer() {

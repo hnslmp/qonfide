@@ -20,20 +20,20 @@ extension UIViewController{
     func configureNavigationBar(withTitle title: String, preferLargeTitles: Bool) {
         let appearance = UINavigationBarAppearance()
         appearance.configureWithOpaqueBackground()
-        appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
-        appearance.backgroundColor = .systemCyan
+        appearance.largeTitleTextAttributes = [.foregroundColor: UIColor(red: 53/255, green: 74/255, blue: 166/255, alpha: 1)]
+        appearance.titleTextAttributes = [.foregroundColor: UIColor(red: 53/255, green: 74/255, blue: 166/255, alpha: 1)]
+        appearance.backgroundColor = .white
         
+        let customBackBar = UIImage(named: "backButton")
+        navigationController?.navigationBar.backIndicatorImage = customBackBar
+        navigationController?.navigationBar.backIndicatorTransitionMaskImage = customBackBar
         navigationController?.navigationBar.standardAppearance = appearance
         navigationController?.navigationBar.compactAppearance = appearance
         navigationController?.navigationBar.scrollEdgeAppearance = appearance
         
         navigationController?.navigationBar.prefersLargeTitles = preferLargeTitles
         navigationItem.title = title
-        navigationController?.navigationBar.tintColor = .white
         navigationController?.navigationBar.isTranslucent = true
-        
-        navigationController?.navigationBar.overrideUserInterfaceStyle = .dark
-        
     }
 }
 

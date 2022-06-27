@@ -69,6 +69,7 @@ extension ChatController{
         cell.message = viewModel.messages[indexPath.row]
         return cell
     }
+    
 }
 
 extension ChatController: UICollectionViewDelegateFlowLayout{
@@ -91,14 +92,18 @@ extension ChatController: UICollectionViewDelegateFlowLayout{
 extension ChatController: ChatViewModelDelegate{
     
     func presentChoiceModal(buttons: [String]) {
-            let vc = CustomModalViewController(buttonArray: buttons)
-            vc.delegate = self
-            vc.modalPresentationStyle = .overCurrentContext
-            self.present(vc, animated: true)
+        collectionView.scrollToItem(at: IndexPath(item: viewModel.messages.count-1, section: 0), at: .bottom, animated: true)
+        collectionView.setContentOffset(CGPoint(x: 0, y: collectionView.contentSize.height-100), animated: true)
+        let vc = CustomModalViewController(buttonArray: buttons)
+        vc.delegate = self
+        vc.modalPresentationStyle = .overCurrentContext
+        self.present(vc, animated: true)
     }
     
     func presentTextModal() {
         let vc = TextFieldController()
+        collectionView.scrollToItem(at: IndexPath(item: viewModel.messages.count-1, section: 0), at: .bottom, animated: true)
+        collectionView.setContentOffset(CGPoint(x: 0, y: collectionView.contentSize.height-100), animated: true)
         vc.delegate = self
         vc.modalPresentationStyle = .overCurrentContext
         self.present(vc, animated: true)

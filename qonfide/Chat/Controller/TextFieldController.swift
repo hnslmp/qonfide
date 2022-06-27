@@ -90,7 +90,6 @@ class TextFieldController: UIViewController {
         super.viewDidLoad()
         setupView()
         setupConstraints()
-        setupPanGesture()
     }
     
     @objc func handleCloseAction() {
@@ -142,67 +141,7 @@ class TextFieldController: UIViewController {
         containerViewBottomConstraint?.isActive = true
     }
     
-    func setupPanGesture() {
-        // add pan gesture recognizer to the view controller's view (the whole screen)
-        let panGesture = UIPanGestureRecognizer(target: self, action: #selector(self.handlePanGesture(gesture:)))
-        // change to false to immediately listen on gesture movement
-        panGesture.delaysTouchesBegan = false
-        panGesture.delaysTouchesEnded = false
-        view.addGestureRecognizer(panGesture)
-    }
-    
-    // MARK: Pan gesture handler
-    @objc func handlePanGesture(gesture: UIPanGestureRecognizer) {
-        let translation = gesture.translation(in: view)
-        // Drag to top will be minus value and vice versa
-        print("Pan gesture y offset: \(translation.y)")
-        
-        // Get drag direction
-        let isDraggingDown = translation.y > 0
-        print("Dragging direction: \(isDraggingDown ? "going down" : "going up")")
-        
-        // New height is based on value of dragging plus current container height
-        let newHeight = currentContainerHeight - translation.y
-        
-        // Handle based on gesture state
-        switch gesture.state {
-        case .changed:
-            // This state will occur when user is dragging
-            if newHeight < maximumContainerHeight {
-                // Keep updating the height constraint
-                containerViewHeightConstraint?.constant = newHeight
-                // refresh layout
-                view.layoutIfNeeded()
-            }
-        case .ended:
-            // This happens when user stop drag,
-            // so we will get the last height of container
-            
-            // Condition 1: If new height is below min, dismiss controller
-            if newHeight < dismissibleHeight {
-                print("dd")
-            }
-            else if newHeight < defaultHeight {
-                // Condition 2: If new height is below default, animate back to default
-                animateContainerHeight(defaultHeight)
-            }
-            else if newHeight < maximumContainerHeight && isDraggingDown {
-                // Condition 3: If new height is below max and going down, set to default height
-                animateContainerHeight(defaultHeight)
-            }
-            else if newHeight > defaultHeight && !isDraggingDown {
-                // Condition 4: If new height is below max and going up, set to max height at top
-                animateContainerHeight(maximumContainerHeight)
-            }
-        default:
-            break
-        }
-    }
-    
-    
-    
     // MARK: FUNCTION
-        
     func animateContainerHeight(_ height: CGFloat) {
         UIView.animate(withDuration: 0.4) {
             // Update container height

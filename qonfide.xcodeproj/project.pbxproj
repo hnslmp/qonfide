@@ -43,6 +43,13 @@
 		B5EFBE6328579B1B00579F50 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EFBE6228579B1B00579F50 /* UserViewModel.swift */; };
 		B5FBDB5B285DCC92007F047D /* SummaryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FBDB5A285DCC92007F047D /* SummaryController.swift */; };
 		B5FBDB5D285DCFAB007F047D /* SummaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FBDB5C285DCFAB007F047D /* SummaryViewModel.swift */; };
+		E103CAEA286611A9004B3B53 /* ViewEntryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E103CAE9286611A9004B3B53 /* ViewEntryController.swift */; };
+		E103CAF428661669004B3B53 /* EntryTypeOneCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E103CAF228661669004B3B53 /* EntryTypeOneCell.swift */; };
+		E103CAF528661669004B3B53 /* EntryTypeOneCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E103CAF328661669004B3B53 /* EntryTypeOneCell.xib */; };
+		E103CAF828661680004B3B53 /* EntryTypeTwoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E103CAF628661680004B3B53 /* EntryTypeTwoCell.swift */; };
+		E103CAF928661680004B3B53 /* EntryTypeTwoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E103CAF728661680004B3B53 /* EntryTypeTwoCell.xib */; };
+		E103CAFC28661691004B3B53 /* EntryTypeThreeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E103CAFA28661691004B3B53 /* EntryTypeThreeCell.swift */; };
+		E103CAFD28661691004B3B53 /* EntryTypeThreeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E103CAFB28661691004B3B53 /* EntryTypeThreeCell.xib */; };
 		E1063F822864D9F700B5B046 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1063F812864D9F700B5B046 /* TabBarViewController.swift */; };
 		E108B6062865FFC20096B685 /* ModalChooseQuotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = E108B5FB2865FFC20096B685 /* ModalChooseQuotes.swift */; };
 		E108B6072865FFC20096B685 /* ChangePasswordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E108B5FD2865FFC20096B685 /* ChangePasswordCell.swift */; };
@@ -58,8 +65,9 @@
 		E1515BF1285B2E77009E0009 /* Onboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1515BF0285B2E77009E0009 /* Onboard.storyboard */; };
 		E1515BF3285B2E8C009E0009 /* OnboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1515BF2285B2E8C009E0009 /* OnboardViewController.swift */; };
 		E1515BF5285B2FAF009E0009 /* OnboardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1515BF4285B2FAF009E0009 /* OnboardModel.swift */; };
+		E16E0F462868A82F00DD0B53 /* MonthYearWheelPicker in Frameworks */ = {isa = PBXBuildFile; productRef = E16E0F452868A82F00DD0B53 /* MonthYearWheelPicker */; };
+		E1AF4AFA28684145000C75BA /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AF4AF928684145000C75BA /* HomeController.swift */; };
 		E1ED6CA6286480FB0028F9D1 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1ED6CA5286480FB0028F9D1 /* Home.storyboard */; };
-		E1ED6CA8286481100028F9D1 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1ED6CA7286481100028F9D1 /* HomeController.swift */; };
 		E1ED6CB028648B400028F9D1 /* EntryListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1ED6CAE28648B400028F9D1 /* EntryListViewCell.swift */; };
 		E1ED6CB128648B400028F9D1 /* EntryListViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1ED6CAF28648B400028F9D1 /* EntryListViewCell.xib */; };
 /* End PBXBuildFile section */
@@ -100,6 +108,13 @@
 		B5EFBE6228579B1B00579F50 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		B5FBDB5A285DCC92007F047D /* SummaryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryController.swift; sourceTree = "<group>"; };
 		B5FBDB5C285DCFAB007F047D /* SummaryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryViewModel.swift; sourceTree = "<group>"; };
+		E103CAE9286611A9004B3B53 /* ViewEntryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewEntryController.swift; sourceTree = "<group>"; };
+		E103CAF228661669004B3B53 /* EntryTypeOneCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryTypeOneCell.swift; sourceTree = "<group>"; };
+		E103CAF328661669004B3B53 /* EntryTypeOneCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EntryTypeOneCell.xib; sourceTree = "<group>"; };
+		E103CAF628661680004B3B53 /* EntryTypeTwoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryTypeTwoCell.swift; sourceTree = "<group>"; };
+		E103CAF728661680004B3B53 /* EntryTypeTwoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EntryTypeTwoCell.xib; sourceTree = "<group>"; };
+		E103CAFA28661691004B3B53 /* EntryTypeThreeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryTypeThreeCell.swift; sourceTree = "<group>"; };
+		E103CAFB28661691004B3B53 /* EntryTypeThreeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EntryTypeThreeCell.xib; sourceTree = "<group>"; };
 		E1063F812864D9F700B5B046 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		E108B5FB2865FFC20096B685 /* ModalChooseQuotes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalChooseQuotes.swift; sourceTree = "<group>"; };
 		E108B5FD2865FFC20096B685 /* ChangePasswordCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePasswordCell.swift; sourceTree = "<group>"; };
@@ -115,8 +130,8 @@
 		E1515BF0285B2E77009E0009 /* Onboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboard.storyboard; sourceTree = "<group>"; };
 		E1515BF2285B2E8C009E0009 /* OnboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardViewController.swift; sourceTree = "<group>"; };
 		E1515BF4285B2FAF009E0009 /* OnboardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardModel.swift; sourceTree = "<group>"; };
+		E1AF4AF928684145000C75BA /* HomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		E1ED6CA5286480FB0028F9D1 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
-		E1ED6CA7286481100028F9D1 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		E1ED6CAE28648B400028F9D1 /* EntryListViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryListViewCell.swift; sourceTree = "<group>"; };
 		E1ED6CAF28648B400028F9D1 /* EntryListViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EntryListViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -128,6 +143,7 @@
 			files = (
 				B55F49752856D7E500BC8351 /* FirebaseAuth in Frameworks */,
 				B55F49772856D7E500BC8351 /* FirebaseFirestore in Frameworks */,
+				E16E0F462868A82F00DD0B53 /* MonthYearWheelPicker in Frameworks */,
 				B55F49792856D7E500BC8351 /* FirebaseStorage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -339,6 +355,17 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		E103CAEB286614E9004B3B53 /* entryViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				E103CAF228661669004B3B53 /* EntryTypeOneCell.swift */,
+				E103CAF328661669004B3B53 /* EntryTypeOneCell.xib */,
+				E103CAF628661680004B3B53 /* EntryTypeTwoCell.swift */,
+				E103CAF728661680004B3B53 /* EntryTypeTwoCell.xib */,
+				E103CAFA28661691004B3B53 /* EntryTypeThreeCell.swift */,
+				E103CAFB28661691004B3B53 /* EntryTypeThreeCell.xib */,
+			);
+			path = entryViewCell;
 		E108B5FA2865FFC20096B685 /* Setting */ = {
 			isa = PBXGroup;
 			children = (
@@ -377,11 +404,12 @@
 		E1ED6CA4286480EA0028F9D1 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				E103CAEB286614E9004B3B53 /* entryViewCell */,
 				E1ED6CA928648AF00028F9D1 /* HomeCell */,
 				E1ED6CA5286480FB0028F9D1 /* Home.storyboard */,
 				E1139DA62864C50C00662A48 /* ModalPickMonthController.swift */,
-				E1ED6CA7286481100028F9D1 /* HomeController.swift */,
-				E1063F812864D9F700B5B046 /* TabBarViewController.swift */,
+				E1AF4AF928684145000C75BA /* HomeController.swift */,
+				E103CAE9286611A9004B3B53 /* ViewEntryController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -415,6 +443,7 @@
 				B55F49742856D7E500BC8351 /* FirebaseAuth */,
 				B55F49762856D7E500BC8351 /* FirebaseFirestore */,
 				B55F49782856D7E500BC8351 /* FirebaseStorage */,
+				E16E0F452868A82F00DD0B53 /* MonthYearWheelPicker */,
 			);
 			productName = qonfide;
 			productReference = B5B555422852FF800076C25E /* qonfide.app */;
@@ -446,6 +475,7 @@
 			mainGroup = B5B555392852FF800076C25E;
 			packageReferences = (
 				B55F49732856D7E500BC8351 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				E16E0F442868A82F00DD0B53 /* XCRemoteSwiftPackageReference "MonthYearWheelPicker" */,
 			);
 			productRefGroup = B5B555432852FF800076C25E /* Products */;
 			projectDirPath = "";
@@ -466,6 +496,9 @@
 				B5B555522852FF820076C25E /* LaunchScreen.storyboard in Resources */,
 				B593326828574CC900927312 /* GoogleService-Info.plist in Resources */,
 				B5B5554F2852FF820076C25E /* Assets.xcassets in Resources */,
+				E103CAF528661669004B3B53 /* EntryTypeOneCell.xib in Resources */,
+				E103CAF928661680004B3B53 /* EntryTypeTwoCell.xib in Resources */,
+				E103CAFD28661691004B3B53 /* EntryTypeThreeCell.xib in Resources */,
 				E1ED6CA6286480FB0028F9D1 /* Home.storyboard in Resources */,
 				E1515BF1285B2E77009E0009 /* Onboard.storyboard in Resources */,
 				E1ED6CB128648B400028F9D1 /* EntryListViewCell.xib in Resources */,
@@ -484,6 +517,7 @@
 				B593326628574C7000927312 /* SignupFormController.swift in Sources */,
 				E1139DA72864C50C00662A48 /* ModalPickMonthController.swift in Sources */,
 				B528513F285B6509009F7422 /* MessageCell.swift in Sources */,
+				E103CAF828661680004B3B53 /* EntryTypeTwoCell.swift in Sources */,
 				B5043F4A285850590064D738 /* Service.swift in Sources */,
 				2E56BA0828602E5B0078E6F8 /* ButtonOptions.swift in Sources */,
 				2E56BA0C28621A050078E6F8 /* CustomMessageTextView.swift in Sources */,
@@ -509,16 +543,19 @@
 				E108B6082865FFC20096B685 /* ReminderCell.swift in Sources */,
 				B5B555462852FF800076C25E /* AppDelegate.swift in Sources */,
 				B5ECF70C2860D57F00D30E8E /* TabBarController.swift in Sources */,
+				E103CAFC28661691004B3B53 /* EntryTypeThreeCell.swift in Sources */,
+				E103CAF428661669004B3B53 /* EntryTypeOneCell.swift in Sources */,
 				B5FBDB5B285DCC92007F047D /* SummaryController.swift in Sources */,
 				B5043F48285850300064D738 /* LoginService.swift in Sources */,
 				B5FBDB5D285DCFAB007F047D /* SummaryViewModel.swift in Sources */,
 				B5A2283E2857166A007665A3 /* CustomUserTextView.swift in Sources */,
+				E103CAEA286611A9004B3B53 /* ViewEntryController.swift in Sources */,
 				B5D02759286207780041E175 /* UpDownMoodView.swift in Sources */,
 				B5E1192D2860BD42000DD0E0 /* MoodCell.swift in Sources */,
 				B5D0276D28645BCA0041E175 /* ChatViewModel.swift in Sources */,
+				E1AF4AFA28684145000C75BA /* HomeController.swift in Sources */,
 				B55F497B2856DB6200BC8351 /* LoginPageController.swift in Sources */,
 				B593326A2857540500927312 /* User.swift in Sources */,
-				E1ED6CA8286481100028F9D1 /* HomeController.swift in Sources */,
 				2E56BA1128641F3B0078E6F8 /* TextFieldController.swift in Sources */,
 				B5A4F9D0286175B600ADAE15 /* AverageMoodView.swift in Sources */,
 				E1ED6CB028648B400028F9D1 /* EntryListViewCell.swift in Sources */,
@@ -750,6 +787,14 @@
 				kind = branch;
 			};
 		};
+		E16E0F442868A82F00DD0B53 /* XCRemoteSwiftPackageReference "MonthYearWheelPicker" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/bendodson/MonthYearWheelPicker.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -767,6 +812,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = B55F49732856D7E500BC8351 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseStorage;
+		};
+		E16E0F452868A82F00DD0B53 /* MonthYearWheelPicker */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E16E0F442868A82F00DD0B53 /* XCRemoteSwiftPackageReference "MonthYearWheelPicker" */;
+			productName = MonthYearWheelPicker;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

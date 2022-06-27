@@ -36,7 +36,12 @@ class TabBarController: UITabBarController{
         ListEntriesVC.title = "Entries"
 //        ChatInputVC.title = "New Input"
         
-        self.setViewControllers([ListEntriesVC, ChatInputVC, SummaryVC], animated: true)
+        let homeStoryboard = UIStoryboard(name: "Home", bundle: nil)
+        let homeVC = homeStoryboard.instantiateViewController(withIdentifier: "homeView")
+        
+        
+        
+        self.setViewControllers([homeVC, ChatInputVC, SummaryVC], animated: true)
 
 //        let chatTintColor = UIColor(red: 51/255, green: 88/255, blue: 141/255, alpha: 1)
         self.tabBar.layer.shadowOffset = CGSize(width: 0, height: 0)

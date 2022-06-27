@@ -30,9 +30,7 @@ class LoginFormController: UIViewController{
     }()
     
     private let emailTextView: CustomUserTextView = CustomUserTextView(placeholder: "Email")
-    private let xxx: CustomMessageTextView = CustomMessageTextView(placeholder: "ssss")
-
-    
+ 
     private let passwordTextView: CustomUserTextView = CustomUserTextView(placeholder: "Password", isSecureField: true)
     
     private lazy var loginButton: AuthButton = {
@@ -85,7 +83,6 @@ class LoginFormController: UIViewController{
     }
     
     // MARK: - Helpers
-    
     func configureTextFieldObserver(){
         [emailTextView, passwordTextView].forEach {
             $0.customTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
@@ -111,7 +108,7 @@ class LoginFormController: UIViewController{
         loginImageView.setDimensions(height: 280, width: 280)
         loginImageView.anchor(top: loginTitle.bottomAnchor, paddingTop: 36)
         
-        let stack = UIStackView(arrangedSubviews: [xxx,emailTextView, passwordTextView, UIView(), loginButton, createAccountButton])
+        let stack = UIStackView(arrangedSubviews: [emailTextView, passwordTextView, UIView(), loginButton, createAccountButton])
         stack.axis = .vertical
         stack.spacing = 16
         view.addSubview(stack)

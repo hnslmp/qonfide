@@ -10,9 +10,9 @@ import UIKit
 class SummaryController: UIViewController{
     
     // MARK: - Properties
-    var dataSource: [String: Int] = ["😊 Happy":0,"😭 Sad":0,"😡 Angry":0,"😮 Surprised":0, "🤢 Disgusted":0, "😱 Fearful":0, "😔 Bad":0]
+    var dataSource: [Int] = [0,0,0,0,0,0,0]
         
-    var emotionCounts: [String: Int] = [:]
+    var emotionCounts: [String: Int] = ["😊 Happy":0,"😭 Sad":0,"😡 Angry":0,"😮 Surprised":0, "🤢 Disgusted":0, "😱 Fearful":0, "😔 Bad":0]
     
     var graphViews: Array<UIView> = []
     
@@ -40,19 +40,17 @@ class SummaryController: UIViewController{
     private let durationControl: UISegmentedControl = {
         let durations = ["Past 7 Days", "Past 31 Days"]
         let sc = UISegmentedControl(items: durations)
-
         return sc
     }()
     
-    private let totalEntries: UIView = {
+    private lazy var totalEntries: UIView = {
         let view = UIView()
         
         view.heightAnchor.constraint(equalToConstant: 80).isActive = true
         view.layer.cornerRadius = 20
         view.backgroundColor = UIColor(red: 241/255, green: 247/255, blue: 255/255, alpha: 1)
         
-        //TODO: Ganti jadi ambil data asli
-        let entriesCount = AppHelper.appInputs.count
+        let entriesCount: Int = AppHelper.appInputs.count
         
         let labelNumber = UILabel()
         labelNumber.font = .boldSystemFont(ofSize: 50)
@@ -74,27 +72,40 @@ class SummaryController: UIViewController{
         return view
     }()
     
-    private let averageMood = AverageMoodView()
+    private lazy var averageMood = AverageMoodView()
     
-    private let upDownMood = UpDownMoodView()
+    private lazy var upDownMood = UpDownMoodView()
     
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureUI()
         configureData()
+        configureUI()
         drawGraph()
     }
     
     // MARK: - Helpers
     func configureData(){
         let emotions: [String] = AppHelper.appInputs.map{$0.answer3}
-        print("DEBUG: Print fetchedinput \(emotions)")
         for item in emotions {
             emotionCounts[item] = (emotionCounts[item] ?? 0) + 1
         }
-        dataSource.merge(dict: emotionCounts)
+        let happyCount = emotionCounts["😊 Happy"]
+        let sadCount = emotionCounts["😭 Sad"]
+        let angryCount = emotionCounts["😡 Angry"]
+        let suprisedCount = emotionCounts["😮 Surprised"]
+        let disgustedCount = emotionCounts["🤢 Disgusted"]
+        let fearfulCount = emotionCounts["😱 Fearful"]
+        let badCount = emotionCounts["😔 Bad"]
+                
+        dataSource[0] = happyCount ?? 0
+        dataSource[1] = sadCount ?? 0
+        dataSource[2] = angryCount ?? 0
+        dataSource[3] = suprisedCount ?? 0
+        dataSource[4] = disgustedCount ?? 0
+        dataSource[5] = fearfulCount ?? 0
+        dataSource[6] = badCount ?? 0
     }
     
     func configureUI(){
@@ -142,13 +153,9 @@ class SummaryController: UIViewController{
         graphView.subviews.forEach { $0.removeFromSuperview() }
         graphViews.removeAll()
         
-        let dataArray = Array(dataSource.values)
-        print("DEBUG: dataSource \(dataSource)")
-        print("DEBUG: dataArray \(dataArray)")
-
-        for index in 0...dataArray.count - 1
+        for index in 0...dataSource.count - 1
         {
-            let value = dataArray[index]
+            let value = dataSource[index]
 
             let leadingBar = prevBar == nil
 

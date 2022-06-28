@@ -28,6 +28,10 @@ class TabBarController: UITabBarController{
         configureTabBar()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.isNavigationBarHidden = true
+    }
+    
     override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
         if self.selectedIndex == 1 {
             self.hidesBottomBarWhenPushed = true

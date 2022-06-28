@@ -17,7 +17,7 @@ class MoodCellView: UIStackView{
         
         let countLabel = UILabel()
         countLabel.text = " \(String(count)) "
-        countLabel.font = .boldSystemFont(ofSize: 20)
+        countLabel.font = .boldSystemFont(ofSize: 18)
         countLabel.textColor = UIColor(red: 51/255, green: 88/255, blue: 141/255, alpha: 1)
         
         let moodLabel = MoodCell(mood: mood)
@@ -41,9 +41,9 @@ class MoodCell: UILabel{
         layer.borderWidth = 1
         layer.borderColor = UIColor(red: 51/255, green: 88/255, blue: 141/255, alpha: 1).cgColor
         
-        font = .systemFont(ofSize: 16)
+        font = .systemFont(ofSize: 12)
         textColor = UIColor(red: 51/255, green: 88/255, blue: 141/255, alpha: 1)
-        text = " 🙂 \(mood) "
+        text = " \(mood) "
     }
     
     required init?(coder: NSCoder) {

@@ -17,8 +17,14 @@ class AverageMoodView: UIView{
     // MARK: - Properties
     private let moodTitle: UILabel = {
         
-        //TODO: Change into using dynamic data
-        let averageMood = "Happy"
+        let emotions: [String] = AppHelper.appInputs.map{$0.answer3}
+        var emotionCounts: [String: Int] = [:]
+        for item in emotions {
+            emotionCounts[item] = (emotionCounts[item] ?? 0) + 1
+        }
+        
+        let maxEmoitons = emotionCounts.max { a, b in a.value < b.value }
+        let averageMood = maxEmoitons?.key ?? ""
         
         let label = UILabel()
         let textColor = UIColor(red: 51/255, green: 88/255, blue: 141/255, alpha: 1)
@@ -32,13 +38,6 @@ class AverageMoodView: UIView{
     private let moodLine: UIImageView = {
         let view = UIImageView(image: UIImage(named: "cellLine"))
         return view
-//        let view = UIView()
-//        let width = 2
-//        view.frame = CGRect(x: 0, y: 0, width: 300, height: width)
-//        let line = CALayer()
-//        line.backgroundColor = UIColor(red: 51/255, green: 88/255, blue: 141/255, alpha: 1).cgColor
-//        line.frame = CGRect(x: 0, y: 0, width: Int(view.frame.width), height: width)
-//        view.layer.addSublayer(line)
     }()
     
     private let moodBody: UILabel = {
@@ -54,11 +53,15 @@ class AverageMoodView: UIView{
         stack.axis = .horizontal
         stack.distribution = .fillProportionally
         
-        //TODO: Ganti jadi data real
         let moods = [moodStruct(mood: "Happy", count: 4), moodStruct(mood: "Sadness", count: 2)]
-        
-        moods.forEach { moodStruct in
-            stack.addArrangedSubview(MoodCellView(mood: moodStruct.mood, count: moodStruct.count))
+        let emotions: [String] = AppHelper.appInputs.map{$0.answer3}
+        var emotionCounts: [String: Int] = [:]
+        for item in emotions {
+            emotionCounts[item] = (emotionCounts[item] ?? 0) + 1
+        }
+        let emotionsSorted = emotionCounts.sorted{ $0.value > $1.value }
+        for i in 0...2{
+            stack.addArrangedSubview(MoodCellView(mood: emotionsSorted[i].key, count: emotionsSorted[i].value))
         }
         
         return stack
@@ -84,13 +87,6 @@ class AverageMoodView: UIView{
         
         addSubview(moodStack)
         moodStack.anchor(top: moodBody.bottomAnchor,left:leftAnchor, paddingTop: 12, paddingLeft: 24)
-        
-//        axis = .vertical
-//        alignment = .lastBaseline
-//        distribution = .fillProportionally
-//
-//        [moodTitle, moodLine, moodBody, moodStack].forEach {view in addArrangedSubview(view)}
-        
     }
     
     required init(coder: NSCoder) {

@@ -38,6 +38,8 @@ class UpDownMoodView: UIView {
         stack.distribution = .fillProportionally
         
         let upMoods = ["School", "Work"]
+        
+        
 
         upMoods.forEach { mood in
             stack.addArrangedSubview(MoodCell(mood: mood))

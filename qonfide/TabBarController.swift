@@ -70,8 +70,9 @@ class TabBarController: UITabBarController{
             Task.init{
                 let fetchedInput = try await ChatServiceClass.fetchMessages()
                 AppHelper.appInputs = fetchedInput
+                print("DEBUG: Data fetched")
+                print("DEBUG: User is logged in")
             }
-            print("DEBUG: User is logged in")
         }
     }
     

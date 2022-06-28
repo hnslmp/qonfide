@@ -37,11 +37,13 @@ class SettingsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        fetchData()
         viewStyling()
         // Do any additional setup after loading the view.
     }
     
     func viewStyling() {
+        navigationController?.isNavigationBarHidden = false
         self.view.backgroundColor = .white
         
         tableView.delegate = self
@@ -60,10 +62,10 @@ class SettingsViewController: UIViewController {
         selectPhoto.imageView?.layer.masksToBounds = true
         selectPhoto.addTarget(self, action: #selector(handleSelectPhoto), for: .touchUpInside)
         
-        usernameField.text = userData.username
+//        usernameField.text = userData.username
         usernameField.font = UIFont.systemFont(ofSize: 20, weight: .bold)
         usernameField.addTarget(self, action: #selector(DidChangeNickName), for: .editingChanged)
-        emailField.text = userData.email
+//        emailField.text = userData.email
         emailField.font = UIFont.systemFont(ofSize: 16)
         emailField.addTarget(self, action: #selector(DidChangeEmail), for: .editingChanged)
         
@@ -87,6 +89,13 @@ class SettingsViewController: UIViewController {
                 print("Permission Denied")
             }
         }
+    }
+    
+    func fetchData() {
+        let currentUsr = Auth.auth().currentUser
+        
+        usernameField.text = currentUsr?.displayName ?? "Haris"
+        emailField.text = currentUsr?.email
     }
     
     @IBAction func signOutTapped(_ sender: Any) {
@@ -146,6 +155,9 @@ class SettingsViewController: UIViewController {
         }
     }
     
+    @IBAction func unwindToSetting (_ seg: UIStoryboardSegue) {
+        
+    }
 }
 
 // MARK: - IMAGE PICKER EXT

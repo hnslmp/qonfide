@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import Firebase
 
 class HomeController: UIViewController {
 
@@ -31,21 +31,31 @@ class HomeController: UIViewController {
     
     let dateFormatter = DateFormatter()
     var entryThisMonth: Date?
+    let data = AppHelper.appInputs
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
         self.tableView.register(UINib.init(nibName: "EntryListViewCell", bundle: nil), forCellReuseIdentifier: EntryListViewCell.identifier)
+        
+        getCurrentUser()
         viewStyling()
+    }
+    
+    func getCurrentUser() {
+        guard let current = Auth.auth().currentUser else {
+            print("no user")
+            return
+        }
+        greetTxt.text = "Hi, " + (current.displayName ?? "Haris")
+        
     }
     
     func viewStyling() {
 //        tableView.isHidden = true
 //        view.addSubview(imgViews)
         let spacer = " "
-        
-        greetTxt.text = "Hi, John"
         
         viewQuotes.layer.cornerRadius = 10
         fetchData()
@@ -105,8 +115,8 @@ class HomeController: UIViewController {
     
     @IBAction func goToSettings(_ sender: Any) {
         let sb = UIStoryboard(name: "Settings", bundle: nil)
-        let vc = sb.instantiateViewController(withIdentifier: "SettingView")
-        navigationController?.pushViewController(vc, animated: true)
+        let vc = sb.instantiateViewController(withIdentifier: "SettingView") as! SettingsViewController
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     
@@ -121,7 +131,7 @@ class HomeController: UIViewController {
 
 extension HomeController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        15
+        5
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

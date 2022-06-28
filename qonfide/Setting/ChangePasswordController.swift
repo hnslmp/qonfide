@@ -19,6 +19,7 @@ class ChangePasswordController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.isNavigationBarHidden = false
         errorMessage.isHidden = true
         errorMessage.numberOfLines = 2
         // Do any additional setup after loading the view.
@@ -30,10 +31,7 @@ class ChangePasswordController: UIViewController {
         if isValid {
             errorMsg = ""
             errorMessage.isHidden = true
-            let storyboard = UIStoryboard(name: "Settings", bundle: nil)
-            let vc = storyboard.instantiateViewController(withIdentifier: "SettingView")
-            vc.navigationItem.hidesBackButton = true
-            self.navigationController?.pushViewController(vc, animated: true)
+            performSegue(withIdentifier: "unwindToSetting", sender: self)
         } else {
             errorMessage.isHidden = false
         }

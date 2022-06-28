@@ -19,6 +19,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: scene)
         window?.makeKeyAndVisible()
         window?.rootViewController = UINavigationController(rootViewController: TabBarController())
+        UINavigationBar.appearance().backIndicatorImage = UIImage(named: "backButton")
+        UINavigationBar.appearance().backIndicatorTransitionMaskImage = UIImage(named: "backButton")
 
 //        if defaults.bool(forKey: "First Launch") {
 

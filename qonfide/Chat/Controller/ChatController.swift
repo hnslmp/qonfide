@@ -40,13 +40,19 @@ class ChatController: UICollectionViewController
     }
     
     @objc func completeTapped(){
-        navigationController?.pushViewController(TabBarController(), animated: true)
+        navigationController?.popViewController(animated: true)
         print("DEBUG: Complete Tapped pressed")
     }
     
     // MARK: - Helpers
     func configureUI(){
+        navigationController?.isNavigationBarHidden = false
         configureNavigationBar(withTitle: getDate(), preferLargeTitles: false)
+//        let backItem = UIBarButtonItem()
+//        backItem.title = ""
+//        self.navigationItem.backBarButtonItem = backItem
+//        self.navigationController?.navigationItem.backBarButtonItem = backItem
+//        self.navigationController?.navigationItem.ba
         
         self.navigationController?.navigationBar.layer.shadowColor = UIColor.black.cgColor
         self.navigationController?.navigationBar.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)

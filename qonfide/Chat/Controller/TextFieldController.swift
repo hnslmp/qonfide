@@ -15,17 +15,20 @@ class TextFieldController: UIViewController {
     
     weak var delegate: TextFieldControllerDelegate?
     
-    //COMPONENT TEXT VIEW
+    // MARK: - Properties
     
     private lazy var messageInputTextView: UITextView = {
         let tv = UITextView()
         tv.autocorrectionType = .no
         tv.font = UIFont.systemFont(ofSize: 16)
         tv.isScrollEnabled = true
+        tv.sizeToFit()
         tv.backgroundColor = UIColor(red: 133/255, green: 165/255, blue: 210/255, alpha: 0.2)
         tv.layer.cornerRadius = 8
         return tv
     }()
+    
+    private var textViewHeight: CGFloat = 0
     
     private lazy var sendButton: UIButton = {
         let button = UIButton(type: .system)
@@ -44,14 +47,13 @@ class TextFieldController: UIViewController {
         
         return label
     }()
-    
-    //CONTAINER TEXT VIEW
-    
+        
     private lazy var containerView: UIView = {
         let view = UIView()
         view.backgroundColor =  UIColor(red: 241/255, green: 247/255, blue: 255/255, alpha: 1)
         view.layer.cornerRadius = 16
         view.clipsToBounds = true
+        view.autoresizingMask = .flexibleHeight
         return view
     }()
     
@@ -61,12 +63,13 @@ class TextFieldController: UIViewController {
         view.autoresizingMask = .flexibleHeight
         
         view.addSubview(sendButton)
-        sendButton.anchor(top: view.topAnchor, right: view.rightAnchor,paddingTop: 25,paddingRight: 8)
+        sendButton.anchor(top: view.topAnchor, right: view.rightAnchor,paddingTop: -4,paddingRight: 8)
         sendButton.setDimensions(height: 50,width: 50)
         
         view.addSubview(messageInputTextView)
-        messageInputTextView.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor,right: sendButton.leftAnchor,paddingTop: 12,paddingLeft: 4,paddingBottom: 8,paddingRight: 8)
-        
+        messageInputTextView.anchor(top: view.topAnchor,left: view.leftAnchor, bottom: view.bottomAnchor,right: sendButton.leftAnchor,paddingTop: 0,paddingLeft: 4, paddingBottom: 12,paddingRight: 8)
+        messageInputTextView.translatesAutoresizingMaskIntoConstraints = false
+
         view.addSubview(placeholderLabel)
         placeholderLabel.anchor(left: messageInputTextView.leftAnchor, paddingLeft: 4)
         placeholderLabel.centerY(inView: messageInputTextView)
@@ -76,7 +79,7 @@ class TextFieldController: UIViewController {
     }()
     
     // Constants
-    let defaultHeight: CGFloat = 150
+    let defaultHeight: CGFloat = 90
     let dismissibleHeight: CGFloat = 200
     let maximumContainerHeight: CGFloat = UIScreen.main.bounds.height - 64
     // keep current new height, initial is default height
@@ -88,6 +91,7 @@ class TextFieldController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupNotifications()
         setupView()
         setupConstraints()
     }
@@ -100,6 +104,25 @@ class TextFieldController: UIViewController {
         super.viewDidAppear(animated)
 //        animateShowDimmedView()
         animatePresentContainer()
+    }
+    
+    func setupNotifications(){
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y == 0 {
+                self.view.frame.origin.y -= keyboardSize.height
+            }
+        }
+    }
+
+    @objc func keyboardWillHide(notification: NSNotification) {
+        if self.view.frame.origin.y != 0 {
+            self.view.frame.origin.y = 0
+        }
     }
     
     func setupView() {
@@ -141,7 +164,7 @@ class TextFieldController: UIViewController {
         containerViewBottomConstraint?.isActive = true
     }
     
-    // MARK: FUNCTION
+    // MARK: Functions
     func animateContainerHeight(_ height: CGFloat) {
         UIView.animate(withDuration: 0.4) {
             // Update container height

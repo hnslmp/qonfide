@@ -85,8 +85,7 @@ class SummaryController: UIViewController{
         
         configureUI()
         Task.init{
-            let fetchedInput = try await ChatServiceClass.fetchMessages()
-            let emotions: [String] = fetchedInput.map{$0.answer3}
+            let emotions: [String] = AppHelper.appInputs.map{$0.answer3}
             for item in emotions {
                 emotionCounts[item] = (emotionCounts[item] ?? 0) + 1
             }

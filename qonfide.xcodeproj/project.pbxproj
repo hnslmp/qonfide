@@ -31,6 +31,7 @@
 		B5A2283E2857166A007665A3 /* CustomUserTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A2283D2857166A007665A3 /* CustomUserTextView.swift */; };
 		B5A4F9D0286175B600ADAE15 /* AverageMoodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A4F9CF286175B600ADAE15 /* AverageMoodView.swift */; };
 		B5B0C764286B284E00702988 /* Input.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B0C763286B284D00702988 /* Input.swift */; };
+		B5B0C766286B581500702988 /* AppHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B0C765286B581500702988 /* AppHelper.swift */; };
 		B5B555462852FF800076C25E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B555452852FF800076C25E /* AppDelegate.swift */; };
 		B5B555482852FF800076C25E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B555472852FF800076C25E /* SceneDelegate.swift */; };
 		B5B5554A2852FF800076C25E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B555492852FF800076C25E /* ViewController.swift */; };
@@ -97,6 +98,7 @@
 		B5A2283D2857166A007665A3 /* CustomUserTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUserTextView.swift; sourceTree = "<group>"; };
 		B5A4F9CF286175B600ADAE15 /* AverageMoodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AverageMoodView.swift; sourceTree = "<group>"; };
 		B5B0C763286B284D00702988 /* Input.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Input.swift; sourceTree = "<group>"; };
+		B5B0C765286B581500702988 /* AppHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppHelper.swift; sourceTree = "<group>"; };
 		B5B555422852FF800076C25E /* qonfide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = qonfide.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5B555452852FF800076C25E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B5B555472852FF800076C25E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -224,6 +226,7 @@
 				B5A22835285712CA007665A3 /* Chat */,
 				B5A228382857131F007665A3 /* Utils */,
 				B5B555452852FF800076C25E /* AppDelegate.swift */,
+				B5B0C765286B581500702988 /* AppHelper.swift */,
 				B5B555472852FF800076C25E /* SceneDelegate.swift */,
 				B5B555492852FF800076C25E /* ViewController.swift */,
 				B5ECF70B2860D57F00D30E8E /* TabBarController.swift */,
@@ -559,6 +562,7 @@
 				B5B555462852FF800076C25E /* AppDelegate.swift in Sources */,
 				B5ECF70C2860D57F00D30E8E /* TabBarController.swift in Sources */,
 				B5FBDB5B285DCC92007F047D /* SummaryController.swift in Sources */,
+				B5B0C766286B581500702988 /* AppHelper.swift in Sources */,
 				B5043F48285850300064D738 /* LoginService.swift in Sources */,
 				B5FBDB5D285DCFAB007F047D /* SummaryViewModel.swift in Sources */,
 				B5A2283E2857166A007665A3 /* CustomUserTextView.swift in Sources */,

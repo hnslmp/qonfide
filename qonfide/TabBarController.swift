@@ -14,8 +14,6 @@ class TabBarController: UITabBarController{
     // MARK: - Properties
     
     private let SummaryVC = SummaryController()
-    
-    //TODO: Change into vc yg beners
     private let ListEntriesVC = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "homeView")
     
     
@@ -23,8 +21,7 @@ class TabBarController: UITabBarController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        logout()
-//        checkIfUserIsLoggedIn()
+        checkIfUserIsLoggedIn()
         configureTabBar()
     }
     

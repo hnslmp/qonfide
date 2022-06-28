@@ -187,7 +187,6 @@ class TextFieldController: UIViewController {
     }
     
     // MARK: - Selector TEXT VIEW
-    
     @objc func handleTextInputChange(){
         placeholderLabel.isHidden = !self.messageInputTextView.text.isEmpty
     }

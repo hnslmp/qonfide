@@ -40,12 +40,10 @@ class OnboardViewController: UIViewController, UIScrollViewDelegate {
             
             let slide = UIView(frame: scrollFrame)
             
-//            subviews (ex: title, desc, etc)
             let backgroundImg = UIImageView.init(image: UIImage(named: onboardData[index].imageBackGround))
             
             backgroundImg.frame = CGRect(x: 0, y: -50, width: scrollWidth, height: scrollHeight)
             backgroundImg.contentMode = .scaleAspectFit
-//
             let imageView = UIImageView.init(image: UIImage(named: onboardData[index].imageView))
             imageView.frame = CGRect(x: 0, y: 0, width: 300, height: 300)
             imageView.contentMode = .scaleAspectFill
@@ -111,15 +109,4 @@ class OnboardViewController: UIViewController, UIScrollViewDelegate {
         let page = (scrollView?.contentOffset.x)! / scrollWidth
         pageControl?.currentPage = Int(page)
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

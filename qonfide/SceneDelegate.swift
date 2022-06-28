@@ -21,6 +21,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 //        }
         
         guard let scene = (scene as? UIWindowScene) else { return }
+        let sb = UIStoryboard(name: "Settings", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: "SettingView")
+        
         window = UIWindow(windowScene: scene)
         window?.makeKeyAndVisible()
         window?.rootViewController = UINavigationController(rootViewController: TabBarController())

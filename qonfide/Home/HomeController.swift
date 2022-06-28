@@ -7,6 +7,7 @@
 
 import UIKit
 
+
 class HomeController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
@@ -17,7 +18,7 @@ class HomeController: UIViewController {
     @IBOutlet weak var refreshBtn: UIButton!
     @IBOutlet weak var changeDateBtn: UIButton!
     @IBOutlet weak var viewQuotes: UIView!
-    
+    @IBOutlet weak var chatBtn: UIButton!
     
     lazy var imgViews: UIImageView = {
         let img = UIImage(named: "Group")
@@ -60,6 +61,7 @@ class HomeController: UIViewController {
         changeDateBtn.contentHorizontalAlignment = .left
         changeDateBtn.semanticContentAttribute = .forceRightToLeft
         
+        chatBtn.layer.cornerRadius = chatBtn.frame.width / 2
     }
     
     func fetchData() {
@@ -92,6 +94,9 @@ class HomeController: UIViewController {
        
         }
     
+    @IBAction func goToChat(_ sender: Any) {
+        self.navigationController?.pushViewController(ChatController(), animated: true)
+    }
     
     @IBAction func refreshData(_ sender: Any) {
         fetchData()
@@ -99,7 +104,6 @@ class HomeController: UIViewController {
     
     
     @IBAction func goToSettings(_ sender: Any) {
-        //MARK: -- BELUM ADA
         let sb = UIStoryboard(name: "Settings", bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: "SettingView")
         navigationController?.pushViewController(vc, animated: true)
@@ -109,7 +113,6 @@ class HomeController: UIViewController {
     @IBAction func pickMonthYear(_ sender: Any) {
         let vc = ModalPickMonthController()
         vc.selectMonthYearDelegate = self
-        vc.inputField.text = dateFormatter.string(from: entryThisMonth!)
         vc.modalPresentationStyle = .overCurrentContext
         self.present(vc, animated: true, completion: nil)
     }

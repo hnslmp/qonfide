@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import NaturalLanguage
 
 private let reuseIdentifier = "MessageCell"
 
@@ -111,6 +112,23 @@ extension ChatController: UICollectionViewDelegateFlowLayout{
 
 extension ChatController: ChatViewModelDelegate{
     
+    func sentimentAnalyst(message: String) -> Double {
+        let tagger = NLTagger(tagSchemes: [.sentimentScore])
+        tagger.string = message
+        
+        // ask for the results
+        let (sentiment, _) = tagger.tag(at: message.startIndex, unit: .paragraph, scheme: .sentimentScore)
+
+        // read the sentiment back and print it
+        let score = Double(sentiment?.rawValue ?? "0") ?? 0
+        
+        for value in 1...3 {
+            print(value)
+        }
+        
+        return score
+    }
+    
     func setParam(message: [String]) {
            paramData = message
        }
@@ -148,7 +166,7 @@ extension ChatController: CustomModalViewControllerDelegate
     func userSelect(choice: String)
     {
         viewModel.userChoice = choice
-        if choice.contains("Angry") {
+        if choice.contains("Angry") || choice.contains("Happy") {
             viewModel.emotionString = choice
         }
         viewModel.configureChat()

@@ -188,9 +188,9 @@
 			children = (
 				B5A2283928571323007665A3 /* Extensions.swift */,
 				B5043F49285850590064D738 /* Service.swift */,
+				2E13D2FB2869DDD70007F4C6 /* ChatService.swift */,
 				B5043F4B285850930064D738 /* DbConstants.swift */,
 				B5043F47285850300064D738 /* LoginService.swift */,
-				2E13D2FB2869DDD70007F4C6 /* ChatService.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";

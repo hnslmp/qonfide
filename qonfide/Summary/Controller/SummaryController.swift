@@ -10,7 +10,9 @@ import UIKit
 class SummaryController: UIViewController{
     
     // MARK: - Properties
-    var dataSource: Array<Int> = [1,3,4,5,6,7,8]
+    var dataSource: [String: Int] = ["😊 Happy":0,"😭 Sad":0,"😡 Angry":0,"😮 Surprised":0, "🤢 Disgusted":0, "😱 Fearful":0, "😔 Bad":0]
+        
+    var emotionCounts: [String: Int] = [:]
     
     var graphViews: Array<UIView> = []
     
@@ -68,17 +70,6 @@ class SummaryController: UIViewController{
         view.addSubview(labelStack)
         labelStack.centerX(inView: view)
         labelStack.centerY(inView: view)
-    
-//        let label = UILabel()
-//        let textColor = UIColor(red: 51/255, green: 88/255, blue: 141/255, alpha: 1)
-//        let attributedTitle = NSMutableAttributedString(string: String(entriesCount), attributes: [.foregroundColor: textColor, .font: UIFont.boldSystemFont(ofSize: 50)])
-//
-//        attributedTitle.append(NSAttributedString(string: "Total Entries This Week", attributes: [.foregroundColor: textColor, .font: UIFont.systemFont(ofSize: 20)]))
-        
-//        label.attributedText = attributedTitle
-//        view.addSubview(label)
-//        label.centerX(inView: view)
-//        label.centerY(inView: view)
         
         return view
     }()
@@ -91,8 +82,17 @@ class SummaryController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         configureUI()
-    
+        Task.init{
+            let fetchedInput = try await ChatServiceClass.fetchMessages()
+            let emotions: [String] = fetchedInput.map{$0.answer3}
+            for item in emotions {
+                emotionCounts[item] = (emotionCounts[item] ?? 0) + 1
+            }
+            dataSource = dataSource.merging(emotionCounts) { (_, new) in new }
+            drawGraph()
+        }
     }
     
     // MARK: - Helpers
@@ -116,7 +116,7 @@ class SummaryController: UIViewController{
         
         graphView.translatesAutoresizingMaskIntoConstraints = false
         graphView.heightAnchor.constraint(equalToConstant: graphView.frame.height).isActive = true
-        drawGraph()
+        
 
         let scrollView = UIScrollView()
         scrollView.contentSize = CGSize(width: 330, height: 400)
@@ -139,41 +139,45 @@ class SummaryController: UIViewController{
     {
         let barSpacing: CGFloat = 16.0
         var prevBar: UIView?
-        
+
         graphView.subviews.forEach { $0.removeFromSuperview() }
         graphViews.removeAll()
         
-        for index in 0...dataSource.count - 1
+        let dataArray = Array(dataSource.values)
+        
+        print("DEBUG: dataArray \(dataArray)")
+
+        for index in 0...dataArray.count - 1
         {
-            let value = dataSource[index]
-            
+            let value = dataArray[index]
+
             let leadingBar = prevBar == nil
-                
+
             let bar = UIView()
             graphViews.append(bar)
             graphView.addSubview(bar)
             bar.backgroundColor = UIColor(red: 133/255, green: 165/255, blue: 210/255, alpha: 1)
-            
+
             bar.layer.cornerRadius = 10
             bar.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
-            
+
             let barHeight = getBarHeight(value)
             let leadingAnchor = leadingBar ? graphView.leadingAnchor : prevBar!.trailingAnchor
-            
+
             bar.translatesAutoresizingMaskIntoConstraints = false
             NSLayoutConstraint.activate([
                 bar.heightAnchor.constraint(equalToConstant: barHeight),
                 bar.bottomAnchor.constraint(equalTo: graphView.bottomAnchor),
                 bar.leadingAnchor.constraint(equalTo: leadingAnchor, constant: barSpacing),
             ])
-            
+
             prevBar?.widthAnchor.constraint(equalTo: bar.widthAnchor).isActive = true
             prevBar = bar
-            
+
             let iv = UIImageView()
             iv.image = emotions[index]
             view.addSubview(iv)
-            
+
             iv.translatesAutoresizingMaskIntoConstraints = false
             iv.topAnchor.constraint(equalTo: bar.bottomAnchor, constant: 8).isActive = true
             iv.anchor(top: bar.bottomAnchor, paddingTop: 8)
@@ -182,7 +186,7 @@ class SummaryController: UIViewController{
         }
         prevBar?.trailingAnchor.constraint(equalTo: graphView.trailingAnchor, constant: -barSpacing).isActive = true
     }
-    
+
     private func getBarHeight(_ dataValue: Int) -> CGFloat
     {
         let topInset = 16.0

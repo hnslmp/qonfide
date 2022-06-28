@@ -30,6 +30,7 @@
 		B5A2283C285713B0007665A3 /* LoginFormController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A2283B285713B0007665A3 /* LoginFormController.swift */; };
 		B5A2283E2857166A007665A3 /* CustomUserTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A2283D2857166A007665A3 /* CustomUserTextView.swift */; };
 		B5A4F9D0286175B600ADAE15 /* AverageMoodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A4F9CF286175B600ADAE15 /* AverageMoodView.swift */; };
+		B5B0C764286B284E00702988 /* Input.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B0C763286B284D00702988 /* Input.swift */; };
 		B5B555462852FF800076C25E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B555452852FF800076C25E /* AppDelegate.swift */; };
 		B5B555482852FF800076C25E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B555472852FF800076C25E /* SceneDelegate.swift */; };
 		B5B5554A2852FF800076C25E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B555492852FF800076C25E /* ViewController.swift */; };
@@ -95,6 +96,7 @@
 		B5A2283B285713B0007665A3 /* LoginFormController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFormController.swift; sourceTree = "<group>"; };
 		B5A2283D2857166A007665A3 /* CustomUserTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUserTextView.swift; sourceTree = "<group>"; };
 		B5A4F9CF286175B600ADAE15 /* AverageMoodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AverageMoodView.swift; sourceTree = "<group>"; };
+		B5B0C763286B284D00702988 /* Input.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Input.swift; sourceTree = "<group>"; };
 		B5B555422852FF800076C25E /* qonfide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = qonfide.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5B555452852FF800076C25E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B5B555472852FF800076C25E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -284,6 +286,7 @@
 			isa = PBXGroup;
 			children = (
 				B57BC0AA285C5D03008776E0 /* Message.swift */,
+				B5B0C763286B284D00702988 /* Input.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -562,6 +565,7 @@
 				B5D02759286207780041E175 /* UpDownMoodView.swift in Sources */,
 				E119D396286966DE00956613 /* EntryTypeTwoCell.swift in Sources */,
 				B5E1192D2860BD42000DD0E0 /* MoodCell.swift in Sources */,
+				B5B0C764286B284E00702988 /* Input.swift in Sources */,
 				E119D38F286966DE00956613 /* HomeController.swift in Sources */,
 				B5D0276D28645BCA0041E175 /* ChatViewModel.swift in Sources */,
 				B55F497B2856DB6200BC8351 /* LoginPageController.swift in Sources */,

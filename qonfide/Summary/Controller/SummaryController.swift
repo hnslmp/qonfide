@@ -52,7 +52,7 @@ class SummaryController: UIViewController{
         view.backgroundColor = UIColor(red: 241/255, green: 247/255, blue: 255/255, alpha: 1)
         
         //TODO: Ganti jadi ambil data asli
-        let entriesCount = 7
+        let entriesCount = AppHelper.appInputs.count
         
         let labelNumber = UILabel()
         labelNumber.font = .boldSystemFont(ofSize: 50)
@@ -82,22 +82,22 @@ class SummaryController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         configureUI()
-        Task.init{
-            let emotions: [String] = AppHelper.appInputs.map{$0.answer3}
-            for item in emotions {
-                emotionCounts[item] = (emotionCounts[item] ?? 0) + 1
-            }
-            dataSource = dataSource.merging(emotionCounts) { (_, new) in new }
-            drawGraph()
-        }
+        configureData()
+        drawGraph()
     }
     
     // MARK: - Helpers
+    func configureData(){
+        let emotions: [String] = AppHelper.appInputs.map{$0.answer3}
+        print("DEBUG: Print fetchedinput \(emotions)")
+        for item in emotions {
+            emotionCounts[item] = (emotionCounts[item] ?? 0) + 1
+        }
+        dataSource.merge(dict: emotionCounts)
+    }
     
     func configureUI(){
-        
         navigationController?.isNavigationBarHidden = true
         view.backgroundColor = .white
         
@@ -143,7 +143,7 @@ class SummaryController: UIViewController{
         graphViews.removeAll()
         
         let dataArray = Array(dataSource.values)
-        
+        print("DEBUG: dataSource \(dataSource)")
         print("DEBUG: dataArray \(dataArray)")
 
         for index in 0...dataArray.count - 1

@@ -12,6 +12,14 @@ public struct AnchoredConstraints {
     public var top, leading, bottom, trailing, width, height: NSLayoutConstraint?
 }
 
+extension Dictionary {
+    mutating func merge(dict: [Key: Value]){
+        for (k, v) in dict {
+            updateValue(v, forKey: k)
+        }
+    }
+}
+
 extension UIColor {
     static let barDeselectedColor = UIColor(white: 0, alpha: 0.1)
 }

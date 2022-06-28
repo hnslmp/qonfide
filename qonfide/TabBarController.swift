@@ -67,6 +67,10 @@ class TabBarController: UITabBarController{
         if Auth.auth().currentUser == nil {
             presentLoginController()
         } else {
+            Task.init{
+                let fetchedInput = try await ChatServiceClass.fetchMessages()
+                AppHelper.appInputs = fetchedInput
+            }
             print("DEBUG: User is logged in")
         }
     }

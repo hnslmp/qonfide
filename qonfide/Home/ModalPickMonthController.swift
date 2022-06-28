@@ -34,17 +34,6 @@ class ModalPickMonthController: UIViewController {
         return labelText
     }()
 
-    lazy var inputField: UITextField = {
-        let inputText = UITextField()
-        inputText.textColor = UIColor(red: 51/255, green: 88/255, blue: 141/255, alpha: 100)
-        inputText.placeholder = "Pick a time"
-        inputText.textAlignment = .center
-        inputText.inputView = monthPicker
-        inputText.inputAccessoryView = createToolbar()
-
-        return inputText
-    }()
-
 //    MARK: --CANCEL BUTTON HAPUS
     lazy var cancelButton: UIButton = {
         let cancel = UIButton()
@@ -58,6 +47,7 @@ class ModalPickMonthController: UIViewController {
         let picker = MonthYearWheelPicker()
         picker.minimumDate = Calendar.current.date(byAdding: .year, value: -22, to: Date())!
         picker.maximumDate = Calendar.current.date(byAdding: .year, value: 0, to: Date())!
+        picker.addTarget(self, action: #selector(respondToChanges), for: .valueChanged)
         
         return picker
     }()
@@ -72,7 +62,7 @@ class ModalPickMonthController: UIViewController {
     
     lazy var contentStackView: UIStackView = {
         let spacer = UIView()
-        let stackView = UIStackView(arrangedSubviews: [buttonStackView, spacer, inputField, spacer])
+        let stackView = UIStackView(arrangedSubviews: [buttonStackView, spacer, monthPicker, spacer])
         stackView.axis = .vertical
         stackView.spacing = 12.0
         return stackView
@@ -123,6 +113,8 @@ class ModalPickMonthController: UIViewController {
         }
         
     @objc func handleCloseAction() {
+        let date = monthPicker.date
+        self.selectMonthYearDelegate.ChangeMonthYearDelegate(date: date)
         animateDismissView()
     }
     
@@ -131,35 +123,9 @@ class ModalPickMonthController: UIViewController {
     }
     
 //    MARK: -- GA FAHAM FUNGSINYA
-    @objc func respondToChanges(date: Date) {
+    @objc func respondToChanges() {
         let dateFormatter = DateFormatter()
-        
-        dateFormatter.dateStyle = .medium
-        dateFormatter.timeStyle = .none
-        dateFormatter.dateFormat = "HH:MM a"
-        dateFormatter.amSymbol = "AM"
-        dateFormatter.pmSymbol = "PM"
-        
-    }
-    
-    func createToolbar() -> UIToolbar {
-        let toolbar = UIToolbar()
-        toolbar.sizeToFit()
-        
-        let done = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(donePressed))
-        toolbar.setItems([done], animated: true)
-
-        return toolbar
-    }
-    
-    @objc func donePressed() {
-        let dateFormatter = DateFormatter()
-        let date = monthPicker.date
         dateFormatter.dateFormat = "MMMM, yyyy"
-        
-        self.inputField.text = dateFormatter.string(from: monthPicker.date)
-        self.selectMonthYearDelegate.ChangeMonthYearDelegate(date: date)
-        self.view.endEditing(true)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -246,14 +212,6 @@ class ModalPickMonthController: UIViewController {
         UIView.animate(withDuration: 0.4) {
             self.dimmedView.alpha = 0
         } completion: { _ in
-//            MARK: -- FOR WUT?
-//            print(self.timePicker.countDownDuration)
-//            if self.parentButton == "work"{
-//                UserDefaultManager.shared.defaults.set(self.timePicker.countDownDuration, forKey: "workSession")
-//            } else if self.parentButton == "rest"{
-//                UserDefaultManager.shared.defaults.set(self.timePicker.countDownDuration, forKey: "restSession")
-//            }
-//            SelectTimeReminderDelegate.ChangeTimeQuoteDelegate(date: <#T##Date#>)
             // once done, dismiss without animation
             self.dismiss(animated: false, completion: nil)
         }

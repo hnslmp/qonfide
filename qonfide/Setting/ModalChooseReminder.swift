@@ -38,17 +38,6 @@ class ModalChooseReminder: UIViewController {
             return labelText
         }()
     
-        lazy var inputField: UITextField = {
-            let inputText = UITextField()
-            inputText.textColor = UIColor(red: 51/255, green: 88/255, blue: 141/255, alpha: 100)
-            inputText.placeholder = "Pick a time"
-            inputText.textAlignment = .center
-            inputText.inputView = timePicker
-            inputText.inputAccessoryView = createToolbar()
-            
-            return inputText
-        }()
-    
 //    MARK: --CANCEL BUTTON HAPUS
         lazy var cancelButton: UIButton = {
             let cancel = UIButton()
@@ -62,7 +51,7 @@ class ModalChooseReminder: UIViewController {
             let picker = UIDatePicker()
             picker.datePickerMode = .time
             picker.preferredDatePickerStyle = .wheels
-//            picker.addTarget(self, action: #selector(respondToChanges), for: .valueChanged)
+            picker.addTarget(self, action: #selector(respondToChanges), for: .valueChanged)
             return picker
         }()
         
@@ -76,7 +65,7 @@ class ModalChooseReminder: UIViewController {
         
         lazy var contentStackView: UIStackView = {
             let spacer = UIView()
-            let stackView = UIStackView(arrangedSubviews: [buttonStackView, spacer,inputField, spacer])
+            let stackView = UIStackView(arrangedSubviews: [buttonStackView, spacer, timePicker, spacer])
             stackView.axis = .vertical
             stackView.spacing = 12.0
             return stackView
@@ -125,10 +114,11 @@ class ModalChooseReminder: UIViewController {
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-//        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "pickerClosed"), object: nil)
     }
     
     @objc func handleCloseAction() {
+        let date = timePicker.date
+        selectTimeDelegate.ChangeTimeReminderDelegate(date: date)
         animateDismissView()
     }
     
@@ -136,48 +126,22 @@ class ModalChooseReminder: UIViewController {
         cancelDismissView()
     }
     
-//    MARK: -- GA FAHAM FUNGSINYA
-    @objc func respondToChanges(date: Date) {
+//    MARK: -- FUNCTION TO CHANGE VALUE
+    @objc func respondToChanges() {
         let dateFormatter = DateFormatter()
-        
-        dateFormatter.dateStyle = .medium
-        dateFormatter.timeStyle = .none
-        dateFormatter.dateFormat = "HH:MM a"
-        dateFormatter.amSymbol = "AM"
-        dateFormatter.pmSymbol = "PM"
-        
-        self.inputField.text = dateFormatter.string(from: date)
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        animateShowDimmedView()
-        animatePresentContainer()
-    }
-    
-//    MARK: --TOOLBAR
-    func createToolbar() -> UIToolbar {
-        let toolbar = UIToolbar()
-        toolbar.sizeToFit()
-        
-        let done = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(donePressed))
-        toolbar.setItems([done], animated: true)
-        
-        return toolbar
-    }
-    
-    @objc func donePressed() {
-        let dateFormatter = DateFormatter()
-        let date = timePicker.date
+//        let date = timePicker.date
         dateFormatter.dateStyle = .medium
         dateFormatter.timeStyle = .none
         dateFormatter.dateFormat = "h:mm a"
         dateFormatter.amSymbol = "AM"
         dateFormatter.pmSymbol = "PM"
         
-        self.inputField.text = dateFormatter.string(from: timePicker.date)
-        selectTimeDelegate.ChangeTimeReminderDelegate(date: date)
-        self.view.endEditing(true)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        animateShowDimmedView()
+        animatePresentContainer()
     }
     
     func setupView() {
@@ -258,15 +222,6 @@ class ModalChooseReminder: UIViewController {
         UIView.animate(withDuration: 0.4) {
             self.dimmedView.alpha = 0
         } completion: { _ in
-//            MARK: -- FOR WUT?
-//            print(self.timePicker.countDownDuration)
-//            if self.parentButton == "work"{
-//                UserDefaultManager.shared.defaults.set(self.timePicker.countDownDuration, forKey: "workSession")
-//            } else if self.parentButton == "rest"{
-//                UserDefaultManager.shared.defaults.set(self.timePicker.countDownDuration, forKey: "restSession")
-//            }
-//            SelectTimeReminderDelegate.ChangeTimeQuoteDelegate(date: <#T##Date#>)
-            // once done, dismiss without animation
             self.dismiss(animated: false, completion: nil)
         }
         // hide main view by updating bottom constraint in animation block

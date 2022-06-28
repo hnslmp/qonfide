@@ -8,24 +8,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="6cD-vz-t3J">
-            <objects>
-                <viewController id="yd7-B3-6fv" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="7WE-8Q-LoX">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="hWC-PJ-MPo"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="" image="addBtn" id="bui-vZ-4cK">
-                        <inset key="imageInsets" minX="-4" minY="-30" maxX="-4" maxY="0.0"/>
-                    </tabBarItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mhZ-vK-MbV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1217" y="-96"/>
-        </scene>
         <!--Summary-->
         <scene sceneID="wS5-JP-Sgm">
             <objects>
@@ -122,6 +104,20 @@
                                     <constraint firstAttribute="height" constant="339" id="TF6-Gw-Gd7"/>
                                 </constraints>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="isE-91-YIP">
+                                <rect key="frame" x="352" y="290" width="31" height="31"/>
+                                <color key="backgroundColor" red="0.20000000000000001" green="0.34509803919999998" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="31" id="RXX-qM-KkM"/>
+                                    <constraint firstAttribute="height" constant="31" id="hWb-OC-AOH"/>
+                                </constraints>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="plus" catalog="system"/>
+                                <connections>
+                                    <action selector="goToChat:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="HVT-lZ-wHN"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -132,10 +128,12 @@
                             <constraint firstItem="kDC-3c-QBr" firstAttribute="top" secondItem="DN7-9t-hz8" secondAttribute="bottom" constant="29" id="AQm-kk-zyq"/>
                             <constraint firstItem="5EM-vf-gDQ" firstAttribute="top" secondItem="kDC-3c-QBr" secondAttribute="bottom" constant="29" id="Dkr-cK-mFI"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="5EM-vf-gDQ" secondAttribute="trailing" constant="31" id="EQR-Xw-Xr2"/>
+                            <constraint firstItem="isE-91-YIP" firstAttribute="top" secondItem="DN7-9t-hz8" secondAttribute="bottom" constant="31" id="Orf-Ev-t38"/>
                             <constraint firstItem="5EM-vf-gDQ" firstAttribute="centerX" secondItem="DN7-9t-hz8" secondAttribute="centerX" id="QUo-89-abV"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="7tH-0I-ogF" secondAttribute="trailing" constant="101" id="TOj-Wc-VgU"/>
                             <constraint firstItem="DN7-9t-hz8" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="31" id="a2s-4Z-jMw"/>
                             <constraint firstItem="DN7-9t-hz8" firstAttribute="top" secondItem="7tH-0I-ogF" secondAttribute="bottom" constant="49" id="dRR-Mk-cjK"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="isE-91-YIP" secondAttribute="trailing" constant="31" id="g9z-jB-IA5"/>
                             <constraint firstItem="5EM-vf-gDQ" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="31" id="jVS-ZW-Pyy"/>
                             <constraint firstItem="kDC-3c-QBr" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="31" id="jkq-W7-ZOS"/>
                             <constraint firstItem="i5s-Zd-WXt" firstAttribute="centerY" secondItem="7tH-0I-ogF" secondAttribute="centerY" id="lkq-iW-sAF"/>
@@ -146,6 +144,7 @@
                     <connections>
                         <outlet property="authorTxt" destination="OXW-MH-vgU" id="4Ld-hr-xZf"/>
                         <outlet property="changeDateBtn" destination="kDC-3c-QBr" id="Jzg-Zb-FhP"/>
+                        <outlet property="chatBtn" destination="isE-91-YIP" id="Eny-5Z-hRR"/>
                         <outlet property="greetTxt" destination="7tH-0I-ogF" id="Rgb-02-jlh"/>
                         <outlet property="quoteTxt" destination="pfg-LV-lFH" id="wfT-dm-x7A"/>
                         <outlet property="refreshBtn" destination="bM3-ez-BgJ" id="HI3-S6-vYG"/>
@@ -217,7 +216,6 @@
                     </tabBar>
                     <connections>
                         <segue destination="Y6W-OH-hqX" kind="relationship" relationship="viewControllers" id="VKY-so-agd"/>
-                        <segue destination="yd7-B3-6fv" kind="relationship" relationship="viewControllers" id="ql0-M1-buu"/>
                         <segue destination="lcp-3Z-E1F" kind="relationship" relationship="viewControllers" id="XZW-En-WY6"/>
                     </connections>
                 </tabBarController>
@@ -227,11 +225,11 @@
         </scene>
     </scenes>
     <resources>
-        <image name="addBtn" width="73" height="73"/>
         <image name="arrow.triangle.2.circlepath" catalog="system" width="128" height="101"/>
         <image name="book.fill" catalog="system" width="128" height="95"/>
         <image name="chart.bar" catalog="system" width="128" height="90"/>
         <image name="gearshape.fill" catalog="system" width="128" height="121"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

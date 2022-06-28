@@ -16,9 +16,7 @@ class TabBarController: UITabBarController{
     private let SummaryVC = SummaryController()
     
     //TODO: Change into vc yg beners
-//    private let ListEntriesVC = ViewController()
     private let ListEntriesVC = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "homeView")
-    private let ChatInputVC = ViewController()
     
     
     // MARK: - Lifecycle
@@ -30,13 +28,17 @@ class TabBarController: UITabBarController{
         configureTabBar()
     }
     
+    override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+        if self.selectedIndex == 1 {
+            self.hidesBottomBarWhenPushed = true
+        }
+    }
+    
     // MARK: - Helpers
     func configureTabBar(){
         SummaryVC.title = "Summary"
         ListEntriesVC.title = "Entries"
-//        ChatInputVC.title = "New Input"
-        
-        self.setViewControllers([ListEntriesVC, ChatInputVC, SummaryVC], animated: true)
+        self.setViewControllers([ListEntriesVC, SummaryVC], animated: true)
 
 //        let chatTintColor = UIColor(red: 51/255, green: 88/255, blue: 141/255, alpha: 1)
         self.tabBar.layer.shadowOffset = CGSize(width: 0, height: 0)
@@ -52,17 +54,9 @@ class TabBarController: UITabBarController{
                 
         if let tabBarItem1 = self.tabBar.items?[0] {
             tabBarItem1.image = UIImage(systemName: "book")
-            tabBarItem1.selectedImage = UIImage(systemName: "book.fill")        }
-        if let tabBarItem2 = self.tabBar.items?[1] {
-//            tabBarItem2.image = UIImage(systemName: "plus.circle.fill")
-//            tabBarItem2.selectedImage = UIImage(systemName: "plus.circle.fill")
-            tabBarItem2.image = UIImage(named: "addBtn")
-            tabBarItem2.selectedImage = UIImage(named: "addBtn")
-            tabBarItem2.imageInsets.top = -30
-            tabBarItem2.imageInsets.left = -4
-            tabBarItem2.imageInsets.right = -4
+            tabBarItem1.selectedImage = UIImage(systemName: "book.fill")
         }
-        if let tabBarItem3 = self.tabBar.items?[2] {
+        if let tabBarItem3 = self.tabBar.items?[1] {
             tabBarItem3.image = UIImage(systemName: "chart.bar")
             tabBarItem3.selectedImage = UIImage(systemName: "chart.bar.fill")
         }

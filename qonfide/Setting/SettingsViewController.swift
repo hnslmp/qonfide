@@ -26,6 +26,7 @@ class SettingsViewController: UIViewController {
     var textInCells = ["", "Check-In Reminder", "Daily Quotes Reminder"]
     let notificationCenter = UNUserNotificationCenter.current()
     private var profileImage: UIImage?
+    var quotes: String?
     
 //    To set default value timer
     var dateComp = DateComponents()
@@ -36,6 +37,11 @@ class SettingsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewStyling()
+        // Do any additional setup after loading the view.
+    }
+    
+    func viewStyling() {
         self.view.backgroundColor = .white
         
         tableView.delegate = self
@@ -81,7 +87,6 @@ class SettingsViewController: UIViewController {
                 print("Permission Denied")
             }
         }
-        // Do any additional setup after loading the view.
     }
     
     @IBAction func signOutTapped(_ sender: Any) {
@@ -273,14 +278,12 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource, Se
         else if indexPath.section == 1 {
             let vc = ModalChooseReminder()
             vc.selectTimeDelegate = self
-            vc.inputField.text = self.dateFormatter.string(from: dateReminder)
             vc.modalPresentationStyle = .overCurrentContext
             self.present(vc, animated: true, completion: nil)
         }
         else {
             let vc = ModalChooseQuotes()
             vc.selectTimeDelegate = self
-            vc.inputField.text = self.dateFormatter.string(from: dateQuotes)
             vc.modalPresentationStyle = .overCurrentContext
             self.present(vc, animated: true, completion: nil)
         }
@@ -291,10 +294,11 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource, Se
         if sender.isOn {
             notificationCenter.getNotificationSettings { (settings) in
                 DispatchQueue.main.async {
-                    let title = "Quotes Of the Day"
-                    let message = "Let by gone be by gone"
                     
                     if settings.authorizationStatus == .authorized {
+                        let title = "Quotes Of the Day"
+                        let message = "Let by gone be by gone"
+                        
                         let content = UNMutableNotificationContent()
                         content.title = title
                         content.body = message
@@ -388,4 +392,3 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource, Se
     }
     
 }
-

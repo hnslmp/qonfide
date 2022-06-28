@@ -15,10 +15,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         
-        Task.init{
-            let fetchedInput = try await ChatServiceClass.fetchMessages()
-            AppHelper.appInputs = fetchedInput
-        }
+//        Task.init{
+//            let fetchedInput = try await ChatServiceClass.fetchMessages()
+//            AppHelper.appInputs = fetchedInput
+//        }
         
         guard let scene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: scene)

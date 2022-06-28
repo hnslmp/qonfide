@@ -11,6 +11,7 @@ protocol ChatViewModelDelegate
 {
     func presentChoiceModal(buttons: [String])
     func presentTextModal()
+//    func resetContentOffset()
     func refreshChat()
 }
 
@@ -154,11 +155,8 @@ class ChatViewModel{
         }
         else if counter == 22 {
             messages.append(Message(text: "Here is a suggestion when you're feeling " + emotionString + " : \n 1. Slowly repeat a calm word or phrase such as 'relax,' 'take it easy.' Repeat it to yourself while breathing deeply. \n \n 2. Use imagery; visualize a relaxing experience, from either your memory or your imagination. \n \n 3. Non-strenuous, slow yoga-like exercises can relax your muscles and make you feel much calmer.", isBobSender: true))
+            messages.append(Message(text: "Don't forget to check-in your emotion later", isBobSender: true))
             delegate.refreshChat()
-            counter += 1
-            configureChat()
         }
     }
-    
-    
 }

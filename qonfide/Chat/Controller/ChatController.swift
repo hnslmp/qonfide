@@ -15,8 +15,14 @@ class ChatController: UICollectionViewController
     // MARK: - Properties
     private let viewModel = ChatViewModel()
     
-    // MARK: - Lifecycle
+    private lazy var saveBarButton: UIBarButtonItem = {
+        let barButton = UIBarButtonItem(title: "Save ", style: .plain, target: self, action: #selector(completeTapped))
+        barButton.tintColor = UIColor(red: 53/255, green: 74/255, blue: 166/255, alpha: 1)
+        return barButton
+    }()
     
+            
+    // MARK: - Lifecycle
     init(){
         super.init(collectionViewLayout: UICollectionViewFlowLayout())
     }
@@ -33,6 +39,10 @@ class ChatController: UICollectionViewController
         viewModel.configureChat()
     }
     
+    @objc func completeTapped(){
+        navigationController?.pushViewController(TabBarController(), animated: true)
+        print("DEBUG: Complete Tapped pressed")
+    }
     
     // MARK: - Helpers
     func configureUI(){
@@ -43,7 +53,8 @@ class ChatController: UICollectionViewController
         self.navigationController?.navigationBar.layer.shadowRadius = 4.0
         self.navigationController?.navigationBar.layer.shadowOpacity = 0.4
         self.navigationController?.navigationBar.layer.masksToBounds = false
-
+        self.navigationItem.rightBarButtonItem = saveBarButton
+        
         collectionView.backgroundColor = .white
         collectionView.register(MessageCell.self, forCellWithReuseIdentifier: reuseIdentifier)
         collectionView.alwaysBounceVertical = true
@@ -111,14 +122,18 @@ extension ChatController: ChatViewModelDelegate{
     
     func refreshChat() {
         self.collectionView.reloadData()
+        
+        if viewModel.counter == 22 {
+            collectionView.scrollToItem(at: IndexPath(item: viewModel.messages.count-1, section: 0), at: .top, animated: true)
+        }
     }
+    
 }
 
 extension ChatController: CustomModalViewControllerDelegate
 {
     func userSelect(choice: String)
     {
-        print("DEBUG: ChatController delegate: \(choice)")
         viewModel.userChoice = choice
         if choice.contains("Angry") {
             viewModel.emotionString = choice

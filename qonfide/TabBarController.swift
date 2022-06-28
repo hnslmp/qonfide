@@ -93,5 +93,4 @@ class TabBarController: UITabBarController{
             print("DEBUG: Failed to sign out")
         }
     }
-    
 }

@@ -31,7 +31,5 @@ struct MessageViewModel {
     init(message: Message){
         self.message = message
     }
-    
-//    func 
 }
 

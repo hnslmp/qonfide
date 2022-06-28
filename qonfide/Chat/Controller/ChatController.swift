@@ -15,6 +15,8 @@ class ChatController: UICollectionViewController
     // MARK: - Properties
     private let viewModel = ChatViewModel()
     
+    private var paramData: Array<String> = []
+    
     private lazy var saveBarButton: UIBarButtonItem = {
         let barButton = UIBarButtonItem(title: "Save ", style: .plain, target: self, action: #selector(completeTapped))
         barButton.tintColor = UIColor(red: 53/255, green: 74/255, blue: 166/255, alpha: 1)
@@ -40,6 +42,7 @@ class ChatController: UICollectionViewController
     }
     
     @objc func completeTapped(){
+        ChatServiceClass.processData(paramData)
         navigationController?.popViewController(animated: true)
         print("DEBUG: Complete Tapped pressed")
     }
@@ -107,6 +110,10 @@ extension ChatController: UICollectionViewDelegateFlowLayout{
 }
 
 extension ChatController: ChatViewModelDelegate{
+    
+    func setParam(message: [String]) {
+           paramData = message
+       }
     
     func presentChoiceModal(buttons: [String]) {
         collectionView.scrollToItem(at: IndexPath(item: viewModel.messages.count-1, section: 0), at: .bottom, animated: true)

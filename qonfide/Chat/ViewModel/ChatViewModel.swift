@@ -13,7 +13,9 @@ protocol ChatViewModelDelegate
     func presentTextModal()
 //    func resetContentOffset()
     func refreshChat()
-}
+    func setParam(message: [String])}
+
+let activityAnger: Array<String> = ["Here is a suggestion when you're feeling angry: \n 1. Slowly repeat a calm word or phrase such as 'relax,' 'take it easy.' Repeat it to yourself while breathing deeply. \n \n 2. Use imagery; visualize a relaxing experience, from either your memory or your imagination. \n \n 3. Non-strenuous, slow yoga-like exercises can relax your muscles and make you feel much calmer."]
 
 class ChatViewModel{
     
@@ -39,6 +41,8 @@ class ChatViewModel{
     
     var options4: Array<String> = ["Yeah sure", "I don't think I need it now"]
     
+    var tempValue: Array<String> = []
+    
     func configureChat(){
         print(userChoice)
         if counter == 0 {
@@ -51,6 +55,7 @@ class ChatViewModel{
             counter += 1
         }else if counter == 2 {
             messages.append(Message(text: "Hey, Bob. It's mostly because of " + userChoice, isBobSender: false))
+            tempValue.append(userChoice)
             delegate.refreshChat()
             counter += 1
             configureChat()
@@ -64,6 +69,7 @@ class ChatViewModel{
             counter += 1
         }else if counter == 5 {
             messages.append(Message(text: userChoice, isBobSender: false))
+            tempValue.append(userChoice)
             delegate.refreshChat()
             counter += 1
             configureChat()
@@ -84,6 +90,7 @@ class ChatViewModel{
         }
         else if counter == 9 {
             messages.append(Message(text: "It mostly makes me feel " + userChoice, isBobSender: false))
+            tempValue.append(userChoice)
             delegate.refreshChat()
             counter += 1
             configureChat()
@@ -105,6 +112,7 @@ class ChatViewModel{
         }
         else if counter == 13 {
             messages.append(Message(text: "I Feel " + userChoice + " " + emotionString, isBobSender: false))
+            tempValue.append(userChoice)
             delegate.refreshChat()
             counter += 1
             configureChat()
@@ -127,6 +135,7 @@ class ChatViewModel{
         }
         else if counter == 17 {
             messages.append(Message(text: userChoice, isBobSender: false))
+            tempValue.append(userChoice)
             delegate.refreshChat()
             counter += 1
             configureChat()
@@ -154,9 +163,11 @@ class ChatViewModel{
             configureChat()
         }
         else if counter == 22 {
-            messages.append(Message(text: "Here is a suggestion when you're feeling " + emotionString + " : \n 1. Slowly repeat a calm word or phrase such as 'relax,' 'take it easy.' Repeat it to yourself while breathing deeply. \n \n 2. Use imagery; visualize a relaxing experience, from either your memory or your imagination. \n \n 3. Non-strenuous, slow yoga-like exercises can relax your muscles and make you feel much calmer.", isBobSender: true))
+            messages.append(Message(text: activityAnger[0], isBobSender: true))
             messages.append(Message(text: "Don't forget to check-in your emotion later", isBobSender: true))
+            tempValue.append(activityAnger[0])
             delegate.refreshChat()
+            delegate.setParam(message: tempValue)
         }
     }
 }

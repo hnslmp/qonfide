@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E13D2FC2869DDD70007F4C6 /* ChatService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E13D2FB2869DDD70007F4C6 /* ChatService.swift */; };
 		2E56BA0828602E5B0078E6F8 /* ButtonOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E56BA0728602E5B0078E6F8 /* ButtonOptions.swift */; };
 		2E56BA0E2862D52E0078E6F8 /* CustomModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E56BA0D2862D52E0078E6F8 /* CustomModalViewController.swift */; };
 		2E56BA1128641F3B0078E6F8 /* TextFieldController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E56BA1028641F3B0078E6F8 /* TextFieldController.swift */; };
@@ -74,6 +75,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2E13D2FB2869DDD70007F4C6 /* ChatService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatService.swift; sourceTree = "<group>"; };
 		2E56BA0728602E5B0078E6F8 /* ButtonOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonOptions.swift; sourceTree = "<group>"; };
 		2E56BA0D2862D52E0078E6F8 /* CustomModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomModalViewController.swift; sourceTree = "<group>"; };
 		2E56BA1028641F3B0078E6F8 /* TextFieldController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldController.swift; sourceTree = "<group>"; };
@@ -186,8 +188,9 @@
 			children = (
 				B5A2283928571323007665A3 /* Extensions.swift */,
 				B5043F49285850590064D738 /* Service.swift */,
-				B5043F47285850300064D738 /* LoginService.swift */,
 				B5043F4B285850930064D738 /* DbConstants.swift */,
+				B5043F47285850300064D738 /* LoginService.swift */,
+				2E13D2FB2869DDD70007F4C6 /* ChatService.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -544,6 +547,7 @@
 				B57BC0AD285C5E53008776E0 /* MessageViewModel.swift in Sources */,
 				E108B60C2865FFC20096B685 /* UserModel.swift in Sources */,
 				E108B6072865FFC20096B685 /* ChangePasswordCell.swift in Sources */,
+				2E13D2FC2869DDD70007F4C6 /* ChatService.swift in Sources */,
 				E108B6062865FFC20096B685 /* ModalChooseQuotes.swift in Sources */,
 				E108B60F2865FFC20096B685 /* SettingsViewController.swift in Sources */,
 				E119D39A286966DE00956613 /* ViewEntryController.swift in Sources */,

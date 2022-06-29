@@ -53,10 +53,8 @@ class HomeController: UIViewController {
     }
     
     func viewStyling() {
-//        tableView.isHidden = true
-//        view.addSubview(imgViews)
-        let spacer = " "
         
+        let spacer = " "
         viewQuotes.layer.cornerRadius = 10
         fetchData()
         quoteTxt.numberOfLines = 3

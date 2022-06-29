@@ -31,15 +31,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         UINavigationBar.appearance().backIndicatorTransitionMaskImage = UIImage(named: "backButton")
 
 //        if defaults.bool(forKey: "First Launch") {
-
+//
 ////            open for second time or more
-
+//
 //            print("kedua")
 //            defaults.set(true, forKey: "First Launch")
 //            window = UIWindow(windowScene: scene)
 //            window?.makeKeyAndVisible()
 //            window?.rootViewController = UINavigationController(rootViewController: LoginPageController())
-
+//
 //        } else {
 ////          open for first time
 //            print("pertama")

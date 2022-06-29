@@ -15,39 +15,20 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         
-//        Task.init{
-//            let fetchedInput = try await ChatServiceClass.fetchMessages()
-//            AppHelper.appInputs = fetchedInput
-//        }
-        
         guard let scene = (scene as? UIWindowScene) else { return }
-//        let sb = UIStoryboard(name: "Settings", bundle: nil)
-//        let vc = sb.instantiateViewController(withIdentifier: "SettingView")
-//
-//        window = UIWindow(windowScene: scene)
-//        window?.makeKeyAndVisible()
-//        window?.rootViewController = UINavigationController(rootViewController: TabBarController())
-//        UINavigationBar.appearance().backIndicatorImage = UIImage(named: "backButton")
-//        UINavigationBar.appearance().backIndicatorTransitionMaskImage = UIImage(named: "backButton")
-
         if defaults.bool(forKey: "First Launch") {
-
-//            open for second time or more
-
+            //Second time
             print("kedua")
             defaults.set(true, forKey: "First Launch")
             window = UIWindow(windowScene: scene)
             window?.makeKeyAndVisible()
-            window?.rootViewController = UINavigationController(rootViewController: LoginPageController())
-
+            window?.rootViewController = UINavigationController(rootViewController: TabBarController())
         } else {
-//          open for first time
+            //First time
             print("pertama")
             defaults.set(true, forKey: "First Launch")
-
             let storyboard = UIStoryboard(name: "Onboard", bundle: nil)
             let initiateVC = storyboard.instantiateViewController(withIdentifier: "OnboardView")
-
             window = UIWindow(windowScene: scene)
             window?.makeKeyAndVisible()
             window?.rootViewController = UINavigationController(rootViewController: initiateVC)

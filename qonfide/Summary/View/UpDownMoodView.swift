@@ -37,12 +37,13 @@ class UpDownMoodView: UIView {
         stack.axis = .horizontal
         stack.distribution = .fillProportionally
         
-        let upMoods = ["School", "Work"]
+        let inputs = AppHelper.appInputs
+        let filteredHappy = inputs.filter { $0.answer3 == "😊 Happy" }
+        let upMoodReason = filteredHappy.map { $0.answer1 }
+        let upMoodReasonUniqued = upMoodReason.uniqued()
         
-        
-
-        upMoods.forEach { mood in
-            stack.addArrangedSubview(MoodCell(mood: mood))
+        upMoodReasonUniqued.forEach { reason in
+            stack.addArrangedSubview(ReasonCell(reason: reason))
         }
                 
         return stack
@@ -53,10 +54,13 @@ class UpDownMoodView: UIView {
         stack.axis = .horizontal
         stack.distribution = .fillProportionally
         
-        let upMoods = ["School", "Work"]
-
-        upMoods.forEach { mood in
-            stack.addArrangedSubview(MoodCell(mood: mood))
+        let inputs = AppHelper.appInputs
+        let filteredUnhappy = inputs.filter { $0.answer3 != "😊 Happy"}
+        let downMoodReason = filteredUnhappy.map{ $0.answer1 }
+        let downMoodReasonUniqued = downMoodReason.uniqued()
+        
+        downMoodReasonUniqued.forEach { reason in
+            stack.addArrangedSubview(ReasonCell(reason: reason))
         }
                 
         return stack

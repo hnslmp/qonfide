@@ -50,3 +50,28 @@ class MoodCell: UILabel{
         fatalError("init(coder:) has not been implemented")
     }
 }
+
+class ReasonCell: UILabel{
+    
+    init(reason: String){
+        super.init(frame: .zero)
+        backgroundColor = .white
+        
+        layer.masksToBounds = true
+        layer.cornerRadius = 13
+        layer.borderWidth = 1
+        layer.borderColor = UIColor(red: 51/255, green: 88/255, blue: 141/255, alpha: 1).cgColor
+        
+        font = .systemFont(ofSize: 12)
+        textColor = UIColor(red: 51/255, green: 88/255, blue: 141/255, alpha: 1)
+        text = " \(  reason  ) "
+        
+        heightAnchor.constraint(equalToConstant: self.font.lineHeight+4).isActive = true
+        
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+}

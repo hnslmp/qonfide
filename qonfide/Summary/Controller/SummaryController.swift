@@ -10,9 +10,9 @@ import UIKit
 class SummaryController: UIViewController{
     
     // MARK: - Properties
-    var dataSource: [Int] = [0,0,0,0,0,0,0]
-        
-    var emotionCounts: [String: Int] = ["😊 Happy":0,"😭 Sad":0,"😡 Angry":0,"😮 Surprised":0, "🤢 Disgusted":0, "😱 Fearful":0, "😔 Bad":0]
+    var dataSource: [Int] = []
+            
+    private let viewModel = SummaryViewModel()
     
     var graphViews: Array<UIView> = []
     
@@ -87,25 +87,7 @@ class SummaryController: UIViewController{
     
     // MARK: - Helpers
     func configureData(){
-        let emotions: [String] = AppHelper.appInputs.map{$0.answer3}
-        for item in emotions {
-            emotionCounts[item] = (emotionCounts[item] ?? 0) + 1
-        }
-        let happyCount = emotionCounts["😊 Happy"]
-        let sadCount = emotionCounts["😭 Sad"]
-        let angryCount = emotionCounts["😡 Angry"]
-        let suprisedCount = emotionCounts["😮 Surprised"]
-        let disgustedCount = emotionCounts["🤢 Disgusted"]
-        let fearfulCount = emotionCounts["😱 Fearful"]
-        let badCount = emotionCounts["😔 Bad"]
-                
-        dataSource[0] = happyCount ?? 0
-        dataSource[1] = sadCount ?? 0
-        dataSource[2] = angryCount ?? 0
-        dataSource[3] = suprisedCount ?? 0
-        dataSource[4] = disgustedCount ?? 0
-        dataSource[5] = fearfulCount ?? 0
-        dataSource[6] = badCount ?? 0
+        dataSource = viewModel.configureChartData()
     }
     
     func configureUI(){

@@ -135,7 +135,7 @@ class SettingsViewController: UIViewController {
         
         do {
             try firebaseAuth.signOut()
-            self.navigationController?.pushViewController(LoginPageController(), animated: true)
+            self.navigationController?.pushViewController(TabBarController(), animated: true)
         } catch let signOutError as NSError {
             print("Error sign out: \(signOutError)")
         }

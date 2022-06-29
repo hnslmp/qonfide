@@ -21,42 +21,37 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 //        }
         
         guard let scene = (scene as? UIWindowScene) else { return }
-        let sb = UIStoryboard(name: "Settings", bundle: nil)
-        let vc = sb.instantiateViewController(withIdentifier: "SettingView")
-        
-        window = UIWindow(windowScene: scene)
-        window?.makeKeyAndVisible()
-        window?.rootViewController = UINavigationController(rootViewController: TabBarController())
-        UINavigationBar.appearance().backIndicatorImage = UIImage(named: "backButton")
-        UINavigationBar.appearance().backIndicatorTransitionMaskImage = UIImage(named: "backButton")
+//        let sb = UIStoryboard(name: "Settings", bundle: nil)
+//        let vc = sb.instantiateViewController(withIdentifier: "SettingView")
+//
+//        window = UIWindow(windowScene: scene)
+//        window?.makeKeyAndVisible()
+//        window?.rootViewController = UINavigationController(rootViewController: TabBarController())
+//        UINavigationBar.appearance().backIndicatorImage = UIImage(named: "backButton")
+//        UINavigationBar.appearance().backIndicatorTransitionMaskImage = UIImage(named: "backButton")
 
-//        if defaults.bool(forKey: "First Launch") {
+        if defaults.bool(forKey: "First Launch") {
 
-////            open for second time or more
+//            open for second time or more
 
-//            print("kedua")
-//            defaults.set(true, forKey: "First Launch")
-//            window = UIWindow(windowScene: scene)
-//            window?.makeKeyAndVisible()
-//            window?.rootViewController = UINavigationController(rootViewController: LoginPageController())
+            print("kedua")
+            defaults.set(true, forKey: "First Launch")
+            window = UIWindow(windowScene: scene)
+            window?.makeKeyAndVisible()
+            window?.rootViewController = UINavigationController(rootViewController: LoginPageController())
 
-//        } else {
-////          open for first time
-//            print("pertama")
-//            defaults.set(true, forKey: "First Launch")
+        } else {
+//          open for first time
+            print("pertama")
+            defaults.set(true, forKey: "First Launch")
 
-////            let storyboard = UIStoryboard(name: "Onboard", bundle: nil)
-//            let storyboard = UIStoryboard(name: "Home", bundle: nil)
-////            let initiateVC = storyboard.instantiateViewController(withIdentifier: "OnboardView")
-//            let initiateVC = storyboard.instantiateViewController(withIdentifier: "homeView")
+            let storyboard = UIStoryboard(name: "Onboard", bundle: nil)
+            let initiateVC = storyboard.instantiateViewController(withIdentifier: "OnboardView")
 
-//            let storyboard = UIStoryboard(name: "Onboard", bundle: nil)
-//            let initiateVC = storyboard.instantiateViewController(withIdentifier: "OnboardView")
-
-//            window = UIWindow(windowScene: scene)
-//            window?.makeKeyAndVisible()
-//            window?.rootViewController = UINavigationController(rootViewController: initiateVC)
-//        }
+            window = UIWindow(windowScene: scene)
+            window?.makeKeyAndVisible()
+            window?.rootViewController = UINavigationController(rootViewController: initiateVC)
+        }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

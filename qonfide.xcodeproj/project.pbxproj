@@ -41,6 +41,7 @@
 		B5D02759286207780041E175 /* UpDownMoodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D02758286207780041E175 /* UpDownMoodView.swift */; };
 		B5D0276D28645BCA0041E175 /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D0276C28645BCA0041E175 /* ChatViewModel.swift */; };
 		B5E1192D2860BD42000DD0E0 /* MoodCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E1192C2860BD42000DD0E0 /* MoodCell.swift */; };
+		B5E6824C286EEAA200E20918 /* SpinnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E6824B286EEAA200E20918 /* SpinnerViewController.swift */; };
 		B5ECF70C2860D57F00D30E8E /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5ECF70B2860D57F00D30E8E /* TabBarController.swift */; };
 		B5EFBE6328579B1B00579F50 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EFBE6228579B1B00579F50 /* UserViewModel.swift */; };
 		B5FBDB5B285DCC92007F047D /* SummaryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FBDB5A285DCC92007F047D /* SummaryController.swift */; };
@@ -110,6 +111,7 @@
 		B5D02758286207780041E175 /* UpDownMoodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpDownMoodView.swift; sourceTree = "<group>"; };
 		B5D0276C28645BCA0041E175 /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
 		B5E1192C2860BD42000DD0E0 /* MoodCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodCell.swift; sourceTree = "<group>"; };
+		B5E6824B286EEAA200E20918 /* SpinnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerViewController.swift; sourceTree = "<group>"; };
 		B5ECF70B2860D57F00D30E8E /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		B5EFBE6228579B1B00579F50 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		B5FBDB5A285DCC92007F047D /* SummaryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryController.swift; sourceTree = "<group>"; };
@@ -195,6 +197,7 @@
 				2E13D2FB2869DDD70007F4C6 /* ChatService.swift */,
 				B5043F4B285850930064D738 /* DbConstants.swift */,
 				B5043F47285850300064D738 /* LoginService.swift */,
+				B5E6824B286EEAA200E20918 /* SpinnerViewController.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -534,6 +537,7 @@
 				B528513F285B6509009F7422 /* MessageCell.swift in Sources */,
 				B5043F4A285850590064D738 /* Service.swift in Sources */,
 				2E56BA0828602E5B0078E6F8 /* ButtonOptions.swift in Sources */,
+				B5E6824C286EEAA200E20918 /* SpinnerViewController.swift in Sources */,
 				E119D398286966DE00956613 /* EntryListViewCell.swift in Sources */,
 				B57BC0AB285C5D03008776E0 /* Message.swift in Sources */,
 				2E56BA0E2862D52E0078E6F8 /* CustomModalViewController.swift in Sources */,

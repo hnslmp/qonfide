@@ -80,6 +80,7 @@ class HomeController: UIViewController {
     }
     
     func viewStyling() {
+
         let spacer = " "
         viewQuotes.layer.cornerRadius = 10
         fetchData()

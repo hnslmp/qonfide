@@ -14,6 +14,7 @@ struct moodStruct {
 
 class AverageMoodView: UIView{
     
+    
     // MARK: - Properties
     private let moodTitle: UILabel = {
         
@@ -22,7 +23,6 @@ class AverageMoodView: UIView{
         for item in emotions {
             emotionCounts[item] = (emotionCounts[item] ?? 0) + 1
         }
-        
         let maxEmoitons = emotionCounts.max { a, b in a.value < b.value }
         let averageMood = maxEmoitons?.key ?? ""
         

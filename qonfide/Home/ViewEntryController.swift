@@ -23,17 +23,18 @@ class ViewEntryController: UIViewController {
     let q4 = "This is what happen..."
     let q5 = "This is what I did..."
     let q6 = "Activity Suggestion:"
-    let emoji1 = "😡"
-    let answ1 = "Angry"
-    let emoji2 = "🏫"
-    let answ2 = "School"
-    let answ3 = "A little"
-    let answ4 = "School makes me angry because of the amount of work I need to finish."
-    let answ5 = "I try to list down the work I need to finish."
-    let answ6 = "1. Slowly repeat a calm word or phrase such as relax, take it easy. Repeat it to yourself while breathing deeply. \n2. Use imagery; visualize a relaxing experience, from either your memory or your imagination. \n3. Non-strenuous, slow yoga-like exercises can relax your muscles and make you feel much calmer."
+    var emoji1 = "😡"
+    var answ1 = "Angry"
+    var emoji2 = "🏫"
+    var answ2 = "School"
+    var answ3 = "A little"
+    var answ4 = "School makes me angry because of the amount of work I need to finish."
+    var answ5 = "I try to list down the work I need to finish."
+    var answ6 = "1. Slowly repeat a calm word or phrase such as relax, take it easy. Repeat it to yourself while breathing deeply. \n2. Use imagery; visualize a relaxing experience, from either your memory or your imagination. \n3. Non-strenuous, slow yoga-like exercises can relax your muscles and make you feel much calmer."
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.isNavigationBarHidden = false
         viewStyling()
 
         // Do any additional setup after loading the view.

@@ -34,7 +34,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DN7-9t-hz8">
                                 <rect key="frame" x="31" y="173" width="352" height="120"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pfg-LV-lFH">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="pfg-LV-lFH">
                                         <rect key="frame" x="49" y="0.0" width="254" height="80"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -71,7 +71,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kDC-3c-QBr">
-                                <rect key="frame" x="31" y="342" width="79.5" height="34.5"/>
+                                <rect key="frame" x="31" y="323" width="79.5" height="57"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Button">
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="17"/>
@@ -82,7 +82,7 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="5EM-vf-gDQ">
-                                <rect key="frame" x="31" y="423.5" width="352" height="339"/>
+                                <rect key="frame" x="31" y="410" width="352" height="339"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="339" id="TF6-Gw-Gd7"/>
@@ -109,8 +109,8 @@
                             <constraint firstItem="7tH-0I-ogF" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="53" id="0aA-L8-gSI"/>
                             <constraint firstItem="7tH-0I-ogF" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="48" id="1Er-m0-Mht"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="DN7-9t-hz8" secondAttribute="trailing" constant="31" id="A5R-qm-V3m"/>
-                            <constraint firstItem="kDC-3c-QBr" firstAttribute="top" secondItem="DN7-9t-hz8" secondAttribute="bottom" constant="49" id="AQm-kk-zyq"/>
-                            <constraint firstItem="5EM-vf-gDQ" firstAttribute="top" secondItem="kDC-3c-QBr" secondAttribute="bottom" constant="47" id="Dkr-cK-mFI"/>
+                            <constraint firstItem="kDC-3c-QBr" firstAttribute="top" secondItem="DN7-9t-hz8" secondAttribute="bottom" constant="30" id="AQm-kk-zyq"/>
+                            <constraint firstItem="5EM-vf-gDQ" firstAttribute="top" secondItem="kDC-3c-QBr" secondAttribute="bottom" constant="30" id="Dkr-cK-mFI"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="5EM-vf-gDQ" secondAttribute="trailing" constant="31" id="EQR-Xw-Xr2"/>
                             <constraint firstItem="isE-91-YIP" firstAttribute="top" secondItem="DN7-9t-hz8" secondAttribute="bottom" constant="43" id="Orf-Ev-t38"/>
                             <constraint firstItem="5EM-vf-gDQ" firstAttribute="centerX" secondItem="DN7-9t-hz8" secondAttribute="centerX" id="QUo-89-abV"/>
@@ -122,6 +122,7 @@
                             <constraint firstItem="kDC-3c-QBr" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="31" id="jkq-W7-ZOS"/>
                             <constraint firstItem="i5s-Zd-WXt" firstAttribute="centerY" secondItem="7tH-0I-ogF" secondAttribute="centerY" id="lkq-iW-sAF"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="i5s-Zd-WXt" secondAttribute="trailing" constant="31" id="yoX-KK-0N2"/>
+                            <constraint firstItem="isE-91-YIP" firstAttribute="centerY" secondItem="kDC-3c-QBr" secondAttribute="centerY" id="zHj-p9-RJS"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Entries" image="book.fill" catalog="system" id="QUY-Ml-CSx"/>

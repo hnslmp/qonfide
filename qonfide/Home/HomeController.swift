@@ -7,6 +7,8 @@
 
 import UIKit
 import Firebase
+import SwiftUI
+import CoreMIDI
 
 class HomeController: UIViewController {
 
@@ -31,7 +33,8 @@ class HomeController: UIViewController {
     
     let dateFormatter = DateFormatter()
     var entryThisMonth: Date?
-    let data = AppHelper.appInputs
+    var userChat: [Input]?
+    var quoteOfTheDay: String = "Don't forget to smile"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,17 +46,41 @@ class HomeController: UIViewController {
         viewStyling()
     }
     
-    func getCurrentUser() {
-        guard let current = Auth.auth().currentUser else {
-            print("no user")
-            return
+    func checkEntry() {
+        if ((userChat?.isEmpty) != nil) {
+            tableView.isHidden = true
+            view.addSubview(imgViews)
         }
-        greetTxt.text = "Hi, " + (current.displayName ?? "Haris")
-        
+        else {
+            tableView.isHidden = false
+            imgViews.removeFromSuperview()
+        }
+    }
+    
+    func getCurrentUser() {
+        let db = Firestore.firestore()
+        //get uid
+        let users = Auth.auth().currentUser
+        let path = "users/\(users?.uid ?? "nil")"
+//        print(path)
+        // read document specific path with uid
+        let docRef = db.document(path)
+        docRef.getDocument { snapshot, error in
+            //get data and check if it's not nil
+            guard let userdata = snapshot?.data(), error == nil else {
+                return
+            }
+            //typecast data to a string
+            guard let username = userdata["username"] as? String else {
+                return
+            }
+            
+            self.greetTxt.text = "Hi, " + username
+        }
     }
     
     func viewStyling() {
-        
+
         let spacer = " "
         viewQuotes.layer.cornerRadius = 10
         fetchData()
@@ -70,6 +97,20 @@ class HomeController: UIViewController {
         changeDateBtn.semanticContentAttribute = .forceRightToLeft
         
         chatBtn.layer.cornerRadius = chatBtn.frame.width / 2
+        
+        //fetch user chat
+        Task.init {
+            let chats = await fetchedChat()
+            self.userChat = chats
+            
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+        
+        //check if entry is available
+        checkEntry()
+        
     }
     
     func fetchData() {
@@ -92,6 +133,8 @@ class HomeController: UIViewController {
                     DispatchQueue.main.async {
                         self.quoteTxt.text = "\"" + (quote ?? "Please refresh quotes") + "\""
                         self.authorTxt.text = "- " + (author ?? "Annon")
+                        
+                        self.quoteOfTheDay = (quote ?? "DEBUG NILL")
                     }
                     
                 } catch {
@@ -114,9 +157,19 @@ class HomeController: UIViewController {
     @IBAction func goToSettings(_ sender: Any) {
         let sb = UIStoryboard(name: "Settings", bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: "SettingView") as! SettingsViewController
+        vc.quotes = quoteOfTheDay
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
+    func fetchedChat() async -> [Input] {
+        do {
+            let arr = try await ChatServiceClass.fetchMessages()
+            return arr
+        } catch {
+            print("Error while fetching user chat")
+            return []
+        }
+    }
     
     @IBAction func pickMonthYear(_ sender: Any) {
         let vc = ModalPickMonthController()
@@ -129,18 +182,121 @@ class HomeController: UIViewController {
 
 extension HomeController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        5
+        userChat?.count ?? 0
+    }
+    
+    func emojiMoodConverter(emoji: String) -> String {
+        var temp: String = ""
+        
+        if emoji == "😡 Angry" {
+            temp = "😡"
+        }
+        else if emoji == "🤢 Disgusted" {
+            temp = "🤢"
+        }
+        else if emoji == "😊 Happy" {
+            temp = "😊"
+        }
+        else if emoji == "😭 Sad" {
+            temp = "😭"
+        }
+        else if emoji == "😔 Bad" {
+            temp = "😔"
+        }
+        
+        return temp
+    }
+    
+    func emojiCausesConverter(emoji: String) -> String {
+        var temp: String = ""
+        
+        if emoji == "💼 Work" {
+            temp = "💼"
+        }
+        else if emoji == "🏫 School" {
+            temp = "🏫"
+        }
+        else if emoji == "👫🏻 Relationships" {
+            temp = "👫🏻"
+        }
+        else if emoji == "😕 Insecurities" {
+            temp = "😕"
+        }
+        else if emoji == "Other" {
+            temp = "Other"
+        }
+        
+        return temp
+    }
+    
+    func trimEmojis(emoji: String) -> String {
+        var temp: String = ""
+        
+        if emoji == "😡 Angry" {
+            temp = "Angry"
+        }
+        else if emoji == "🤢 Disgusted" {
+            temp = "Disgusted"
+        }
+        else if emoji == "😊 Happy" {
+            temp = "Happy"
+        }
+        else if emoji == "😭 Sad" {
+            temp = "Sad"
+        }
+        else if emoji == "😔 Bad" {
+            temp = "Bad"
+        }
+        else if emoji == "💼 Work" {
+            temp = "Work"
+        }
+        else if emoji == "🏫 School" {
+            temp = "School"
+        }
+        else if emoji == "👫🏻 Relationships" {
+            temp = "Relationships"
+        }
+        else if emoji == "😕 Insecurities" {
+            temp = "Insecurities"
+        }
+        else if emoji == "Other" {
+            temp = "Other"
+        }
+        
+        return temp
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: EntryListViewCell.identifier, for: indexPath) as! EntryListViewCell
+        
+        let temp = userChat?[indexPath.row].answer3
+        let emoji = emojiMoodConverter(emoji: temp!)
+        cell.emotionTxt.text = emoji
+        cell.causesTxt.text = userChat?[indexPath.row].answer1
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let sb = UIStoryboard(name: "Home", bundle: nil)
-        let vc = sb.instantiateViewController(withIdentifier: "viewEntry")
+        let vc = sb.instantiateViewController(withIdentifier: "viewEntry") as! ViewEntryController
+        
+        let emojiTemp1 = userChat?[indexPath.row].answer3
+        let emojiTemp2 = userChat?[indexPath.row].answer1
+        let emoji1 = emojiMoodConverter(emoji: emojiTemp1!)
+        let emoji2 = emojiCausesConverter(emoji: emojiTemp2!)
+        let answ1 = trimEmojis(emoji: emojiTemp1!)
+        let answ2 = trimEmojis(emoji: emojiTemp2!)
+        
+        vc.answ1 = answ1
+        vc.emoji1 = emoji1
+        vc.answ2 = answ2
+        vc.emoji2 = emoji2
+        vc.answ3 = (userChat?[indexPath.row].answer4 ?? "DEBUG: NILL")
+        vc.answ4 = (userChat?[indexPath.row].answer2 ?? "DEBUG: NILL")
+        vc.answ5 = (userChat?[indexPath.row].answer5 ?? "DEBUG: NILL")
+        vc.answ6 = (userChat?[indexPath.row].answer6 ?? "DEBUG: NILL")
+        
         navigationController?.pushViewController(vc, animated: true)
     }
     

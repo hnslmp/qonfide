@@ -26,13 +26,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="School" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="krK-fs-UjE">
-                                <rect key="frame" x="96" y="10" width="99" height="21"/>
+                                <rect key="frame" x="96" y="10" width="174" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.20000000000000001" green="0.34509803921568627" blue="0.55294117647058827" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sun, 22 June" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fen-Sn-YT3">
-                                <rect key="frame" x="96" y="37" width="99" height="17"/>
+                                <rect key="frame" x="96" y="37" width="174" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="0.20000000000000001" green="0.34509803919999998" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -45,12 +45,12 @@
                             <constraint firstItem="fen-Sn-YT3" firstAttribute="leading" secondItem="GrU-sH-jaq" secondAttribute="trailing" constant="8" symbolic="YES" id="RUx-Mv-ji8"/>
                             <constraint firstItem="GrU-sH-jaq" firstAttribute="top" secondItem="qgc-eM-q4n" secondAttribute="top" constant="3" id="ZTn-WB-jJL"/>
                             <constraint firstItem="fen-Sn-YT3" firstAttribute="centerX" secondItem="krK-fs-UjE" secondAttribute="centerX" id="bhU-cn-da7"/>
-                            <constraint firstAttribute="trailing" secondItem="krK-fs-UjE" secondAttribute="trailing" constant="125" id="fCu-jd-Qlm"/>
+                            <constraint firstAttribute="trailing" secondItem="krK-fs-UjE" secondAttribute="trailing" constant="50" id="fCu-jd-Qlm"/>
                             <constraint firstItem="krK-fs-UjE" firstAttribute="leading" secondItem="GrU-sH-jaq" secondAttribute="trailing" constant="8" symbolic="YES" id="gvS-o1-KQz"/>
                             <constraint firstItem="GrU-sH-jaq" firstAttribute="leading" secondItem="qgc-eM-q4n" secondAttribute="leading" constant="16" id="hDT-JV-AJ1"/>
                             <constraint firstAttribute="bottom" secondItem="GrU-sH-jaq" secondAttribute="bottom" constant="3" id="hZx-4G-7P4"/>
                             <constraint firstItem="fen-Sn-YT3" firstAttribute="top" secondItem="krK-fs-UjE" secondAttribute="bottom" constant="6" id="igP-xm-JC6"/>
-                            <constraint firstAttribute="trailing" secondItem="fen-Sn-YT3" secondAttribute="trailing" constant="125" id="rLW-F2-2wE"/>
+                            <constraint firstAttribute="trailing" secondItem="fen-Sn-YT3" secondAttribute="trailing" constant="50" id="rLW-F2-2wE"/>
                         </constraints>
                     </view>
                 </subviews>

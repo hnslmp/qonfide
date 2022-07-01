@@ -26,14 +26,13 @@ class SettingsViewController: UIViewController {
     var textInCells = ["", "Check-In Reminder", "Daily Quotes Reminder"]
     let notificationCenter = UNUserNotificationCenter.current()
     private var profileImage: UIImage?
-    var quotes: String?
+    var quotes: String = "Let by gone be by gone"
     
 //    To set default value timer
     var dateComp = DateComponents()
     var dateReminder:Date = Date()
     var dateQuotes:Date = Date()
     let dateFormatter = DateFormatter()
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -309,11 +308,10 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource, Se
                     
                     if settings.authorizationStatus == .authorized {
                         let title = "Quotes Of the Day"
-                        let message = "Let by gone be by gone"
                         
                         let content = UNMutableNotificationContent()
                         content.title = title
-                        content.body = message
+                        content.body = self.quotes
                         let dateComp = Calendar.current.dateComponents([.hour, .minute], from: self.dateQuotes)
                         let trigger = UNCalendarNotificationTrigger(dateMatching: dateComp, repeats: true)
                         let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)

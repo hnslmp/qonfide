@@ -68,10 +68,20 @@ class TabBarController: UITabBarController{
             presentLoginController()
         } else {
             Task.init{
+                let child = SpinnerViewController()
+                addChild(child)
+                child.view.frame = view.frame
+                view.addSubview(child.view)
+                child.didMove(toParent: self)
+                
                 let fetchedInput = try await ChatServiceClass.fetchMessages()
                 AppHelper.appInputs = fetchedInput
                 print("DEBUG: Data fetched")
                 print("DEBUG: User is logged in")
+                
+                child.willMove(toParent: nil)
+                child.view.removeFromSuperview()
+                child.removeFromParent()
             }
         }
     }

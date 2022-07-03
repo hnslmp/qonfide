@@ -71,6 +71,11 @@ class ChatController: UICollectionViewController
         let result = dateFormatter.string(from: date)
         return result
     }
+    
+    func scrollChat() {
+        collectionView.scrollToItem(at: IndexPath(item: viewModel.messages.count-1, section: 0), at: .bottom, animated: true)
+        collectionView.setContentOffset(CGPoint(x: 0, y: collectionView.contentSize.height-100), animated: true)
+    }
 }
 
 extension ChatController{
@@ -127,8 +132,6 @@ extension ChatController: ChatViewModelDelegate{
        }
     
     func presentChoiceModal(buttons: [String]) {
-        collectionView.scrollToItem(at: IndexPath(item: viewModel.messages.count-1, section: 0), at: .bottom, animated: true)
-        collectionView.setContentOffset(CGPoint(x: 0, y: collectionView.contentSize.height-100), animated: true)
         let vc = CustomModalViewController(buttonArray: buttons)
         vc.delegate = self
         vc.modalPresentationStyle = .overCurrentContext
@@ -137,8 +140,6 @@ extension ChatController: ChatViewModelDelegate{
     
     func presentTextModal() {
         let vc = TextFieldController()
-        collectionView.scrollToItem(at: IndexPath(item: viewModel.messages.count-1, section: 0), at: .bottom, animated: true)
-        collectionView.setContentOffset(CGPoint(x: 0, y: collectionView.contentSize.height-100), animated: true)
         vc.delegate = self
         vc.modalPresentationStyle = .overCurrentContext
         self.present(vc, animated: true)
@@ -158,10 +159,14 @@ extension ChatController: CustomModalViewControllerDelegate
 {
     func userSelect(choice: String)
     {
-        viewModel.userChoice = choice
-        if choice.contains("Angry") || choice.contains("Happy") {
+        if choice != "Others" {
+            scrollChat()
+        }
+
+        if choice.contains("Angry") || choice.contains("Happy") || choice.contains("Surprised") || choice.contains("Sad") || choice.contains("Bad") || choice.contains("Fearful") || choice.contains("Disgusted") {
             viewModel.emotionString = choice
         }
+        viewModel.userChoice = choice
         viewModel.configureChat()
     }
 }
@@ -169,6 +174,7 @@ extension ChatController: CustomModalViewControllerDelegate
 extension ChatController: TextFieldControllerDelegate {
     
     func userInput(_ inputView: TextFieldController,wantsToSend input: String) {
+        scrollChat()
         inputView.clearMessageText()
         viewModel.userChoice = input
         viewModel.configureChat()

@@ -81,17 +81,19 @@ class HomeController: UIViewController {
     
     func viewStyling() {
 
-        let spacer = " "
+        let spacer = "     "
         viewQuotes.layer.cornerRadius = 10
         fetchData()
         quoteTxt.numberOfLines = 3
         quoteTxt.font = UIFont.italicSystemFont(ofSize: 17)
         authorTxt.font = UIFont.italicSystemFont(ofSize: 17)
         
+        settingBtn.imageView?.frame = CGRect(x: 0, y: 0, width: 31, height: 31)
         dateFormatter.dateFormat = "MMMM, yyyy"
         entryThisMonth = Date()
         
-        changeDateBtn.setTitle(dateFormatter.string(from: entryThisMonth!) + spacer + spacer, for: .normal)
+        let myTitleAttribute = NSAttributedString(string: "\(dateFormatter.string(from: entryThisMonth!)) \(spacer)", attributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 20, weight: .bold)])
+        changeDateBtn.setAttributedTitle(myTitleAttribute, for: .normal)
         changeDateBtn.setImage(UIImage(systemName: "chevron.down.circle"), for: .normal)
         changeDateBtn.contentHorizontalAlignment = .left
         changeDateBtn.semanticContentAttribute = .forceRightToLeft
@@ -299,6 +301,16 @@ extension HomeController: UITableViewDelegate, UITableViewDataSource {
         
         navigationController?.pushViewController(vc, animated: true)
     }
+    
+//    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+//        let action = UIContextualAction(style: .destructive, title: "Delete") { action, view, completionHandler in
+//
+//            let item = self.userChat![indexPath.row]
+//
+//        }
+//
+//        return UISwipeActionsConfiguration(actions: [action])
+//    }
     
 }
 

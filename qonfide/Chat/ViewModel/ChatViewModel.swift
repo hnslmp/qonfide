@@ -14,6 +14,7 @@ protocol ChatViewModelDelegate
     func refreshChat()
     func setParam(message: [String])
     func sentimentAnalyst(message: String) -> Double
+    func scrollChat()
 }
 
 let negativeResponse: Array<String> = ["That must be uncomfortable for you.","I'm sorry you are going through this.","That sucks...","This experience must be hard for you.","That sounds challenging.","I'm here to help you with your emotions.","I'm glad that you try to confide here."]
@@ -100,6 +101,7 @@ class ChatViewModel{
         switch counter {
         case 0:
             messages.append(Message(text: "Hey, I'm Bob. I'm here to help you with your emotions. Can you first tell me what is affecting your emotion?", isBobSender: true))
+            delegate.refreshChat()
             counter += 1
             configureChat()
         case 1:
@@ -116,10 +118,13 @@ class ChatViewModel{
                 configureChat()
             }
         case 3:
-            messages.append(Message(text: "Can you write how and why " + userChoice + " affects you?", isBobSender: true))
-            delegate.refreshChat()
-            counter += 1
-            configureChat()
+            Timer.scheduledTimer(withTimeInterval: 2.0, repeats: false) { timer in
+                self.messages.append(Message(text: "Can you write how and why " + self.userChoice + " affects you?", isBobSender: true))
+                self.delegate.refreshChat()
+                self.delegate.scrollChat()
+                self.counter += 1
+                self.configureChat()
+            }
         case 4:
             delegate.presentTextModal()
             counter += 1
@@ -131,24 +136,29 @@ class ChatViewModel{
             counter += 1
             configureChat()
         case 6:
-            if scoreSentiment == 0 {
-                messages.append(Message(text: "I see. I’d love to hear more.", isBobSender: true))
-            } else if scoreSentiment < 0 {
-                messages.append(Message(text: negativeResponse[Int.random(in: 0...negativeResponse.count-1)], isBobSender: true))
-            } else {
-                messages.append(Message(text: positiveResponse[Int.random(in: 0...positiveResponse.count-1)], isBobSender: true))
+            Timer.scheduledTimer(withTimeInterval: 2.0, repeats: false) { [self] timer in
+                if scoreSentiment == 0 {
+                    self.messages.append(Message(text: "I see. I’d love to hear more.", isBobSender: true))
+                } else if scoreSentiment < 0 {
+                    messages.append(Message(text: negativeResponse[Int.random(in: 0...negativeResponse.count-1)], isBobSender: true))
+                } else {
+                    messages.append(Message(text: positiveResponse[Int.random(in: 0...positiveResponse.count-1)], isBobSender: true))
+                }
+                delegate.refreshChat()
+                delegate.scrollChat()
+                counter += 1
+                configureChat()
             }
-            delegate.refreshChat()
-            counter += 1
-            configureChat()
         case 7:
-            messages.append(Message(text: "How did this situation make you feel?", isBobSender: true))
-            delegate.refreshChat()
-            counter += 1
-            configureChat()
+            Timer.scheduledTimer(withTimeInterval: 2.0, repeats: false) { [self] timer in
+                messages.append(Message(text: "How did this situation make you feel?", isBobSender: true))
+                delegate.refreshChat()
+                counter += 1
+                configureChat()
+            }
         case 8:
-            delegate.presentChoiceModal(buttons: options2)
-            counter += 1
+                delegate.presentChoiceModal(buttons: options2)
+                counter += 1
         case 9:
             messages.append(Message(text: "It mostly makes me feel " + userChoice, isBobSender: false))
             tempValue.append(userChoice)
@@ -156,6 +166,7 @@ class ChatViewModel{
             counter += 1
             configureChat()
         case 10:
+            Timer.scheduledTimer(withTimeInterval: 2.0, repeats: false) { [self] timer in
             if emotionString.contains("Happy") {
                 messages.append(Message(text: validateHappy[Int.random(in: 0...validateHappy.count-1)], isBobSender: true))
             } else if emotionString.contains("Angry") {
@@ -172,13 +183,17 @@ class ChatViewModel{
                 messages.append(Message(text: validateFearful[Int.random(in: 0...validateFearful.count-1)], isBobSender: true))
             }
             delegate.refreshChat()
+            delegate.scrollChat()
             counter += 1
             configureChat()
+            }
         case 11:
+            Timer.scheduledTimer(withTimeInterval: 2.0, repeats: false) { [self] timer in
             messages.append(Message(text: askingIntensity[emotionString]!, isBobSender: true))
             delegate.refreshChat()
             counter += 1
             configureChat()
+            }
         case 12:
             delegate.presentChoiceModal(buttons: options3)
             counter += 1
@@ -189,15 +204,21 @@ class ChatViewModel{
             counter += 1
             configureChat()
         case 14:
+            Timer.scheduledTimer(withTimeInterval: 2.0, repeats: false) { [self] timer in
             messages.append(Message(text: validateIntensity[Int.random(in: 0...validateIntensity.count-1)], isBobSender: true))
             delegate.refreshChat()
+            delegate.scrollChat()
             counter += 1
             configureChat()
+            }
         case 15:
+            Timer.scheduledTimer(withTimeInterval: 2.0, repeats: false) { [self] timer in
             messages.append(Message(text: "Have you tried to do something to make yourself feel better?", isBobSender: true))
             delegate.refreshChat()
+            delegate.scrollChat()
             counter += 1
             configureChat()
+            }
         case 16:
             delegate.presentTextModal()
             counter += 1
@@ -208,15 +229,20 @@ class ChatViewModel{
             counter += 1
             configureChat()
         case 18:
+            Timer.scheduledTimer(withTimeInterval: 2.0, repeats: false) { [self] timer in
             messages.append(Message(text: validateResolution[Int.random(in: 0...validateResolution.count-1)], isBobSender: true))
             delegate.refreshChat()
+            delegate.scrollChat()
             counter += 1
             configureChat()
+            }
         case 19:
+            Timer.scheduledTimer(withTimeInterval: 2.0, repeats: false) { [self] timer in
             messages.append(Message(text: "Would you want to receive an activity suggestion that might help you?", isBobSender: true))
             delegate.refreshChat()
             counter += 1
             configureChat()
+            }
         case 20:
             delegate.presentChoiceModal(buttons: options4)
             counter += 1
@@ -243,12 +269,12 @@ class ChatViewModel{
                     messages.append(Message(text: activityFear[Int.random(in: 0...activityFear.count-1)], isBobSender: true))
                 }
             }
-            messages.append(Message(text: "Don't forget to check-in your emotion later", isBobSender: true))
+            messages.append(Message(text: "Thank you for checking in your emotion today, don’t forget to save it by clicking the button on the “Save” button and check back in tomorrow.", isBobSender: true))
             tempValue.append(messages[messages.count-2].text)
             delegate.refreshChat()
             delegate.setParam(message: tempValue)
         default:
-            print("ERROR: COUNTER NOT FOUND")
+            print("ERROR: COUNTER NOT FOUND == \(counter)")
         }
     }
 }

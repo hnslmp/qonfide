@@ -10,11 +10,17 @@ import NaturalLanguage
 
 private let reuseIdentifier = "MessageCell"
 
+protocol ChatControllerDelegate: AnyObject{
+    func refreshTable()
+}
+
 class ChatController: UICollectionViewController
 {
     
     // MARK: - Properties
     private let viewModel = ChatViewModel()
+    
+    weak var delegate: ChatControllerDelegate?
     
     private var paramData: Array<String> = []
     
@@ -43,6 +49,12 @@ class ChatController: UICollectionViewController
     
     @objc func completeTapped(){
         ChatServiceClass.processData(paramData)
+        Task.init{
+            let fetchedInput = try await ChatServiceClass.fetchMessages()
+            AppHelper.appInputs = fetchedInput
+            print("DEBUG: Data fetched LAGI")
+            delegate?.refreshTable()
+        }
         navigationController?.popViewController(animated: true)
         print("DEBUG: Complete Tapped pressed")
     }
@@ -50,9 +62,10 @@ class ChatController: UICollectionViewController
     // MARK: - Helpers
     func configureUI(){
         navigationController?.isNavigationBarHidden = false
-        configureNavigationBar(withTitle: getDate(), preferLargeTitles: false)        
-        self.navigationController?.navigationBar.layer.shadowColor = UIColor.black.cgColor
-        self.navigationController?.navigationBar.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
+        configureNavigationBar(withTitle: getDate(), preferLargeTitles: false)
+        self.navigationController?.navigationBar.tintColor = UIColor(red: 53/255, green: 74/255, blue: 166/255, alpha: 1)
+        self.navigationController?.navigationBar.layer.shadowColor = UIColor(red: 153/255, green: 153/255, blue: 153/255, alpha: 0.5).cgColor
+        self.navigationController?.navigationBar.layer.shadowOffset = CGSize(width: 0.0, height: 1.0)
         self.navigationController?.navigationBar.layer.shadowRadius = 4.0
         self.navigationController?.navigationBar.layer.shadowOpacity = 0.4
         self.navigationController?.navigationBar.layer.masksToBounds = false
@@ -70,11 +83,6 @@ class ChatController: UICollectionViewController
         dateFormatter.dateFormat = "dd/MM/yyyy"
         let result = dateFormatter.string(from: date)
         return result
-    }
-    
-    func scrollChat() {
-        collectionView.scrollToItem(at: IndexPath(item: viewModel.messages.count-1, section: 0), at: .bottom, animated: true)
-        collectionView.setContentOffset(CGPoint(x: 0, y: collectionView.contentSize.height-100), animated: true)
     }
 }
 
@@ -110,6 +118,11 @@ extension ChatController: UICollectionViewDelegateFlowLayout{
 
 extension ChatController: ChatViewModelDelegate{
     
+    func scrollChat() {
+        collectionView.scrollToItem(at: IndexPath(item: viewModel.messages.count-1, section: 0), at: .bottom, animated: true)
+        collectionView.setContentOffset(CGPoint(x: 0, y: collectionView.contentSize.height-100), animated: true)
+    }
+    
     func sentimentAnalyst(message: String) -> Double {
         let tagger = NLTagger(tagSchemes: [.sentimentScore])
         tagger.string = message
@@ -132,6 +145,7 @@ extension ChatController: ChatViewModelDelegate{
        }
     
     func presentChoiceModal(buttons: [String]) {
+        scrollChat()
         let vc = CustomModalViewController(buttonArray: buttons)
         vc.delegate = self
         vc.modalPresentationStyle = .overCurrentContext

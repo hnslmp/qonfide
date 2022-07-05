@@ -148,7 +148,9 @@ class HomeController: UIViewController {
         }
     
     @IBAction func goToChat(_ sender: Any) {
-        self.navigationController?.pushViewController(ChatController(), animated: true)
+        let vc = ChatController()
+        vc.delegate = self
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func refreshData(_ sender: Any) {
@@ -320,4 +322,11 @@ extension HomeController: SelectMonthYearDelegate {
         self.changeDateBtn.setTitle(dateFormatter.string(from: date), for: .normal)
     }
     
+}
+
+extension HomeController: ChatControllerDelegate {
+    func refreshTable() {
+        print("REFRESH TABLE")
+        self.tableView.reloadData()
+    }
 }

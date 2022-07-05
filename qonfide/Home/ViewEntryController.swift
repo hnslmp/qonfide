@@ -10,7 +10,6 @@ import UIKit
 class ViewEntryController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var viewConversationBtn: UIButton!
 
     let appearence = UINavigationBarAppearance()
     //MARK: -- Dummy
@@ -34,13 +33,20 @@ class ViewEntryController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.isNavigationBarHidden = false
         viewStyling()
 
         // Do any additional setup after loading the view.
     }
     
     func viewStyling() {
+        navigationController?.isNavigationBarHidden = false
+        configureNavigationBar(withTitle: getDate(), preferLargeTitles: false)
+        self.navigationController?.navigationBar.layer.shadowColor = UIColor.black.cgColor
+        self.navigationController?.navigationBar.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
+        self.navigationController?.navigationBar.layer.shadowRadius = 4.0
+        self.navigationController?.navigationBar.layer.shadowOpacity = 0.4
+        self.navigationController?.navigationBar.layer.masksToBounds = false
+        
         self.tableView.delegate = self
         self.tableView.dataSource = self
         
@@ -55,11 +61,15 @@ class ViewEntryController: UIViewController {
         dateNow = dateformatter.string(from: date)
         self.title = dateNow
         
-        self.viewConversationBtn.layer.cornerRadius = 10
+//        self.viewConversationBtn.layer.cornerRadius = 10
     }
     
-    @IBAction func seeConversationTap(_ sender: Any) {
-        
+    func getDate() -> String {
+        let date = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd/MM/yyyy"
+        let result = dateFormatter.string(from: date)
+        return result
     }
     
 }

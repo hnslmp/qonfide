@@ -43,7 +43,7 @@ extension UIViewController{
         let customBackBar = UIImage(named: "backButton")
         navigationController?.navigationBar.backIndicatorImage = customBackBar
         navigationController?.navigationBar.backIndicatorTransitionMaskImage = customBackBar
-
+        
 //        navigationController?.navigationBar.backItem = customBackBar
         navigationController?.navigationBar.standardAppearance = appearance
         navigationController?.navigationBar.compactAppearance = appearance

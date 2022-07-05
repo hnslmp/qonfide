@@ -20,7 +20,7 @@ class CustomModalViewController: UIViewController{
         stack.distribution = .fill
         stack.axis = .vertical
         stack.alignment = .center
-        stack.spacing = 12.0
+        stack.spacing = 20.0
         return stack
     }()
     
@@ -54,7 +54,8 @@ class CustomModalViewController: UIViewController{
             button.addTarget(self, action: #selector(optionPressed), for: .touchUpInside)
             layoutOptions.addArrangedSubview(button)
         }
-        defaultHeight = CGFloat(buttonArray.count * 70)
+        // button height 50 + spacing 20 + container up and down 30
+        defaultHeight = CGFloat((buttonArray.count * 70) + 30)
     }
     
     required init?(coder: NSCoder) {
@@ -89,8 +90,8 @@ class CustomModalViewController: UIViewController{
             containerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             containerView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             // content stackView
-            layoutOptions.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 32),
-            layoutOptions.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -20),
+            layoutOptions.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 20),
+            layoutOptions.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -30),
             layoutOptions.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 20),
             layoutOptions.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -20),
         ])

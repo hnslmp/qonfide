@@ -19,7 +19,7 @@ class SignupFormController: UIViewController{
         label.text = "Qonfide"
         label.textAlignment = .center
         label.textColor = UIColor(red: 51/255, green: 88/255, blue: 141/255, alpha: 1)
-        label.font = UIFont.systemFont(ofSize: 32, weight: .bold)
+        label.font = .rounded(ofSize: 32, weight: .bold)
         return label
     }()
     
@@ -49,7 +49,7 @@ class SignupFormController: UIViewController{
         let button = UIButton()
         let attributedTitle = NSMutableAttributedString(string: "I Already Have an Account", attributes: [
             .foregroundColor: UIColor(red: 133/255, green: 165/255, blue: 210/255, alpha: 1),
-            .font: UIFont.systemFont(ofSize: 16, weight: .regular),
+            .font: UIFont.rounded(ofSize: 16, weight: .regular),
                 .underlineStyle: NSUnderlineStyle.thick.rawValue
         ])
         button.setAttributedTitle(attributedTitle, for: .normal)

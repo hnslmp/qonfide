@@ -49,12 +49,7 @@ class ChatController: UICollectionViewController
     
     @objc func completeTapped(){
         ChatServiceClass.processData(paramData)
-        Task.init{
-            let fetchedInput = try await ChatServiceClass.fetchMessages()
-            AppHelper.appInputs = fetchedInput
-            print("DEBUG: Data fetched LAGI")
-            delegate?.refreshTable()
-        }
+        delegate?.refreshTable()
         navigationController?.popViewController(animated: true)
         print("DEBUG: Complete Tapped pressed")
     }

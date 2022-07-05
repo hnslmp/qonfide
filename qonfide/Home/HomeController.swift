@@ -167,6 +167,7 @@ class HomeController: UIViewController {
     
     func fetchedChat() async -> [Input] {
         do {
+            print("fetching user chat")
             let arr = try await ChatServiceClass.fetchMessages()
             return arr
         } catch {
@@ -327,6 +328,13 @@ extension HomeController: SelectMonthYearDelegate {
 extension HomeController: ChatControllerDelegate {
     func refreshTable() {
         print("REFRESH TABLE")
-        self.tableView.reloadData()
+        Task.init {
+            let chats = await fetchedChat()
+            self.userChat = chats
+            
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
     }
 }

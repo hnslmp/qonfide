@@ -215,7 +215,7 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource, Se
             cell.selectionStyle = .none
             
             cell.labelTxt.text = dateFormatter.string(from: dateReminder)
-            cell.labelTxt.font = UIFont.systemFont(ofSize: 17, weight: .bold)
+            cell.labelTxt.font = UIFont.systemFont(ofSize: 20, weight: .bold)
             
             cell.switchBtn.setOn(false, animated: true)
             cell.switchBtn.tag = indexPath.section
@@ -230,7 +230,7 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource, Se
             cell.selectionStyle = .none
             
             cell.labelTxt.text = dateFormatter.string(from: dateQuotes)
-            cell.labelTxt.font = UIFont.systemFont(ofSize: 17, weight: .bold)
+            cell.labelTxt.font = UIFont.systemFont(ofSize: 20, weight: .bold)
             
             cell.switchBtn.setOn(false, animated: true)
             cell.switchBtn.tag = indexPath.section

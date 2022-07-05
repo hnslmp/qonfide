@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -17,16 +18,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7tH-0I-ogF">
-                                <rect key="frame" x="48" y="97" width="265" height="41"/>
+                                <rect key="frame" x="31" y="97" width="282" height="41"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
                                 <color key="textColor" red="0.20000000000000001" green="0.34509803921568627" blue="0.55294117647058827" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i5s-Zd-WXt">
-                                <rect key="frame" x="337" y="102" width="46" height="31"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i5s-Zd-WXt">
+                                <rect key="frame" x="347.5" y="102" width="45.5" height="31"/>
                                 <color key="tintColor" red="0.52156862745098043" green="0.6470588235294118" blue="0.82352941176470584" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="gearshape.fill" catalog="system"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <imageReference key="image" image="gearshape.fill" catalog="system" symbolScale="large"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage"/>
+                                </buttonConfiguration>
                                 <connections>
                                     <action selector="goToSettings:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="f7l-o2-T1k"/>
                                 </connections>
@@ -40,7 +44,7 @@
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OXW-MH-vgU">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="OXW-MH-vgU">
                                         <rect key="frame" x="49" y="85.5" width="254" height="21"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -71,10 +75,10 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kDC-3c-QBr">
-                                <rect key="frame" x="31" y="323" width="79.5" height="57"/>
+                                <rect key="frame" x="31" y="328" width="93.5" height="47"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Button">
-                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="17"/>
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="22"/>
                                     <color key="baseForegroundColor" red="0.20000000000000001" green="0.34509803921568627" blue="0.55294117647058827" alpha="1" colorSpace="calibratedRGB"/>
                                 </buttonConfiguration>
                                 <connections>
@@ -107,10 +111,10 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="7tH-0I-ogF" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="53" id="0aA-L8-gSI"/>
-                            <constraint firstItem="7tH-0I-ogF" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="48" id="1Er-m0-Mht"/>
+                            <constraint firstItem="7tH-0I-ogF" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="31" id="1Er-m0-Mht"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="DN7-9t-hz8" secondAttribute="trailing" constant="31" id="A5R-qm-V3m"/>
-                            <constraint firstItem="kDC-3c-QBr" firstAttribute="top" secondItem="DN7-9t-hz8" secondAttribute="bottom" constant="30" id="AQm-kk-zyq"/>
-                            <constraint firstItem="5EM-vf-gDQ" firstAttribute="top" secondItem="kDC-3c-QBr" secondAttribute="bottom" constant="30" id="Dkr-cK-mFI"/>
+                            <constraint firstItem="kDC-3c-QBr" firstAttribute="top" secondItem="DN7-9t-hz8" secondAttribute="bottom" constant="35" id="AQm-kk-zyq"/>
+                            <constraint firstItem="5EM-vf-gDQ" firstAttribute="top" secondItem="kDC-3c-QBr" secondAttribute="bottom" constant="35" id="Dkr-cK-mFI"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="5EM-vf-gDQ" secondAttribute="trailing" constant="31" id="EQR-Xw-Xr2"/>
                             <constraint firstItem="isE-91-YIP" firstAttribute="top" secondItem="DN7-9t-hz8" secondAttribute="bottom" constant="43" id="Orf-Ev-t38"/>
                             <constraint firstItem="5EM-vf-gDQ" firstAttribute="centerX" secondItem="DN7-9t-hz8" secondAttribute="centerX" id="QUo-89-abV"/>
@@ -121,7 +125,7 @@
                             <constraint firstItem="5EM-vf-gDQ" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="31" id="jVS-ZW-Pyy"/>
                             <constraint firstItem="kDC-3c-QBr" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="31" id="jkq-W7-ZOS"/>
                             <constraint firstItem="i5s-Zd-WXt" firstAttribute="centerY" secondItem="7tH-0I-ogF" secondAttribute="centerY" id="lkq-iW-sAF"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="i5s-Zd-WXt" secondAttribute="trailing" constant="31" id="yoX-KK-0N2"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="i5s-Zd-WXt" secondAttribute="trailing" constant="21" id="yoX-KK-0N2"/>
                             <constraint firstItem="isE-91-YIP" firstAttribute="centerY" secondItem="kDC-3c-QBr" secondAttribute="centerY" id="zHj-p9-RJS"/>
                         </constraints>
                     </view>
@@ -198,7 +202,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lIl-0P-erM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="663.768115942029" y="-267.1875"/>
+            <point key="canvasLocation" x="448" y="-984"/>
         </scene>
     </scenes>
     <resources>

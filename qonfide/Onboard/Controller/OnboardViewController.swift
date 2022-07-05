@@ -16,7 +16,7 @@ class OnboardViewController: UIViewController, UIScrollViewDelegate {
     var scrollWidth: CGFloat! = 0.0
     var scrollHeight: CGFloat! = 0.0
     var scrollFrame = CGRect(x: 0, y: 0, width: 0, height: 0)
-    var onboardData: [Onboard] = [Onboard(titles: "Welcome to Qonfide", desc: "Recognize your emotion better and work towards a healthier emotional regulation.", imageView: "qonfide vector-1", imageBackGround: "background1"), Onboard(titles: "Meet Bob!", desc: "Confide to Bob, your personal Qonfide assistant. All your stories are safe between you and Bob.", imageView: "qonfide vector-2", imageBackGround: "background2"), Onboard(titles: "Start taking care of your emotions", desc: "We’ve carefully crafted guiding questions to create a meaningful journaling experience for you.", imageView: "qonfide vector-3", imageBackGround: "background3")]
+    var onboardData: [Onboard] = [Onboard(titles: "Welcome to\nQonfide", desc: "Recognize your emotion better and work towards a healthier emotional regulation.", imageView: "qonfide vector-1", imageBackGround: "background1"), Onboard(titles: "Meet Bob!", desc: "Confide to Bob, your personal Qonfide assistant. All your stories are safe between you and Bob.", imageView: "qonfide vector-2", imageBackGround: "background2"), Onboard(titles: "Start taking care of your emotions", desc: "We’ve carefully crafted guiding questions to create a meaningful journaling experience for you.", imageView: "qonfide vector-3", imageBackGround: "background3")]
     
     
     override func viewDidLayoutSubviews() {
@@ -49,14 +49,37 @@ class OnboardViewController: UIViewController, UIScrollViewDelegate {
             imageView.contentMode = .scaleAspectFill
             imageView.center = CGPoint(x: scrollWidth/2, y: scrollHeight/2 - 250)
             
-            let title = UILabel.init(frame: CGRect(x: 32, y: imageView.frame.maxY + 50, width: scrollWidth - 50, height: 85))
+//            let title = UILabel.init(frame: CGRect(x: 32, y: imageView.frame.maxY + 50, width: scrollWidth - 50, height: 85))
+//            let title = UILabel.init(frame: CGRect(x: 32, y: imageView.frame.maxY + 50, width: scrollWidth - 78, height: 85))
+//            title.textAlignment = .left
+//            title.numberOfLines = 2
+//            title.textColor = .white
+//            title.font = UIFont.boldSystemFont(ofSize: 34.0)
+//            title.text = onboardData[index].titles
+            
+            let title = UILabel()
+
+            if index == 2 || index == 0{
+                title.frame = CGRect(x: 32, y: imageView.frame.maxY + 50, width: scrollWidth - 50, height: 85)
+            } else {
+                title.frame = CGRect(x: 32, y: imageView.frame.maxY + 70, width: scrollWidth - 50, height: 85)
+            }
             title.textAlignment = .left
             title.numberOfLines = 2
             title.textColor = .white
             title.font = UIFont.boldSystemFont(ofSize: 34.0)
             title.text = onboardData[index].titles
             
-            let desc = UILabel.init(frame: CGRect(x: 32, y: title.frame.maxY+10, width: scrollWidth-64, height: 100))
+            
+            let desc = UILabel()
+            
+            if index == 2 {
+                desc.frame = CGRect(x: 32, y: title.frame.maxY + 10, width: scrollWidth - 64, height: 100)
+            } else if index == 1 {
+                desc.frame = CGRect(x: 32, y: title.frame.maxY + 5, width: scrollWidth - 64, height: 76)
+            } else {
+                desc.frame = CGRect(x: 32, y: title.frame.maxY + 20, width: scrollWidth - 64, height: 76)
+            }
             desc.textAlignment = .left
             desc.numberOfLines = 3
             desc.textColor = .white

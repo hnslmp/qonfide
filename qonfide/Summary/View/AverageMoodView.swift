@@ -14,8 +14,11 @@ struct moodStruct {
 
 class AverageMoodView: UIView{
     
-    
+
     // MARK: - Properties
+    
+    private let viewModel = SummaryViewModel()
+    
     private let moodTitle: UILabel = {
         
         let emotions: [String] = AppHelper.appInputs.map{$0.answer3}
@@ -24,7 +27,7 @@ class AverageMoodView: UIView{
             emotionCounts[item] = (emotionCounts[item] ?? 0) + 1
         }
         let maxEmoitons = emotionCounts.max { a, b in a.value < b.value }
-        let averageMood = maxEmoitons?.key ?? ""
+        let averageMood = ""
         
         let label = UILabel()
         let textColor = UIColor(red: 51/255, green: 88/255, blue: 141/255, alpha: 1)
@@ -75,6 +78,7 @@ class AverageMoodView: UIView{
         layer.cornerRadius = 10
         heightAnchor.constraint(equalToConstant: 120).isActive = true
         
+//        moodTitle.text = viewModel.getAverageMood()
         addSubview(moodTitle)
         moodTitle.anchor(top: topAnchor, left: leftAnchor, paddingTop: 12, paddingLeft: 24)
         

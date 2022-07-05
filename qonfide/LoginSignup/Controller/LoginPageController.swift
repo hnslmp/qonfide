@@ -22,7 +22,7 @@ class LoginPageController: UIViewController{
         label.text = "Qonfide"
         label.textAlignment = .center
         label.textColor = UIColor(red: 51/255, green: 88/255, blue: 141/255, alpha: 1)
-        label.font = UIFont.systemFont(ofSize: 32, weight: .bold)
+        label.font = .rounded(ofSize: 32, weight: .bold)
         return label
     }()
     
@@ -51,7 +51,7 @@ class LoginPageController: UIViewController{
         let button = UIButton(type: .system)
         let attributedTitle = NSMutableAttributedString(string: "Continue as guest", attributes: [
                 .foregroundColor: UIColor(red: 133/255, green: 165/255, blue: 210/255, alpha: 1),
-                .font: UIFont.systemFont(ofSize: 20, weight: .bold),
+                .font: UIFont.rounded(ofSize: 20, weight: .bold),
                 .underlineStyle: NSUnderlineStyle.thick.rawValue])
         button.setAttributedTitle(attributedTitle, for: .normal)
         button.addTarget(self, action: #selector(guestButtonPressed), for: .touchUpInside)

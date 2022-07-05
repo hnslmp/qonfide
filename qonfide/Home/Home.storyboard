@@ -82,7 +82,7 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="5EM-vf-gDQ">
-                                <rect key="frame" x="31" y="410" width="352" height="339"/>
+                                <rect key="frame" x="31" y="390" width="352" height="339"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="339" id="TF6-Gw-Gd7"/>
@@ -110,7 +110,7 @@
                             <constraint firstItem="7tH-0I-ogF" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="48" id="1Er-m0-Mht"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="DN7-9t-hz8" secondAttribute="trailing" constant="31" id="A5R-qm-V3m"/>
                             <constraint firstItem="kDC-3c-QBr" firstAttribute="top" secondItem="DN7-9t-hz8" secondAttribute="bottom" constant="30" id="AQm-kk-zyq"/>
-                            <constraint firstItem="5EM-vf-gDQ" firstAttribute="top" secondItem="kDC-3c-QBr" secondAttribute="bottom" constant="30" id="Dkr-cK-mFI"/>
+                            <constraint firstItem="5EM-vf-gDQ" firstAttribute="top" secondItem="kDC-3c-QBr" secondAttribute="bottom" constant="10" id="Dkr-cK-mFI"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="5EM-vf-gDQ" secondAttribute="trailing" constant="31" id="EQR-Xw-Xr2"/>
                             <constraint firstItem="isE-91-YIP" firstAttribute="top" secondItem="DN7-9t-hz8" secondAttribute="bottom" constant="43" id="Orf-Ev-t38"/>
                             <constraint firstItem="5EM-vf-gDQ" firstAttribute="centerX" secondItem="DN7-9t-hz8" secondAttribute="centerX" id="QUo-89-abV"/>

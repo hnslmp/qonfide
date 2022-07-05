@@ -10,7 +10,6 @@ import UIKit
 class ViewEntryController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var viewConversationBtn: UIButton!
 
     let appearence = UINavigationBarAppearance()
     //MARK: -- Dummy
@@ -62,11 +61,7 @@ class ViewEntryController: UIViewController {
         dateNow = dateformatter.string(from: date)
         self.title = dateNow
         
-        self.viewConversationBtn.layer.cornerRadius = 10
-    }
-    
-    @IBAction func seeConversationTap(_ sender: Any) {
-        
+//        self.viewConversationBtn.layer.cornerRadius = 10
     }
     
     func getDate() -> String {

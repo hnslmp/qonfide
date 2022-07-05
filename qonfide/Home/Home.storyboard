@@ -166,38 +166,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="irb-Ym-LpN">
-                                <rect key="frame" x="20" y="64" width="374" height="665"/>
+                                <rect key="frame" x="20" y="64" width="374" height="778"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Ce-6y-5h7">
-                                <rect key="frame" x="20" y="761" width="374" height="61"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="View Conversation">
-                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="17"/>
-                                    <color key="baseBackgroundColor" red="0.20000000000000001" green="0.34509803919999998" blue="0.55294117649999996" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="seeConversationTap:" destination="R6q-qm-Np1" eventType="touchUpInside" id="Azq-8Z-3WK"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Fz-z6-ass"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="irb-Ym-LpN" firstAttribute="top" secondItem="6Fz-z6-ass" secondAttribute="top" constant="20" id="2dS-uX-v9g"/>
                             <constraint firstItem="6Fz-z6-ass" firstAttribute="trailing" secondItem="irb-Ym-LpN" secondAttribute="trailing" constant="20" id="6V4-o7-93Y"/>
-                            <constraint firstItem="6Fz-z6-ass" firstAttribute="bottom" secondItem="3Ce-6y-5h7" secondAttribute="bottom" constant="40" id="9KX-ij-oAf"/>
-                            <constraint firstItem="6Fz-z6-ass" firstAttribute="trailing" secondItem="3Ce-6y-5h7" secondAttribute="trailing" constant="20" id="FUQ-AS-tEN"/>
                             <constraint firstItem="irb-Ym-LpN" firstAttribute="centerX" secondItem="6Fz-z6-ass" secondAttribute="centerX" id="KRb-Ps-eqJ"/>
-                            <constraint firstItem="3Ce-6y-5h7" firstAttribute="leading" secondItem="6Fz-z6-ass" secondAttribute="leading" constant="20" id="M4h-eP-pdP"/>
-                            <constraint firstItem="3Ce-6y-5h7" firstAttribute="top" secondItem="irb-Ym-LpN" secondAttribute="bottom" constant="32" id="OCl-Di-bUt"/>
                             <constraint firstItem="irb-Ym-LpN" firstAttribute="leading" secondItem="6Fz-z6-ass" secondAttribute="leading" constant="20" id="tYx-BA-W1y"/>
-                            <constraint firstItem="6Fz-z6-ass" firstAttribute="bottom" secondItem="irb-Ym-LpN" secondAttribute="bottom" constant="133" id="yLT-L0-oev"/>
+                            <constraint firstItem="6Fz-z6-ass" firstAttribute="bottom" secondItem="irb-Ym-LpN" secondAttribute="bottom" constant="20" id="yLT-L0-oev"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="tableView" destination="irb-Ym-LpN" id="6h9-bo-0KB"/>
-                        <outlet property="viewConversationBtn" destination="3Ce-6y-5h7" id="Ocd-3O-yFZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lIl-0P-erM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
